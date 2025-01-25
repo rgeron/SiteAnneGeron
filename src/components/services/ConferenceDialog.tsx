@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface ConferenceThemeDialogProps {
   title: string;
@@ -13,99 +14,101 @@ function ConferenceThemeDialog({
   description,
 }: ConferenceThemeDialogProps) {
   return (
-    <DialogContent className="max-w-4xl">
-      <div className="flex flex-col md:flex-row gap-8 p-6">
-        {/* Left Column - Information */}
-        <div className="flex-1 space-y-6">
-          <h2 className="text-2xl font-bold mb-6">{title}</h2>
-          <div className="prose prose-slate">
-            <p className="text-lg">{description}</p>
+    <DialogContent className="max-w-4xl max-h-[90vh] p-0 overflow-hidden">
+      <ScrollArea className="h-full max-h-[90vh]">
+        <div className="flex flex-col md:flex-row gap-8 p-6">
+          {/* Left Column - Information */}
+          <div className="flex-1 space-y-6">
+            <h2 className="text-2xl font-bold mb-6">{title}</h2>
+            <div className="prose prose-slate">
+              <p className="text-lg">{description}</p>
+            </div>
           </div>
-        </div>
 
-        {/* Right Column - Contact Form */}
-        <div className="flex-1 bg-gray-50 p-6 rounded-lg">
-          <h3 className="text-xl font-semibold mb-6">
-            Réserver cette conférence
-          </h3>
-          <form className="space-y-6">
-            <div className="space-y-2">
-              <label htmlFor="name" className="text-sm font-medium">
-                Nom complet
-              </label>
-              <Input id="name" placeholder="Votre nom" />
-            </div>
-
-            <div className="space-y-2">
-              <label htmlFor="organization" className="text-sm font-medium">
-                Organisation
-              </label>
-              <Input
-                id="organization"
-                placeholder="Nom de votre organisation"
-              />
-            </div>
-
-            <div className="space-y-2">
-              <label htmlFor="email" className="text-sm font-medium">
-                Email
-              </label>
-              <Input id="email" type="email" placeholder="votre@email.com" />
-            </div>
-
-            <div className="space-y-2">
-              <label htmlFor="phone" className="text-sm font-medium">
-                Téléphone
-              </label>
-              <Input
-                id="phone"
-                type="tel"
-                placeholder="Votre numéro de téléphone"
-              />
-            </div>
-
-            <div className="space-y-2">
-              <label htmlFor="attendees" className="text-sm font-medium">
-                Nombre de participants estimé
-              </label>
-              <Input
-                id="attendees"
-                type="number"
-                min="20"
-                placeholder="Nombre de participants"
-              />
-            </div>
-
-            <div className="space-y-4">
-              <div className="flex items-center space-x-2">
-                <input
-                  type="checkbox"
-                  id="workshop"
-                  className="h-4 w-4 rounded border-gray-300"
-                />
-                <label htmlFor="workshop" className="text-sm font-medium">
-                  Intéressé(e) par un atelier suite à la conférence ?
+          {/* Right Column - Contact Form */}
+          <div className="flex-1 bg-gray-50 p-6 rounded-lg">
+            <h3 className="text-xl font-semibold mb-6">
+              Réserver cette conférence
+            </h3>
+            <form className="space-y-6">
+              <div className="space-y-2">
+                <label htmlFor="name" className="text-sm font-medium">
+                  Nom complet
                 </label>
+                <Input id="name" placeholder="Votre nom" />
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium">
-                  Message ou demandes particulières
+                <label htmlFor="organization" className="text-sm font-medium">
+                  Organisation
                 </label>
-                <Textarea
-                  id="message"
-                  placeholder="Votre message"
-                  className="min-h-[150px]"
+                <Input
+                  id="organization"
+                  placeholder="Nom de votre organisation"
                 />
               </div>
-            </div>
 
-            <Button type="submit" className="w-full">
-              Envoyer
-            </Button>
-          </form>
+              <div className="space-y-2">
+                <label htmlFor="email" className="text-sm font-medium">
+                  Email
+                </label>
+                <Input id="email" type="email" placeholder="votre@email.com" />
+              </div>
+
+              <div className="space-y-2">
+                <label htmlFor="phone" className="text-sm font-medium">
+                  Téléphone
+                </label>
+                <Input
+                  id="phone"
+                  type="tel"
+                  placeholder="Votre numéro de téléphone"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <label htmlFor="attendees" className="text-sm font-medium">
+                  Nombre de participants estimé
+                </label>
+                <Input
+                  id="attendees"
+                  type="number"
+                  min="20"
+                  placeholder="Nombre de participants"
+                />
+              </div>
+
+              <div className="space-y-4">
+                <div className="flex items-center space-x-2">
+                  <input
+                    type="checkbox"
+                    id="workshop"
+                    className="h-4 w-4 rounded border-gray-300"
+                  />
+                  <label htmlFor="workshop" className="text-sm font-medium">
+                    Intéressé(e) par un atelier suite à la conférence ?
+                  </label>
+                </div>
+
+                <div className="space-y-2">
+                  <label htmlFor="message" className="text-sm font-medium">
+                    Message ou demandes particulières
+                  </label>
+                  <Textarea
+                    id="message"
+                    placeholder="Votre message"
+                    className="min-h-[150px]"
+                  />
+                </div>
+              </div>
+
+              <Button type="submit" className="w-full">
+                Envoyer
+              </Button>
+            </form>
+          </div>
         </div>
-      </div>
+      </ScrollArea>
     </DialogContent>
   );
 }
