@@ -76,15 +76,28 @@ function ConferenceThemeDialog({
               />
             </div>
 
-            <div className="space-y-2">
-              <label htmlFor="message" className="text-sm font-medium">
-                Message ou demandes particulières
-              </label>
-              <Textarea
-                id="message"
-                placeholder="Votre message"
-                className="min-h-[150px]"
-              />
+            <div className="space-y-4">
+              <div className="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  id="workshop"
+                  className="h-4 w-4 rounded border-gray-300"
+                />
+                <label htmlFor="workshop" className="text-sm font-medium">
+                  Intéressé(e) par un atelier suite à la conférence ?
+                </label>
+              </div>
+
+              <div className="space-y-2">
+                <label htmlFor="message" className="text-sm font-medium">
+                  Message ou demandes particulières
+                </label>
+                <Textarea
+                  id="message"
+                  placeholder="Votre message"
+                  className="min-h-[150px]"
+                />
+              </div>
             </div>
 
             <Button type="submit" className="w-full">

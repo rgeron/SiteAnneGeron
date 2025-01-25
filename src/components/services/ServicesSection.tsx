@@ -17,13 +17,9 @@ export default function ServicesSection() {
       dialogContent: <FormationDialog />,
     },
     {
-      title: "Conférence",
+      title: "Conférences & Ateliers",
       icon: <Presentation />,
       dialogContent: <ConferenceDialog />,
-    },
-    {
-      title: "Ateliers",
-      icon: <Users />,
     },
   ];
 
