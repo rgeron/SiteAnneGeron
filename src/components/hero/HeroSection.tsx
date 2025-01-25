@@ -33,7 +33,7 @@ const HeroSection = ({
           initial={{ x: -50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="w-full md:w-1/2 h-1/2 md:h-full"
+          className="w-full md:w-[70%] h-1/2 md:h-full"
         >
           <LeftPanel
             quotes={quotes}
@@ -46,7 +46,7 @@ const HeroSection = ({
           initial={{ x: 50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="w-full md:w-1/2 h-1/2 md:h-full"
+          className="w-full md:w-[30%] h-1/2 md:h-full"
         >
           <RightPanel imageUrl={imageUrl} introText={introText} />
         </motion.div>

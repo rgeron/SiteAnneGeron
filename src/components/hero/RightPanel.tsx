@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 interface RightPanelProps {
   imageUrl?: string;
@@ -8,48 +9,89 @@ interface RightPanelProps {
 }
 
 const RightPanel = ({
-  imageUrl = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&fit=crop",
-  introText = "Hi, I'm Anne Géron. With over a decade of experience in design and development, I create digital experiences that leave lasting impressions. My approach combines aesthetic sensibility with technical expertise to deliver solutions that not only look beautiful but perform exceptionally.",
+  imageUrl = "/images/photo1.jpg",
+  introText = `Pour se rendre d'une vie à l'autre n'est-il pas rassurant de s'y préparer ?
+
+Cette réflexion est devenue au fil des années, pour moi, une nécessité que j'ai enrichie de connaissances et d'expériences.
+
+Il y a 20 ans, j'ai introduit en France le métier de funeral planner, en soutien aux familles endeuillées dans l'organisation logistique des hommages aux défunts. Il y a 15 ans, j'ai rejoint les assurances de personnes pour sensibiliser un plus grand nombres d'acteurs à la prévention funéraire sous forme de récit de vie et de transmission.
+
+J'ai poursuivi en travaillant auprès des personnes en fin de vie et des personnes âgées dépendantes en maison de retraite (Ehpad). Les années passées auprès du grand âge, de la vieillesse et des retraités me persuadent de l'importance de se préparer aux étapes incontournables de cette échéance.
+
+Egalement diplômée d'un master en droit de la santé, j'ai acquis des expertises sur les thématiques de gérontologie. J'interviens lors d'ateliers, des conférences et de formations. J'apporte une sensibilisation pédagogique, illustrée et décomplexée sur ces sujets encore tabous qui déterminent pourtant notre art du bien vieillir.`,
 }: RightPanelProps) => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [showBio, setShowBio] = useState(false);
 
   return (
-    <motion.div
-      className="relative w-full h-[60vh] bg-gray-50 overflow-hidden"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-    >
-      <motion.div
-        className="relative w-full h-full"
-        onHoverStart={() => setIsHovered(true)}
-        onHoverEnd={() => setIsHovered(false)}
-      >
+    <div className="relative w-full h-[60vh] bg-gray-50 overflow-hidden p-6">
+      <div className="relative w-full h-full">
         <motion.img
           src={imageUrl}
           alt="Anne Géron"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover rounded-xl border-2 border-gray-200"
           animate={{
-            filter: isHovered ? "brightness(0.3)" : "brightness(1)",
+            filter: showBio ? "brightness(0.1)" : "brightness(1)",
           }}
           transition={{ duration: 0.4 }}
         />
 
+        <Button
+          variant="secondary"
+          className="absolute bottom-4 left-4 z-10"
+          onClick={() => setShowBio(!showBio)}
+        >
+          {showBio ? "Fermer" : "Qui suis-je ?"}
+        </Button>
+
         <motion.div
-          className={cn(
-            "absolute inset-0 flex items-center justify-center p-8",
-            "text-white text-lg md:text-xl lg:text-2xl leading-relaxed",
-          )}
+          className="absolute inset-0 flex items-start justify-center p-8 overflow-y-auto"
           initial={{ opacity: 0 }}
           animate={{
-            opacity: isHovered ? 1 : 0,
+            opacity: showBio ? 1 : 0,
+            pointerEvents: showBio ? "auto" : "none",
           }}
           transition={{ duration: 0.3 }}
         >
-          <p className="max-w-prose text-center font-light">{introText}</p>
+          <div className="text-white space-y-4 max-w-prose">
+            <p className="text-xl font-semibold mb-6">
+              Pour se rendre d'une vie à l'autre n'est-il pas rassurant de s'y
+              préparer ?
+            </p>
+
+            <p className="leading-relaxed">
+              Cette réflexion est devenue au fil des années, pour moi, une
+              nécessité que j'ai enrichie de connaissances et d'expériences.
+            </p>
+
+            <p className="leading-relaxed">
+              Il y a 20 ans, j'ai introduit en France le métier de funeral
+              planner, en soutien aux familles endeuillées dans l'organisation
+              logistique des hommages aux défunts. Il y a 15 ans, j'ai rejoint
+              les assurances de personnes pour sensibiliser un plus grand
+              nombres d'acteurs à la prévention funéraire sous forme de récit de
+              vie et de transmission.
+            </p>
+
+            <p className="leading-relaxed">
+              J'ai poursuivi en travaillant auprès des personnes en fin de vie
+              et des personnes âgées dépendantes en maison de retraite (Ehpad).
+              Les années passées auprès du grand âge, de la vieillesse et des
+              retraités me persuadent de l'importance de se préparer aux étapes
+              incontournables de cette échéance.
+            </p>
+
+            <p className="leading-relaxed">
+              Egalement diplômée d'un master en droit de la santé, j'ai acquis
+              des expertises sur les thématiques de gérontologie. J'interviens
+              lors d'ateliers, des conférences et de formations. J'apporte une
+              sensibilisation pédagogique, illustrée et décomplexée sur ces
+              sujets encore tabous qui déterminent pourtant notre art du bien
+              vieillir.
+            </p>
+          </div>
         </motion.div>
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 };
 

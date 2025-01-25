@@ -43,7 +43,7 @@ const defaultQuotes: Quote[] = [
 
 const LeftPanel = ({
   quotes = defaultQuotes,
-  logoText = "ANNE GERON",
+  logoText = "",
   etymology = "From Ancient Greek 'γέρων' (gérōn) meaning 'elder' or 'wise one'",
 }: LeftPanelProps) => {
   const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
@@ -60,25 +60,17 @@ const LeftPanel = ({
     <div className="w-full h-full bg-white p-8 flex flex-col justify-between">
       {/* Logo Section */}
       <div className="space-y-4">
-        <motion.h1
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-4xl md:text-6xl font-bold tracking-wider"
+          className="w-48 h-auto"
         >
-          <span>ANNE </span>
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger>
-                <span className="text-blue-600 hover:text-blue-700 transition-colors duration-300">
-                  GÉRON
-                </span>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p className="text-sm">{etymology}</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-        </motion.h1>
+          <img
+            src="/images/logo.jpg"
+            alt="Anne Geron"
+            className="w-full h-auto"
+          />
+        </motion.div>
       </div>
 
       {/* Quote Carousel */}
