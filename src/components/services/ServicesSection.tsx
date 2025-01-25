@@ -1,4 +1,4 @@
-import { Gavel, GraduationCap, Presentation, Users } from "lucide-react";
+import { Gavel, GraduationCap, Presentation } from "lucide-react";
 import ServiceCard from "./ServiceCard";
 import MJDialog from "./MJDialog";
 import FormationDialog from "./FormationDialog";
@@ -15,18 +15,15 @@ export default function ServicesSection() {
       title: "Formation",
       icon: <GraduationCap />,
       dialogContent: <FormationDialog />,
-      imageUrl:
-        "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&auto=format&fit=crop&q=60",
-      description: "Formations professionnelles sur mesure pour vos équipes",
+      description:
+        "Mon objectif est de vous permettre de mieux vendre, plus vendre tout en accompagnant vos collaborateurs à devenir plus agiles sur des sujets tabous et intimes.",
     },
     {
       title: "Conférences & Ateliers",
       icon: <Presentation />,
       dialogContent: <ConferenceDialog />,
-      imageUrl:
-        "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&auto=format&fit=crop&q=60",
       description:
-        "Interventions et ateliers interactifs sur des thématiques ciblées",
+        "La conférence permettant l'accueil un grand nombre de participants en présentiel et Webinar. L'atelier permettant des échanges plus longs, plus interactifs et des partages.",
     },
   ];
 
@@ -44,6 +41,7 @@ export default function ServicesSection() {
                   icon={service.icon}
                   dialogContent={service.dialogContent}
                   className="bg-gray-50 border-2"
+                  description={service.description}
                 />
               ))}
             </div>
