@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Quote {
   text: string;
@@ -39,19 +41,27 @@ const LeftPanel = ({
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentQuoteIndex((prev) => (prev + 1) % quotes.length);
-    }, 5000);
+    }, 8000); // Increased to 8 seconds
 
     return () => clearInterval(interval);
   }, [quotes.length]);
 
+  const nextQuote = () => {
+    setCurrentQuoteIndex((prev) => (prev + 1) % quotes.length);
+  };
+
+  const previousQuote = () => {
+    setCurrentQuoteIndex((prev) => (prev - 1 + quotes.length) % quotes.length);
+  };
+
   return (
     <div className="w-full h-full bg-white p-8 flex flex-col">
       {/* Logo Section */}
-      <div className="flex justify-center items-center flex-grow">
+      <div className="flex justify-center items-start pt-12 flex-grow">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="w-2/3 max-w-[400px]"
+          className="w-4/5 max-w-[600px]"
         >
           <img
             src="/images/logo.jpg"
@@ -62,19 +72,41 @@ const LeftPanel = ({
       </div>
 
       {/* Quote Carousel */}
-      <div className="mt-8">
-        <motion.div
-          key={currentQuoteIndex}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.5 }}
-          className="text-center"
-        >
-          <p className="text-xl md:text-2xl font-light italic text-gray-700">
-            "{quotes[currentQuoteIndex].text}"
-          </p>
-        </motion.div>
+      <div className="mt-8 flex flex-col items-center">
+        <div className="w-3/4 h-[100px] flex items-center justify-center overflow-hidden">
+          <motion.div
+            key={currentQuoteIndex}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5 }}
+            className="text-center"
+          >
+            <p className="text-xl md:text-2xl font-light italic text-gray-700">
+              "{quotes[currentQuoteIndex].text}"
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Navigation Arrows */}
+        <div className="flex gap-4 mt-4">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={previousQuote}
+            className="hover:bg-gray-100"
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={nextQuote}
+            className="hover:bg-gray-100"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </Button>
+        </div>
       </div>
     </div>
   );
