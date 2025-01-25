@@ -1,6 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
 interface Quote {
@@ -41,7 +39,7 @@ const LeftPanel = ({
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentQuoteIndex((prev) => (prev + 1) % quotes.length);
-    }, 8000); // Increased to 8 seconds
+    }, 6000); // Change every 6 seconds
 
     return () => clearInterval(interval);
   }, [quotes.length]);
@@ -55,7 +53,7 @@ const LeftPanel = ({
   };
 
   return (
-    <div className="w-full h-full  flex-col bg-blue-500">
+    <div className="w-full h-full  flex-col">
       {/* Logo Section */}
       <div className="flex justify-center items-start pt-12 flex-grow mb-10">
         <motion.div
@@ -72,40 +70,25 @@ const LeftPanel = ({
       </div>
 
       {/* Quote Carousel */}
-      <div className="flex flex-col items-center ">
-        <div className="mb-6 w-3/4 flex justify-center overflow-hidden">
-          <motion.div
-            key={currentQuoteIndex}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
-            className="text-center"
-          >
-            <p className="text-xl md:text-2xl font-light italic text-gray-700">
-              "{quotes[currentQuoteIndex].text}"
-            </p>
-          </motion.div>
-        </div>
-
-        {/* Navigation Arrows */}
-        <div className="flex">
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={previousQuote}
-            className="hover:bg-gray-100"
-          >
-            <ChevronLeft className="h-6 w-6" />
-          </Button>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={nextQuote}
-            className="hover:bg-gray-100"
-          >
-            <ChevronRight className="h-6 w-6" />
-          </Button>
+      <div className="flex flex-col items-center">
+        <div className="w-4/5 flex justify-center overflow-hidden">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentQuoteIndex}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{
+                duration: 1,
+                ease: "easeInOut",
+              }}
+              className="text-center"
+            >
+              <p className="text-2xl md:text-3xl font-light italic text-gray-700">
+                "{quotes[currentQuoteIndex].text}"
+              </p>
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
     </div>
