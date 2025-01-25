@@ -14,7 +14,8 @@ interface ProductionCardProps {
   description?: string;
   image?: string;
   videoId?: string;
-  type?: "video" | "default";
+  pdfUrl?: string;
+  type?: "video" | "pdf" | "default";
 }
 
 export default function ProductionCard({
@@ -24,6 +25,25 @@ export default function ProductionCard({
   videoId,
   type = "default",
 }: ProductionCardProps) {
+  if (type === "pdf") {
+    return (
+      <Card className="w-[300px] flex-shrink-0 hover:shadow-lg transition-shadow">
+        <CardHeader>
+          <CardTitle>{title}</CardTitle>
+          {description && <CardDescription>{description}</CardDescription>}
+        </CardHeader>
+        <CardContent>
+          <Button
+            className="w-full"
+            onClick={() => window.open(pdfUrl, "_blank")}
+          >
+            Voir le PDF
+          </Button>
+        </CardContent>
+      </Card>
+    );
+  }
+
   if (type === "video") {
     return (
       <Card className="w-[400px] flex-shrink-0 hover:shadow-lg transition-shadow">

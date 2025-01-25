@@ -3,10 +3,22 @@ import ProductionCard from "./ProductionCard";
 
 export default function ProductionsSection() {
   const projects = [
-    { title: "Livre de mémoire et transmission", description: "Family office" },
-    { title: "Cahier MGEN" },
-    { title: "Cahier mort Malakoff" },
-    { title: "Cahier retraite Malakoff" },
+    {
+      title: "Livre de mémoire et transmission",
+      description: "Family office",
+      type: "pdf",
+      pdfUrl: "/pdfs/livre-memoire.pdf",
+    },
+    {
+      title: "Cahier MGEN",
+      type: "pdf",
+      pdfUrl: "/pdfs/cahier-mgen.pdf",
+    },
+    {
+      title: "Cahier mort Malakoff",
+      type: "pdf",
+      pdfUrl: "/pdfs/cahier-mort-malakoff.pdf",
+    },
   ];
 
   const videos = [
