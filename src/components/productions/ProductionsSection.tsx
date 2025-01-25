@@ -2,7 +2,7 @@ import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import ProductionCard from "./ProductionCard";
 
 export default function ProductionsSection() {
-  const publications = [
+  const projects = [
     { title: "Livre de mémoire et transmission", description: "Family office" },
     { title: "Cahier MGEN" },
     { title: "Cahier mort Malakoff" },
@@ -11,14 +11,64 @@ export default function ProductionsSection() {
 
   const videos = [
     {
-      title: "Video 1",
-      image:
-        "https://images.unsplash.com/photo-1516280440429-4c0b901e8b9c?w=800",
+      title: "Accompagner la fin de vie",
+      videoId: "nOhDOKKUOJg",
+      image: "https://i3.ytimg.com/vi/nOhDOKKUOJg/maxresdefault.jpg",
     },
     {
-      title: "Video 2",
-      image:
-        "https://images.unsplash.com/photo-1516280440429-4c0b901e8b9c?w=800",
+      title: "Accompagner la fin de vie - Partie 2",
+      videoId: "nOhDOKKUOJg",
+      image: "https://i3.ytimg.com/vi/nOhDOKKUOJg/maxresdefault.jpg",
+    },
+    {
+      title: "La mort, parlons-en !",
+      videoId: "nOhDOKKUOJg",
+      image: "https://i3.ytimg.com/vi/nOhDOKKUOJg/maxresdefault.jpg",
+    },
+    {
+      title: "Le deuil et ses étapes",
+      videoId: "nOhDOKKUOJg",
+      image: "https://i3.ytimg.com/vi/nOhDOKKUOJg/maxresdefault.jpg",
+    },
+    {
+      title: "Préparer sa fin de vie",
+      videoId: "nOhDOKKUOJg",
+      image: "https://i3.ytimg.com/vi/nOhDOKKUOJg/maxresdefault.jpg",
+    },
+    {
+      title: "Les directives anticipées",
+      videoId: "nOhDOKKUOJg",
+      image: "https://i3.ytimg.com/vi/nOhDOKKUOJg/maxresdefault.jpg",
+    },
+    {
+      title: "Le testament",
+      videoId: "nOhDOKKUOJg",
+      image: "https://i3.ytimg.com/vi/nOhDOKKUOJg/maxresdefault.jpg",
+    },
+    {
+      title: "Les obsèques",
+      videoId: "nOhDOKKUOJg",
+      image: "https://i3.ytimg.com/vi/nOhDOKKUOJg/maxresdefault.jpg",
+    },
+    {
+      title: "Le deuil",
+      videoId: "nOhDOKKUOJg",
+      image: "https://i3.ytimg.com/vi/nOhDOKKUOJg/maxresdefault.jpg",
+    },
+    {
+      title: "L'héritage",
+      videoId: "nOhDOKKUOJg",
+      image: "https://i3.ytimg.com/vi/nOhDOKKUOJg/maxresdefault.jpg",
+    },
+    {
+      title: "La succession",
+      videoId: "nOhDOKKUOJg",
+      image: "https://i3.ytimg.com/vi/nOhDOKKUOJg/maxresdefault.jpg",
+    },
+    {
+      title: "Les démarches administratives",
+      videoId: "nOhDOKKUOJg",
+      image: "https://i3.ytimg.com/vi/nOhDOKKUOJg/maxresdefault.jpg",
     },
   ];
 
@@ -42,14 +92,14 @@ export default function ProductionsSection() {
 
         <div className="space-y-12">
           <div>
-            <h3 className="text-2xl font-semibold mb-6">Publications</h3>
+            <h3 className="text-2xl font-semibold mb-6">Projets</h3>
             <ScrollArea>
               <div className="flex space-x-4 pb-4">
-                {publications.map((pub) => (
+                {projects.map((project) => (
                   <ProductionCard
-                    key={pub.title}
-                    title={pub.title}
-                    description={pub.description}
+                    key={project.title}
+                    title={project.title}
+                    description={project.description}
                   />
                 ))}
               </div>
@@ -58,7 +108,7 @@ export default function ProductionsSection() {
           </div>
 
           <div>
-            <h3 className="text-2xl font-semibold mb-6">Vidéos YouTube</h3>
+            <h3 className="text-2xl font-semibold mb-6">Vidéos</h3>
             <ScrollArea>
               <div className="flex space-x-4 pb-4">
                 {videos.map((video) => (
@@ -66,6 +116,8 @@ export default function ProductionsSection() {
                     key={video.title}
                     title={video.title}
                     image={video.image}
+                    videoId={video.videoId}
+                    type="video"
                   />
                 ))}
               </div>
