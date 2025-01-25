@@ -20,14 +20,25 @@ interface LeftPanelProps {
 
 const defaultQuotes: Quote[] = [
   {
-    text: "Design is not just what it looks like and feels like. Design is how it works.",
-    author: "Steve Jobs",
+    text: "Parce qu'il faut vivre, vieillir est une chance et mourir une nécessité",
+    author: "Anne Géron",
   },
   {
-    text: "Simplicity is the ultimate sophistication.",
-    author: "Leonardo da Vinci",
+    text: "Votre performance business décollera en formant vos équipes à la culture et la pédagogie",
+    author: "Anne Géron",
   },
-  { text: "Less is more.", author: "Ludwig Mies van der Rohe" },
+  {
+    text: "Mieux écouter pour conseiller de manière éclairée puis vendre en sécurité éthique",
+    author: "Anne Géron",
+  },
+  {
+    text: "À travers des conférences, des ateliers et des formations, je vous invite à mieux comprendre ces passages",
+    author: "Anne Géron",
+  },
+  {
+    text: "Ecouter l'intime nous dévoile ou nous confronte à nos peurs et à nos croyances limitantes",
+    author: "Anne Géron",
+  },
 ];
 
 const LeftPanel = ({
