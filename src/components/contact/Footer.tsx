@@ -1,5 +1,3 @@
-import { Mail, MapPin, Phone } from "lucide-react";
-import ContactForm from "./ContactForm";
 import {
   Carousel,
   CarouselContent,
@@ -7,13 +5,14 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import ContactForm from "./ContactForm";
 
 export default function Footer() {
   const carouselImages = [
+    { src: "/images/carousel/cta.png", alt: "CTA" },
     { src: "/images/carousel/methode.png", alt: "Méthode" },
     { src: "/images/carousel/themes.png", alt: "Thèmes" },
     { src: "/images/carousel/approche.png", alt: "Approche" },
-    { src: "/images/carousel/cta.png", alt: "CTA" },
   ];
 
   return (

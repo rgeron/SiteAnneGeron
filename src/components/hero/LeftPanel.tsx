@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useEffect, useState } from "react";
 
 interface Quote {
   text: string;
@@ -55,7 +55,7 @@ const LeftPanel = ({
   };
 
   return (
-    <div className="w-full h-full bg-white flex flex-col bg-blue-500">
+    <div className="w-full h-full bg-white flex flex-col">
       {/* Logo Section */}
       <div className="flex justify-center items-start pt-12 flex-grow">
         <motion.div
