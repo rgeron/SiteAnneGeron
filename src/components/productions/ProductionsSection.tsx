@@ -5,17 +5,22 @@ export default function ProductionsSection() {
   const projects = [
     {
       title: "Livre de mémoire et transmission",
-      description: "Family office",
+      description:
+        "Un guide complet pour préserver et transmettre l'histoire familiale aux générations futures",
       type: "pdf",
       pdfUrl: "/pdfs/livre-memoire.pdf",
     },
     {
       title: "Cahier MGEN",
+      description:
+        "Ressources et informations essentielles pour les adhérents MGEN sur la prévoyance et la santé",
       type: "pdf",
       pdfUrl: "/pdfs/cahier-mgen.pdf",
     },
     {
       title: "Cahier mort Malakoff",
+      description:
+        "Guide pratique pour comprendre et préparer les aspects liés à la fin de vie",
       type: "pdf",
       pdfUrl: "/pdfs/cahier-mort-malakoff.pdf",
     },
@@ -108,11 +113,7 @@ export default function ProductionsSection() {
             <ScrollArea>
               <div className="flex space-x-4 pb-4">
                 {projects.map((project) => (
-                  <ProductionCard
-                    key={project.title}
-                    title={project.title}
-                    description={project.description}
-                  />
+                  <ProductionCard key={project.title} {...project} />
                 ))}
               </div>
               <ScrollBar orientation="horizontal" />
@@ -124,13 +125,7 @@ export default function ProductionsSection() {
             <ScrollArea>
               <div className="flex space-x-4 pb-4">
                 {videos.map((video) => (
-                  <ProductionCard
-                    key={video.title}
-                    title={video.title}
-                    image={video.image}
-                    videoId={video.videoId}
-                    type="video"
-                  />
+                  <ProductionCard key={video.title} {...video} type="video" />
                 ))}
               </div>
               <ScrollBar orientation="horizontal" />
@@ -142,11 +137,7 @@ export default function ProductionsSection() {
             <ScrollArea>
               <div className="flex space-x-4 pb-4">
                 {podcasts.map((podcast) => (
-                  <ProductionCard
-                    key={podcast.title}
-                    title={podcast.title}
-                    image={podcast.image}
-                  />
+                  <ProductionCard key={podcast.title} {...podcast} />
                 ))}
               </div>
               <ScrollBar orientation="horizontal" />

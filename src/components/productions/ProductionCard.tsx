@@ -6,8 +6,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Play } from "lucide-react";
+import { FileText, Play } from "lucide-react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import PDFViewer from "../PDFViewer";
 
 interface ProductionCardProps {
   title: string;
@@ -23,24 +24,29 @@ export default function ProductionCard({
   description,
   image,
   videoId,
+  pdfUrl,
   type = "default",
 }: ProductionCardProps) {
   if (type === "pdf") {
     return (
-      <Card className="w-[300px] flex-shrink-0 hover:shadow-lg transition-shadow">
-        <CardHeader>
-          <CardTitle>{title}</CardTitle>
-          {description && <CardDescription>{description}</CardDescription>}
-        </CardHeader>
-        <CardContent>
-          <Button
-            className="w-full"
-            onClick={() => window.open(pdfUrl, "_blank")}
-          >
-            Voir le PDF
-          </Button>
-        </CardContent>
-      </Card>
+      <Dialog>
+        <DialogTrigger asChild>
+          <Card className="w-[300px] flex-shrink-0 hover:shadow-lg transition-shadow cursor-pointer">
+            <CardHeader>
+              <CardTitle className="text-lg">{title}</CardTitle>
+              {description && <CardDescription>{description}</CardDescription>}
+            </CardHeader>
+            <CardContent className="flex items-center justify-center">
+              <Button className="w-full" variant="outline">
+                <FileText className="mr-2 h-4 w-4" /> Voir le PDF
+              </Button>
+            </CardContent>
+          </Card>
+        </DialogTrigger>
+        <DialogContent className="max-w-4xl max-h-[80vh]">
+          <PDFViewer pdfUrl={pdfUrl} />
+        </DialogContent>
+      </Dialog>
     );
   }
 
