@@ -26,7 +26,7 @@ function ConferenceThemeDialog({
           </div>
 
           {/* Right Column - Contact Form */}
-          <div className="flex-1 bg-gray-50 p-6 rounded-lg">
+          <div className="flex-1 bg-gray-100 p-6 rounded-lg">
             <h3 className="text-xl font-semibold mb-6">
               Réserver cette conférence
             </h3>

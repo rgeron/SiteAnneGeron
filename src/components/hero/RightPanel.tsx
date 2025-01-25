@@ -23,7 +23,7 @@ Egalement diplômée d'un master en droit de la santé, j'ai acquis des expertis
   const [showBio, setShowBio] = useState(false);
 
   return (
-    <div className="relative w-full h-[60vh] bg-gray-50 overflow-hidden p-6">
+    <div className="relative w-full h-[60vh] bg-white overflow-hidden p-6">
       <div className="relative w-full h-full">
         <motion.img
           src={imageUrl}

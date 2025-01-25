@@ -15,7 +15,7 @@ export default function ServiceCard({
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Card className="cursor-pointer hover:shadow-lg transition-shadow">
+        <Card className="cursor-pointer hover:shadow-lg transition-shadow bg-white border border-gray-200">
           <CardContent className="p-6 flex flex-col items-center justify-center min-h-[200px] text-center">
             {icon && <div className="mb-4 text-4xl text-primary">{icon}</div>}
             <h3 className="text-xl font-semibold">{title}</h3>

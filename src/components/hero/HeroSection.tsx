@@ -26,7 +26,7 @@ const HeroSection = ({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="w-full h-[60vh] bg-gray-50"
+      className="w-full h-[60vh] bg-white"
     >
       <div className="w-full h-full flex flex-col md:flex-row">
         <motion.div
