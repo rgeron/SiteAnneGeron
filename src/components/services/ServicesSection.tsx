@@ -8,7 +8,7 @@ export default function ServicesSection() {
   const services = [
     {
       title: "Mandataire judiciaire",
-      icon: <Gavel />,
+      icon: <Gavel className="text-white" />,
       dialogContent: <MJDialog />,
     },
     {
@@ -23,7 +23,7 @@ export default function ServicesSection() {
       icon: <Presentation />,
       dialogContent: <ConferenceDialog />,
       description:
-        "La conférence permettant l'accueil un grand nombre de participants en présentiel et Webinar. L'atelier permettant des échanges plus longs, plus interactifs et des partages.",
+        "La conférence permettant l'accueil un grand nombre de participants en présentiel et\nWebinar.\n\nL'atelier permettant des échanges plus longs, plus interactifs et des partages.",
     },
   ];
 
@@ -40,7 +40,7 @@ export default function ServicesSection() {
                   title={service.title}
                   icon={service.icon}
                   dialogContent={service.dialogContent}
-                  className="bg-gray-50 border-2"
+                  className="bg-gray-50 border-2 h-full"
                   description={service.description}
                 />
               ))}
@@ -48,13 +48,13 @@ export default function ServicesSection() {
           </div>
 
           {/* Right side - Mandataire judiciaire */}
-          <div className="md:w-[30%] md:pl-8">
+          <div className="md:w-[30%] md:pl-12">
             <ServiceCard
               key={services[0].title}
               title={services[0].title}
               icon={services[0].icon}
               dialogContent={services[0].dialogContent}
-              className="bg-primary/5 border-primary/20 border-2"
+              className="bg-gray-900 text-white border-gray-800 border-2 [&_h3]:text-white [&_div]:text-white"
             />
           </div>
         </div>

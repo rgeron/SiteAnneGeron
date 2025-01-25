@@ -38,10 +38,14 @@ export default function ServiceCard({
                 />
               </div>
             )}
-            <div className="p-6 flex flex-col items-center justify-center text-center">
-              {icon && <div className="mb-4 text-4xl text-primary">{icon}</div>}
-              <h3 className="text-xl font-semibold mb-2">{title}</h3>
-              {description && <p className="text-gray-600">{description}</p>}
+            <div className="p-6 flex flex-col items-center justify-center text-center min-h-[280px]">
+              {icon && <div className="mb-4 text-4xl">{icon}</div>}
+              <h3 className="text-2xl font-semibold mb-4">{title}</h3>
+              {description && (
+                <p className="text-lg leading-relaxed whitespace-pre-line">
+                  {description}
+                </p>
+              )}
             </div>
           </CardContent>
         </Card>
