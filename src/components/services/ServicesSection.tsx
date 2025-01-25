@@ -32,7 +32,7 @@ export default function ServicesSection() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row gap-6 h-full">
           {/* Left side - Formation and Conferences */}
-          <div className="md:w-[70%] space-y-6">
+          <div className="md:w-[65%]">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {services.slice(1, 3).map((service) => (
                 <ServiceCard
@@ -48,7 +48,7 @@ export default function ServicesSection() {
           </div>
 
           {/* Right side - Mandataire judiciaire */}
-          <div className="md:w-[40%] md:pl-12">
+          <div className="md:w-[32%]">
             <ServiceCard
               key={services[0].title}
               title={services[0].title}

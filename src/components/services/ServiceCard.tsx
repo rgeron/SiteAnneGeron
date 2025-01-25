@@ -38,7 +38,7 @@ export default function ServiceCard({
                 />
               </div>
             )}
-            <div className="p-6 flex flex-col items-center justify-center text-center min-h-[280px]">
+            <div className="p-6 flex flex-col items-center justify-center text-center">
               {icon && <div className="mb-4 text-4xl">{icon}</div>}
               <h3 className="text-2xl font-semibold mb-4">{title}</h3>
               {description && (

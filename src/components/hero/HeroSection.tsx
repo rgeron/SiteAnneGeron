@@ -26,14 +26,14 @@ const HeroSection = ({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="w-full h-[55vh]"
+      className="w-full h-[55vh] container mx-auto mb-6 mt-6"
     >
       <div className="w-full h-full flex flex-col md:flex-row">
         <motion.div
           initial={{ x: -50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="w-full md:w-[65%] md:h-full"
+          className="w-full md:w-[65%] md:h-full pr-6"
         >
           <LeftPanel
             quotes={quotes}
@@ -46,7 +46,7 @@ const HeroSection = ({
           initial={{ x: 50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="w-full md:w-[35%] md:h-full"
+          className="w-full md:w-[35%] md:h-full pl-6"
         >
           <RightPanel imageUrl={imageUrl} introText={introText} />
         </motion.div>

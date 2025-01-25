@@ -55,13 +55,13 @@ const LeftPanel = ({
   };
 
   return (
-    <div className="w-full h-full bg-white p-8 flex flex-col">
+    <div className="w-full h-full bg-white flex flex-col bg-blue-500">
       {/* Logo Section */}
       <div className="flex justify-center items-start pt-12 flex-grow">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="w-4/5 max-w-[600px]"
+          className=" max-w-[700px]"
         >
           <img
             src="/images/logo.jpg"
@@ -73,7 +73,7 @@ const LeftPanel = ({
 
       {/* Quote Carousel */}
       <div className="mt-8 flex flex-col items-center">
-        <div className="w-3/4 h-[100px] flex items-center justify-center overflow-hidden">
+        <div className="w-3/4 h-[100px] flex justify-center overflow-hidden">
           <motion.div
             key={currentQuoteIndex}
             initial={{ opacity: 0, y: 20 }}
