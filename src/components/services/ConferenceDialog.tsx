@@ -173,31 +173,35 @@ const conferences = [
 
 export default function ConferenceDialog() {
   return (
-    <div className="p-6 space-y-8">
-      <div className="prose prose-slate max-w-none mb-8">
-        <h2 className="text-2xl font-bold mb-4">Modalités des conférences</h2>
-        <ul className="text-lg list-disc pl-6 space-y-2">
-          <li>Conférences de 2h incluant des temps d'échanges</li>
-          <li>En présentiel et distanciel</li>
-          <li>À partir de 20 personnes (sans limite haute)</li>
-        </ul>
-      </div>
+    <div className="p-6 space-y-8 max-h-[80vh] overflow-hidden">
+      <ScrollArea className="h-full pr-4">
+        <div className="prose prose-slate max-w-none mb-8">
+          <h2 className="text-2xl font-bold mb-4">Modalités des conférences</h2>
+          <ul className="text-lg list-disc pl-6 space-y-2">
+            <li>Conférences de 2h incluant des temps d'échanges</li>
+            <li>En présentiel et distanciel</li>
+            <li>À partir de 20 personnes (sans limite haute)</li>
+          </ul>
+        </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {conferences.map((conference) => (
-          <Dialog key={conference.title}>
-            <DialogTrigger asChild>
-              <Button
-                variant="outline"
-                className="w-full h-auto py-4 px-6 text-left flex items-start hover:bg-gray-100"
-              >
-                <span className="text-lg font-medium">{conference.title}</span>
-              </Button>
-            </DialogTrigger>
-            <ConferenceThemeDialog {...conference} />
-          </Dialog>
-        ))}
-      </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {conferences.map((conference) => (
+            <Dialog key={conference.title}>
+              <DialogTrigger asChild>
+                <Button
+                  variant="outline"
+                  className="w-full h-auto py-4 px-6 text-left flex items-start hover:bg-gray-100"
+                >
+                  <span className="text-lg font-medium">
+                    {conference.title}
+                  </span>
+                </Button>
+              </DialogTrigger>
+              <ConferenceThemeDialog {...conference} />
+            </Dialog>
+          ))}
+        </div>
+      </ScrollArea>
     </div>
   );
 }

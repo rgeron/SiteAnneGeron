@@ -125,33 +125,35 @@ const themes = [
 
 export default function FormationDialog() {
   return (
-    <div className="p-6 space-y-8">
-      <div className="prose prose-slate max-w-none mb-8">
-        <h2 className="text-2xl font-bold mb-4">Modalités des formations</h2>
-        <p className="text-lg">
-          Nos formations sont disponibles en présentiel ou en distanciel,
-          adaptées à vos besoins spécifiques. Chaque session peut être
-          personnalisée en fonction de votre contexte professionnel et de vos
-          objectifs. Les formations peuvent être organisées en groupe ou en
-          individuel.
-        </p>
-      </div>
+    <div className="p-6 space-y-8 max-h-[80vh] overflow-hidden">
+      <ScrollArea className="h-full pr-4">
+        <div className="prose prose-slate max-w-none mb-8">
+          <h2 className="text-2xl font-bold mb-4">Modalités des formations</h2>
+          <p className="text-lg">
+            Nos formations sont disponibles en présentiel ou en distanciel,
+            adaptées à vos besoins spécifiques. Chaque session peut être
+            personnalisée en fonction de votre contexte professionnel et de vos
+            objectifs. Les formations peuvent être organisées en groupe ou en
+            individuel.
+          </p>
+        </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {themes.map((theme) => (
-          <Dialog key={theme.title}>
-            <DialogTrigger asChild>
-              <Button
-                variant="outline"
-                className="w-full h-auto py-4 px-6 text-left flex items-start hover:bg-gray-100"
-              >
-                <span className="text-lg font-medium">{theme.title}</span>
-              </Button>
-            </DialogTrigger>
-            <ThemeDialog {...theme} />
-          </Dialog>
-        ))}
-      </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {themes.map((theme) => (
+            <Dialog key={theme.title}>
+              <DialogTrigger asChild>
+                <Button
+                  variant="outline"
+                  className="w-full h-auto py-4 px-6 text-left flex items-start hover:bg-gray-100"
+                >
+                  <span className="text-lg font-medium">{theme.title}</span>
+                </Button>
+              </DialogTrigger>
+              <ThemeDialog {...theme} />
+            </Dialog>
+          ))}
+        </div>
+      </ScrollArea>
     </div>
   );
 }
