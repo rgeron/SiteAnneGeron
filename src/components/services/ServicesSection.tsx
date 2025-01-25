@@ -1,6 +1,7 @@
 import { Gavel, GraduationCap, Presentation, Users } from "lucide-react";
 import ServiceCard from "./ServiceCard";
 import MJDialog from "./MJDialog";
+import FormationDialog from "./FormationDialog";
 
 export default function ServicesSection() {
   const services = [
@@ -12,6 +13,7 @@ export default function ServicesSection() {
     {
       title: "Formation",
       icon: <GraduationCap />,
+      dialogContent: <FormationDialog />,
     },
     {
       title: "Conférence",
