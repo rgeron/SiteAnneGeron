@@ -48,13 +48,13 @@ export default function ServicesSection() {
           </div>
 
           {/* Right side - Mandataire judiciaire */}
-          <div className="md:w-[30%] md:pl-12">
+          <div className="md:w-[40%] md:pl-12">
             <ServiceCard
               key={services[0].title}
               title={services[0].title}
               icon={services[0].icon}
               dialogContent={services[0].dialogContent}
-              className="bg-gray-900 text-white border-gray-800 border-2 [&_h3]:text-white [&_div]:text-white"
+              className="bg-black text-white border-gray-800 border-2 [&_h3]:text-white [&_div]:text-white"
             />
           </div>
         </div>
