@@ -26,26 +26,7 @@ export default function Footer() {
           </div>
 
           <div className="space-y-8">
-            <div>
-              <h2 className="text-2xl font-bold mb-6">
-                Informations de contact
-              </h2>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <MapPin className="h-5 w-5 text-blue-400" />
-                  <span>123 Rue Example, 75000 Paris</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Phone className="h-5 w-5 text-blue-400" />
-                  <span>+33 1 23 45 67 89</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Mail className="h-5 w-5 text-blue-400" />
-                  <span>contact@annegeron.com</span>
-                </div>
-              </div>
-            </div>
-
+            
             <div className="mt-8">
               <Carousel className="w-full max-w-lg mx-auto">
                 <CarouselContent>
