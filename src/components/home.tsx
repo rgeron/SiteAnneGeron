@@ -1,5 +1,8 @@
 import React from "react";
 import HeroSection from "./hero/HeroSection";
+import ServicesSection from "./services/ServicesSection";
+import ProductionsSection from "./productions/ProductionsSection";
+import Footer from "./contact/Footer";
 
 interface HomeProps {
   quotes?: {
@@ -28,6 +31,9 @@ const Home = ({
         imageUrl={imageUrl}
         introText={introText}
       />
+      <ServicesSection />
+      <ProductionsSection />
+      <Footer />
     </main>
   );
 };
