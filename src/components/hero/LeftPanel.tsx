@@ -57,7 +57,7 @@ const LeftPanel = ({
   }, [quotes.length]);
 
   return (
-    <div className="w-full h-full bg-white p-12 flex flex-col justify-between">
+    <div className="w-full h-full bg-white p-8 flex flex-col justify-between">
       {/* Logo Section */}
       <div className="space-y-4">
         <motion.h1

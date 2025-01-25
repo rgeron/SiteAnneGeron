@@ -15,7 +15,7 @@ const RightPanel = ({
 
   return (
     <motion.div
-      className="relative w-full h-full bg-gray-50 overflow-hidden"
+      className="relative w-full h-[60vh] bg-gray-50 overflow-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
