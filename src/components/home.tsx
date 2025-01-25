@@ -31,7 +31,9 @@ const Home = ({
         imageUrl={imageUrl}
         introText={introText}
       />
-      <ServicesSection />
+      <div className="h-[60vh]">
+        <ServicesSection />
+      </div>
       <ProductionsSection />
       <Footer />
     </main>
