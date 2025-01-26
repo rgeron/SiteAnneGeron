@@ -149,48 +149,64 @@ export default function FormationDialog() {
     <div className="p-6 space-y-8 max-h-[80vh] overflow-hidden">
       <ScrollArea className="h-full pr-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-primary/80 to-primary bg-clip-text text-transparent">
-            Formation
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl mx-auto text-left">
-            <div className="flex items-start gap-2">
-              <div className="mt-1.5">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-              </div>
-              <p className="text-sm">Sessions en présentiel ou distanciel</p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="relative inline-block"
+          >
+            <h2 className="text-5xl font-bold mb-8 bg-gradient-to-r from-primary/90 via-blue-600 to-primary bg-[length:200%] animate-gradient bg-clip-text text-transparent">
+              Formation
+            </h2>
+            <motion.div
+              className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent"
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            />
+          </motion.div>
+        </div>
+
+        {/* Information about formations - Commented out for now
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl mx-auto text-left mb-8">
+          <div className="flex items-start gap-2">
+            <div className="mt-1.5">
+              <div className="w-1.5 h-1.5 rounded-full bg-primary" />
             </div>
-            <div className="flex items-start gap-2">
-              <div className="mt-1.5">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-              </div>
-              <p className="text-sm">Formation individuelle ou en groupe</p>
+            <p className="text-sm">Sessions en présentiel ou distanciel</p>
+          </div>
+          <div className="flex items-start gap-2">
+            <div className="mt-1.5">
+              <div className="w-1.5 h-1.5 rounded-full bg-primary" />
             </div>
-            <div className="flex items-start gap-2">
-              <div className="mt-1.5">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-              </div>
-              <p className="text-sm">Adaptée à votre contexte professionnel</p>
+            <p className="text-sm">Formation individuelle ou en groupe</p>
+          </div>
+          <div className="flex items-start gap-2">
+            <div className="mt-1.5">
+              <div className="w-1.5 h-1.5 rounded-full bg-primary" />
             </div>
-            <div className="flex items-start gap-2">
-              <div className="mt-1.5">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-              </div>
-              <p className="text-sm">Contenus personnalisables</p>
+            <p className="text-sm">Adaptée à votre contexte professionnel</p>
+          </div>
+          <div className="flex items-start gap-2">
+            <div className="mt-1.5">
+              <div className="w-1.5 h-1.5 rounded-full bg-primary" />
             </div>
-            <div className="flex items-start gap-2">
-              <div className="mt-1.5">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-              </div>
-              <p className="text-sm">Support pédagogique inclus</p>
+            <p className="text-sm">Contenus personnalisables</p>
+          </div>
+          <div className="flex items-start gap-2">
+            <div className="mt-1.5">
+              <div className="w-1.5 h-1.5 rounded-full bg-primary" />
             </div>
-            <div className="flex items-start gap-2">
-              <div className="mt-1.5">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-              </div>
-              <p className="text-sm">Attestation de formation</p>
+            <p className="text-sm">Support pédagogique inclus</p>
+          </div>
+          <div className="flex items-start gap-2">
+            <div className="mt-1.5">
+              <div className="w-1.5 h-1.5 rounded-full bg-primary" />
             </div>
+            <p className="text-sm">Attestation de formation</p>
           </div>
         </div>
+        */}
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-5xl mx-auto">
           {themes.map((theme) => (
