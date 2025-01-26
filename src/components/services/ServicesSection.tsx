@@ -5,10 +5,6 @@ import MJDialog from "./MJDialog";
 import ServiceCard from "./ServiceCard";
 import MJCard from "./MJCard";
 
-const StaticCircle = () => (
-  <div className="size-32 bg-black rounded-full"></div>
-);
-
 export default function ServicesSection() {
   const services = [
     {
@@ -60,7 +56,11 @@ export default function ServicesSection() {
               dialogContent={services[0].dialogContent}
             />
             <div className="flex justify-center mt-7">
-              <StaticCircle />
+              <img
+                src="/images/logotype.png"
+                alt="Logo AG"
+                className="h-24 w-auto object-contain"
+              />
             </div>
           </div>
         </div>
