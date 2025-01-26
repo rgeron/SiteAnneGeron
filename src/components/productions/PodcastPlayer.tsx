@@ -17,13 +17,17 @@ export default function PodcastPlayer({ title, src }: PodcastPlayerProps) {
     const audio = audioRef.current;
     if (!audio) return;
 
+    // Set initial position to 1 minute
+    audio.currentTime = 60;
+
     const handleTimeUpdate = () => {
-      setCurrentTime(audio.currentTime);
-      // Stop after 1 minute
-      if (audio.currentTime >= 60) {
+      setCurrentTime(audio.currentTime - 60); // Adjust display time to show 0-60
+      // Stop after 2 minutes (1 minute of actual content)
+      if (audio.currentTime >= 120) {
         audio.pause();
-        audio.currentTime = 0;
+        audio.currentTime = 60; // Reset to 1-minute mark
         setIsPlaying(false);
+        setCurrentTime(0);
       }
     };
 
@@ -37,6 +41,8 @@ export default function PodcastPlayer({ title, src }: PodcastPlayerProps) {
     if (isPlaying) {
       audioRef.current.pause();
     } else {
+      // Ensure we start from 1-minute mark when playing
+      audioRef.current.currentTime = 60;
       audioRef.current.play();
     }
     setIsPlaying(!isPlaying);
