@@ -58,7 +58,7 @@ export default function ServicesSection() {
               title={services[0].title}
               icon={services[0].icon}
               dialogContent={services[0].dialogContent}
-              className="bg-gradient-to-br from-violet-900 to-blue-900 text-white border-violet-700 border-2 [&_h3]:text-white [&_div]:text-white hover:shadow-violet-200"
+              className="bg-transparent border-[3px] border-transparent relative before:absolute before:inset-0 before:-z-10 before:rounded-lg before:p-[3px] before:bg-gradient-to-br before:from-violet-600 before:to-blue-600 after:absolute after:inset-[3px] after:-z-10 after:rounded-lg after:bg-white [&_h3]:bg-gradient-to-br [&_h3]:from-violet-600 [&_h3]:to-blue-600 [&_h3]:bg-clip-text [&_h3]:text-transparent [&_svg]:text-violet-600 hover:shadow-violet-200"
             />
             <div className="flex justify-center mt-7">
               <StaticCircle />
