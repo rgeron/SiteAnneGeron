@@ -1,8 +1,12 @@
 import { Gavel, GraduationCap, Presentation } from "lucide-react";
-import ServiceCard from "./ServiceCard";
-import MJDialog from "./MJDialog";
-import FormationDialog from "./FormationDialog";
 import ConferenceDialog from "./ConferenceDialog";
+import FormationDialog from "./FormationDialog";
+import MJDialog from "./MJDialog";
+import ServiceCard from "./ServiceCard";
+
+const StaticCircle = () => (
+  <div className="size-32 bg-black rounded-full"></div>
+);
 
 export default function ServicesSection() {
   const services = [
@@ -56,6 +60,9 @@ export default function ServicesSection() {
               dialogContent={services[0].dialogContent}
               className="bg-black text-white border-gray-800 border-2 [&_h3]:text-white [&_div]:text-white"
             />
+            <div className="flex justify-center mt-7">
+              <StaticCircle />
+            </div>
           </div>
         </div>
       </div>
