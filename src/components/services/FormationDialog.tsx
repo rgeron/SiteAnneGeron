@@ -142,12 +142,6 @@ const themes = [
       "Une approche positive de la retraite, explorant les opportunités de développement personnel et social dans cette nouvelle phase de vie.",
     icon: <Hourglass className="h-5 w-5" />,
   },
-  {
-    title: "Demande de devis",
-    description:
-      "Consultez nos différentes offres de formation et obtenez un devis personnalisé adapté à vos besoins spécifiques.",
-    icon: <GraduationCap className="h-5 w-5" />,
-  },
 ];
 
 export default function FormationDialog() {
@@ -208,7 +202,7 @@ export default function FormationDialog() {
                 >
                   <Button
                     variant="outline"
-                    className="w-full h-auto py-4 px-4 text-left flex items-start gap-3 hover:bg-slate-50 hover:border-slate-300 transition-colors group"
+                    className="w-full h-auto py-4 px-4 text-left flex items-center gap-3 hover:bg-slate-50 hover:border-slate-300 transition-colors group"
                   >
                     <div className="p-2 rounded-full bg-primary/5 text-primary group-hover:bg-primary/10 transition-colors">
                       {theme.icon}
@@ -220,6 +214,18 @@ export default function FormationDialog() {
               <ThemeDialog {...theme} />
             </Dialog>
           ))}
+        </div>
+
+        <div className="text-center mt-12 mb-6">
+          <motion.button
+            className="text-primary hover:text-primary/80 transition-colors"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <span className="text-lg border-b border-primary/30 hover:border-primary transition-colors">
+              Demander un devis pour une formation personnalisée à vos besoins
+            </span>
+          </motion.button>
         </div>
       </ScrollArea>
     </div>
