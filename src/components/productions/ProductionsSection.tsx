@@ -1,5 +1,6 @@
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import ProductionCard from "./ProductionCard";
+import PodcastPlayer from "./PodcastPlayer";
 
 export default function ProductionsSection() {
   const projects = [
@@ -91,14 +92,17 @@ export default function ProductionsSection() {
 
   const podcasts = [
     {
-      title: "Podcast 1",
-      image:
-        "https://images.unsplash.com/photo-1516280440429-4c0b901e8b9c?w=800",
+      title: "Empathie, Sympathie, Compassion",
+      src: "/podcasts/Podcast 1 - Empathie Sympathie Compassion.mp4",
     },
     {
-      title: "Podcast 2",
-      image:
-        "https://images.unsplash.com/photo-1516280440429-4c0b901e8b9c?w=800",
+      title: "Histoire et réglementation funéraire",
+      src: "/podcasts/Podcast 2 - Histoire et réglementation funéraire.mp4",
+    },
+    {
+      title:
+        "Les 3 transitions : assurance, épargne, risque projet décès obsèques",
+      src: "/podcasts/Podcast 3 - 3 transitions assurance epargne rique projet deces obséques.mp4",
     },
   ];
 
@@ -142,7 +146,7 @@ export default function ProductionsSection() {
             <ScrollArea>
               <div className="flex space-x-4 pb-4">
                 {podcasts.map((podcast) => (
-                  <ProductionCard key={podcast.title} {...podcast} />
+                  <PodcastPlayer key={podcast.title} {...podcast} />
                 ))}
               </div>
               <ScrollBar orientation="horizontal" />
