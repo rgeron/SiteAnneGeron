@@ -52,24 +52,29 @@ export default function ProductionCard({
 
   if (type === "video") {
     return (
-      <Card className="w-[400px] flex-shrink-0 hover:shadow-lg transition-shadow bg-gradient-to-br from-violet-50 to-blue-50 border-violet-100">
-        <CardHeader>
-          <CardTitle className="text-lg">{title}</CardTitle>
-        </CardHeader>
-        <CardContent className="flex flex-col items-center gap-4">
+      <Card className="w-[280px] flex-shrink-0 hover:shadow-lg transition-shadow bg-gradient-to-br from-violet-50 to-blue-50 border-red-200 hover:border-red-300 group">
+        <CardContent className="p-3">
           {image && (
-            <div className="aspect-video w-full relative overflow-hidden rounded-md">
+            <div className="aspect-video w-full relative overflow-hidden rounded-md mb-3 group-hover:ring-2 ring-red-400 transition-all">
               <img
                 src={image}
                 alt={title}
                 className="object-cover w-full h-full"
               />
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                <Play className="w-10 h-10 text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all" />
+              </div>
             </div>
           )}
           <Dialog>
             <DialogTrigger asChild>
-              <Button className="w-full" size="lg">
-                <Play className="mr-2 h-4 w-4" /> Regarder la vidéo
+              <Button
+                variant="ghost"
+                className="w-full h-auto p-0 hover:bg-transparent"
+              >
+                <h3 className="text-sm font-medium text-left line-clamp-2 group-hover:text-red-600 transition-colors">
+                  {title}
+                </h3>
               </Button>
             </DialogTrigger>
             <DialogContent className="max-w-4xl">

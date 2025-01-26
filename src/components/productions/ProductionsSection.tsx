@@ -119,9 +119,14 @@ export default function ProductionsSection() {
           </div>
 
           <div>
-            <h3 className="text-2xl font-semibold mb-6">Vidéos</h3>
+            <h3 className="text-2xl font-semibold mb-6">
+              Extraits vidéo d'une conférence
+            </h3>
             <ScrollArea>
-              <div className="flex space-x-4 pb-4">
+              <div
+                className="grid grid-rows-2 gap-4 pb-4"
+                style={{ gridTemplateColumns: "repeat(auto-fill, 280px)" }}
+              >
                 {videos.map((video) => (
                   <ProductionCard key={video.title} {...video} type="video" />
                 ))}
