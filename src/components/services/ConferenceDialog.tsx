@@ -69,7 +69,7 @@ function ConferenceThemeDialog({
           </div>
 
           {/* Right Column - Contact Form */}
-          <div className="flex-1 bg-gray-100 p-6 rounded-lg">
+          <div className="flex-1 bg-gradient-to-br from-violet-50 to-blue-50 p-6 rounded-lg border border-violet-100">
             <h3 className="text-xl font-semibold mb-6">
               Réserver cette conférence
             </h3>
@@ -262,7 +262,7 @@ export default function ConferenceDialog() {
                 >
                   <Button
                     variant="outline"
-                    className="w-full h-auto py-4 px-4 text-left flex items-start gap-3 hover:bg-slate-50 hover:border-slate-300 transition-colors group"
+                    className="w-full h-auto py-4 px-4 text-left flex items-start gap-3 hover:bg-violet-50 hover:border-violet-200 transition-colors group bg-gradient-to-br from-violet-50/50 to-blue-50/50 border-violet-100"
                   >
                     <div className="flex-shrink-0 mt-1 p-2 rounded-full bg-primary/5 text-primary group-hover:bg-primary/10 transition-colors">
                       {getIconForTheme(conference.title)}

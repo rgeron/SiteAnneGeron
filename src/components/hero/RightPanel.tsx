@@ -16,7 +16,7 @@ const RightPanel = ({ imageUrl = "/images/photo1.jpg" }: RightPanelProps) => {
         <motion.img
           src={imageUrl}
           alt="Anne Géron"
-          className="w-full h-full object-cover rounded-xl border-2 border-gray-200"
+          className="w-full h-full object-cover rounded-xl border-2 border-violet-100 shadow-lg shadow-violet-100/20"
           animate={{
             filter: showBio ? "brightness(0.1)" : "brightness(1)",
           }}

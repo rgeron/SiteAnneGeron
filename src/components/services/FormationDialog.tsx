@@ -41,7 +41,7 @@ function ThemeDialog({ title, description, icon }: ThemeDialogProps) {
           </div>
 
           {/* Right Column - Contact Form */}
-          <div className="flex-1 bg-slate-50 p-6 rounded-lg border border-slate-200">
+          <div className="flex-1 bg-gradient-to-br from-violet-50 to-blue-50 p-6 rounded-lg border border-violet-100">
             <h3 className="text-xl font-semibold mb-6">
               Demander plus d'informations
             </h3>
@@ -167,47 +167,6 @@ export default function FormationDialog() {
           </motion.div>
         </div>
 
-        {/* Information about formations - Commented out for now
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl mx-auto text-left mb-8">
-          <div className="flex items-start gap-2">
-            <div className="mt-1.5">
-              <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-            </div>
-            <p className="text-sm">Sessions en présentiel ou distanciel</p>
-          </div>
-          <div className="flex items-start gap-2">
-            <div className="mt-1.5">
-              <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-            </div>
-            <p className="text-sm">Formation individuelle ou en groupe</p>
-          </div>
-          <div className="flex items-start gap-2">
-            <div className="mt-1.5">
-              <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-            </div>
-            <p className="text-sm">Adaptée à votre contexte professionnel</p>
-          </div>
-          <div className="flex items-start gap-2">
-            <div className="mt-1.5">
-              <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-            </div>
-            <p className="text-sm">Contenus personnalisables</p>
-          </div>
-          <div className="flex items-start gap-2">
-            <div className="mt-1.5">
-              <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-            </div>
-            <p className="text-sm">Support pédagogique inclus</p>
-          </div>
-          <div className="flex items-start gap-2">
-            <div className="mt-1.5">
-              <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-            </div>
-            <p className="text-sm">Attestation de formation</p>
-          </div>
-        </div>
-        */}
-
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-5xl mx-auto">
           {themes.map((theme) => (
             <Dialog key={theme.title}>
@@ -218,7 +177,7 @@ export default function FormationDialog() {
                 >
                   <Button
                     variant="outline"
-                    className="w-full h-auto py-4 px-4 text-left flex items-center gap-3 hover:bg-slate-50 hover:border-slate-300 transition-colors group"
+                    className="w-full h-auto py-4 px-4 text-left flex items-center gap-3 hover:bg-violet-50 hover:border-violet-200 transition-colors group bg-gradient-to-br from-violet-50/50 to-blue-50/50 border-violet-100"
                   >
                     <div className="p-2 rounded-full bg-primary/5 text-primary group-hover:bg-primary/10 transition-colors">
                       {theme.icon}
