@@ -1,6 +1,6 @@
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
-import ProductionCard from "./ProductionCard";
 import PodcastPlayer from "./PodcastPlayer";
+import ProductionCard from "./ProductionCard";
 
 export default function ProductionsSection() {
   const projects = [
@@ -111,7 +111,9 @@ export default function ProductionsSection() {
       <div className="container mx-auto px-4">
         <div className="space-y-12">
           <div>
-            <h3 className="text-2xl font-semibold mb-6">Mes travaux</h3>
+            <h3 className="text-2xl font-semibold mb-6">
+              Découvrez mes réalisations clients
+            </h3>
             <ScrollArea>
               <div className="flex space-x-4 pb-4">
                 {projects.map((project) => (

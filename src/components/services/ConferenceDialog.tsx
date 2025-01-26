@@ -1,22 +1,21 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Textarea } from "@/components/ui/textarea";
 import { motion } from "framer-motion";
 import {
   BookOpen,
-  Heart,
-  FileText,
-  Users,
-  Calendar,
   Brain,
-  Sparkles,
-  Lightbulb,
+  Calendar,
+  FileText,
+  Heart,
   Presentation,
   Puzzle,
+  Sparkles,
   Star,
+  Users,
 } from "lucide-react";
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface ConferenceThemeDialogProps {
   title: string;
