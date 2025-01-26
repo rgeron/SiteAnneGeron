@@ -57,25 +57,22 @@ export default function ServicesSection() {
               icon={services[0].icon}
               dialogContent={services[0].dialogContent}
             />
-            <Dialog>
-              <DialogTrigger asChild>
-                <div className="mt-7 p-6 bg-gradient-to-br from-violet-50 to-blue-50 rounded-lg border-2 border-violet-100 hover:shadow-lg transition-all cursor-pointer">
-                  <h3 className="text-xl font-semibold text-center mb-6">
-                    Mon équipe de choc
-                  </h3>
-                  <div className="flex justify-center gap-6">
-                    <div className="w-20 h-20 rounded-full bg-violet-100 border-2 border-violet-200" />
-                    <div className="w-20 h-20 rounded-full bg-violet-100 border-2 border-violet-200" />
-                  </div>
-                  <p className="text-center mt-4 text-sm text-gray-600">
-                    Nous créons des contenus ensemble
-                  </p>
+            <MJCard
+              title="Mes équipes de choc"
+              dialogContent={
+                <div className="w-full h-[70vh] border border-gray-200 rounded-lg overflow-hidden">
+                  <PDFViewer pdfUrl="/pdfs/plaquetteMarieBlaise.pdf" />
                 </div>
-              </DialogTrigger>
-              <DialogContent className="max-w-4xl max-h-[90vh]">
-                <PDFViewer pdfUrl="/pdfs/plaquetteMarieBlaise.pdf" />
-              </DialogContent>
-            </Dialog>
+              }
+            >
+              <div className="flex justify-center gap-6">
+                <div className="w-20 h-20 rounded-full bg-violet-100 border-2 border-violet-200" />
+                <div className="w-20 h-20 rounded-full bg-violet-100 border-2 border-violet-200" />
+              </div>
+              <p className="text-center mt-4 text-sm text-gray-600">
+                Nous créons des contenus ensemble
+              </p>
+            </MJCard>
           </div>
         </div>
       </div>
