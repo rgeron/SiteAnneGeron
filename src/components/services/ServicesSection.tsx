@@ -44,7 +44,7 @@ export default function ServicesSection() {
                   title={service.title}
                   icon={service.icon}
                   dialogContent={service.dialogContent}
-                  className="bg-gray-50 border-2 h-full"
+                  className="bg-gradient-to-br from-violet-50 to-blue-50 border-2 border-violet-100 h-full hover:shadow-violet-100"
                   description={service.description}
                 />
               ))}
@@ -58,7 +58,7 @@ export default function ServicesSection() {
               title={services[0].title}
               icon={services[0].icon}
               dialogContent={services[0].dialogContent}
-              className="bg-black text-white border-gray-800 border-2 [&_h3]:text-white [&_div]:text-white"
+              className="bg-gradient-to-br from-violet-900 to-blue-900 text-white border-violet-700 border-2 [&_h3]:text-white [&_div]:text-white hover:shadow-violet-200"
             />
             <div className="flex justify-center mt-7">
               <StaticCircle />

@@ -31,7 +31,7 @@ export default function ProductionCard({
     return (
       <Dialog>
         <DialogTrigger asChild>
-          <Card className="w-[300px] flex-shrink-0 hover:shadow-lg transition-shadow cursor-pointer">
+          <Card className="w-[300px] flex-shrink-0 hover:shadow-lg transition-shadow cursor-pointer bg-gradient-to-br from-violet-50 to-blue-50 border-violet-100">
             <CardHeader>
               <CardTitle className="text-lg">{title}</CardTitle>
               {description && <CardDescription>{description}</CardDescription>}
@@ -52,7 +52,7 @@ export default function ProductionCard({
 
   if (type === "video") {
     return (
-      <Card className="w-[400px] flex-shrink-0 hover:shadow-lg transition-shadow">
+      <Card className="w-[400px] flex-shrink-0 hover:shadow-lg transition-shadow bg-gradient-to-br from-violet-50 to-blue-50 border-violet-100">
         <CardHeader>
           <CardTitle className="text-lg">{title}</CardTitle>
         </CardHeader>
@@ -93,7 +93,7 @@ export default function ProductionCard({
   }
 
   return (
-    <Card className="w-[300px] flex-shrink-0 hover:shadow-lg transition-shadow">
+    <Card className="w-[300px] flex-shrink-0 hover:shadow-lg transition-shadow bg-gradient-to-br from-violet-50 to-blue-50 border-violet-100">
       {image && (
         <div className="aspect-video relative overflow-hidden">
           <img src={image} alt={title} className="object-cover w-full h-full" />
