@@ -1,9 +1,11 @@
 import { Gavel, GraduationCap, Presentation } from "lucide-react";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import ConferenceDialog from "./ConferenceDialog";
 import FormationDialog from "./FormationDialog";
 import MJDialog from "./MJDialog";
 import ServiceCard from "./ServiceCard";
 import MJCard from "./MJCard";
+import PDFViewer from "../PDFViewer";
 
 export default function ServicesSection() {
   const services = [
@@ -55,13 +57,25 @@ export default function ServicesSection() {
               icon={services[0].icon}
               dialogContent={services[0].dialogContent}
             />
-            <div className="flex justify-center mt-7">
-              <img
-                src="/images/logotype.png"
-                alt="Logo AG"
-                className="h-24 w-auto object-contain"
-              />
-            </div>
+            <Dialog>
+              <DialogTrigger asChild>
+                <div className="mt-7 p-6 bg-gradient-to-br from-violet-50 to-blue-50 rounded-lg border-2 border-violet-100 hover:shadow-lg transition-all cursor-pointer">
+                  <h3 className="text-xl font-semibold text-center mb-6">
+                    Mon équipe de choc
+                  </h3>
+                  <div className="flex justify-center gap-6">
+                    <div className="w-20 h-20 rounded-full bg-violet-100 border-2 border-violet-200" />
+                    <div className="w-20 h-20 rounded-full bg-violet-100 border-2 border-violet-200" />
+                  </div>
+                  <p className="text-center mt-4 text-sm text-gray-600">
+                    Nous créons des contenus ensemble
+                  </p>
+                </div>
+              </DialogTrigger>
+              <DialogContent className="max-w-4xl max-h-[90vh]">
+                <PDFViewer pdfUrl="/pdfs/plaquetteMarieBlaise.pdf" />
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </div>
