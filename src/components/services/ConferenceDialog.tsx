@@ -1,8 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Textarea } from "@/components/ui/textarea";
+import ContactForm from "./ContactForm";
 import { motion } from "framer-motion";
 import {
   BookOpen,
@@ -68,86 +67,8 @@ function ConferenceThemeDialog({
           </div>
 
           {/* Right Column - Contact Form */}
-          <div className="flex-1 bg-gradient-to-br from-violet-50 to-blue-50 p-6 rounded-lg border border-violet-100">
-            <h3 className="text-xl font-semibold mb-6">
-              Réserver cette conférence
-            </h3>
-            <form className="space-y-6">
-              <div className="space-y-2">
-                <label htmlFor="name" className="text-sm font-medium">
-                  Nom complet
-                </label>
-                <Input id="name" placeholder="Votre nom" />
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="organization" className="text-sm font-medium">
-                  Organisation
-                </label>
-                <Input
-                  id="organization"
-                  placeholder="Nom de votre organisation"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium">
-                  Email
-                </label>
-                <Input id="email" type="email" placeholder="votre@email.com" />
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="phone" className="text-sm font-medium">
-                  Téléphone
-                </label>
-                <Input
-                  id="phone"
-                  type="tel"
-                  placeholder="Votre numéro de téléphone"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="attendees" className="text-sm font-medium">
-                  Nombre de participants estimé
-                </label>
-                <Input
-                  id="attendees"
-                  type="number"
-                  min="20"
-                  placeholder="Nombre de participants"
-                />
-              </div>
-
-              <div className="space-y-4">
-                <div className="flex items-center space-x-2">
-                  <input
-                    type="checkbox"
-                    id="workshop"
-                    className="h-4 w-4 rounded border-gray-300"
-                  />
-                  <label htmlFor="workshop" className="text-sm font-medium">
-                    Intéressé(e) par un atelier suite à la conférence ?
-                  </label>
-                </div>
-
-                <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium">
-                    Message ou demandes particulières
-                  </label>
-                  <Textarea
-                    id="message"
-                    placeholder="Votre message"
-                    className="min-h-[150px]"
-                  />
-                </div>
-              </div>
-
-              <Button type="submit" className="w-full">
-                Envoyer
-              </Button>
-            </form>
+          <div className="flex-1">
+            <ContactForm showWorkshopOption={true} />
           </div>
         </div>
       </ScrollArea>

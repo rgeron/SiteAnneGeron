@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import ContactForm from "./ContactForm";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
 import {
@@ -41,51 +40,8 @@ function ThemeDialog({ title, description, icon }: ThemeDialogProps) {
           </div>
 
           {/* Right Column - Contact Form */}
-          <div className="flex-1 bg-gradient-to-br from-violet-50 to-blue-50 p-6 rounded-lg border border-violet-100">
-            <h3 className="text-xl font-semibold mb-6">
-              Demander plus d'informations
-            </h3>
-            <form className="space-y-6">
-              <div className="space-y-2">
-                <label htmlFor="name" className="text-sm font-medium">
-                  Nom complet
-                </label>
-                <Input id="name" placeholder="Votre nom" />
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium">
-                  Email
-                </label>
-                <Input id="email" type="email" placeholder="votre@email.com" />
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="phone" className="text-sm font-medium">
-                  Téléphone
-                </label>
-                <Input
-                  id="phone"
-                  type="tel"
-                  placeholder="Votre numéro de téléphone"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium">
-                  Message
-                </label>
-                <Textarea
-                  id="message"
-                  placeholder="Votre message"
-                  className="min-h-[150px]"
-                />
-              </div>
-
-              <Button type="submit" className="w-full">
-                Envoyer
-              </Button>
-            </form>
+          <div className="flex-1">
+            <ContactForm />
           </div>
         </div>
       </ScrollArea>
