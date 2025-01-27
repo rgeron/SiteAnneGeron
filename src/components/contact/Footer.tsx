@@ -5,7 +5,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import ContactForm from "./ContactForm";
+import ContactForm from "../services/ContactForm";
 
 export default function Footer() {
   const carouselImages = [
@@ -16,7 +16,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-black text-white py-16">
+    <footer className="bg-white text-black py-16">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>
