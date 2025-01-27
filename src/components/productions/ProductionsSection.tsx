@@ -1,6 +1,8 @@
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import CahierCard from "./CahierCard";
 import PodcastPlayer from "./PodcastPlayer";
-import ProductionCard from "./ProductionCard";
+import WebinarCard from "./WebinarCard";
+import YTBCard from "./YTBCard";
 
 export default function ProductionsSection() {
   const projects = [
@@ -90,6 +92,15 @@ export default function ProductionsSection() {
     },
   ];
 
+  const webinars = [
+    {
+      title: "LILLY 15 min Webinair",
+      videoUrl: "https://example.com/webinar.mp4",
+      image:
+        "https://images.unsplash.com/photo-1591115765373-5207764f72e7?q=80&w=2940&auto=format&fit=crop",
+    },
+  ];
+
   const podcasts = [
     {
       title: "Empathie, Sympathie, Compassion",
@@ -123,7 +134,7 @@ export default function ProductionsSection() {
             <ScrollArea>
               <div className="flex space-x-4 pb-4">
                 {projects.map((project) => (
-                  <ProductionCard key={project.title} {...project} />
+                  <CahierCard key={project.title} {...project} />
                 ))}
               </div>
               <ScrollBar orientation="horizontal" />
@@ -141,7 +152,7 @@ export default function ProductionsSection() {
                   style={{ gridAutoColumns: "280px", gridAutoFlow: "column" }}
                 >
                   {videos.map((video) => (
-                    <ProductionCard key={video.title} {...video} type="video" />
+                    <YTBCard key={video.title} {...video} />
                   ))}
                 </div>
               </div>
@@ -153,12 +164,9 @@ export default function ProductionsSection() {
             <h3 className="text-2xl font-semibold mb-6">Webinars</h3>
             <ScrollArea>
               <div className="flex space-x-4 pb-4">
-                <ProductionCard
-                  title="LILLY 15 min Webinair"
-                  type="video"
-                  videoId="webinar"
-                  image="https://images.unsplash.com/photo-1591115765373-5207764f72e7?q=80&w=2940&auto=format&fit=crop"
-                />
+                {webinars.map((webinar) => (
+                  <WebinarCard key={webinar.title} {...webinar} />
+                ))}
               </div>
               <ScrollBar orientation="horizontal" />
             </ScrollArea>
