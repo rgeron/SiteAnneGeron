@@ -1,11 +1,11 @@
 import { Gavel, GraduationCap, Presentation, Users } from "lucide-react";
-import PDFViewer from "../PDFViewer";
 import ConferenceDialog from "./ConferenceDialog";
 import FormationDialog from "./FormationDialog";
 import MJCard from "./MJCard";
 import MJDialog from "./MJDialog";
 import ServiceCard from "./ServiceCard";
 import CollabCard from "./CollabCard";
+import BlaiseMarieDialog from "./BlaiseMarieDialog";
 
 export default function ServicesSection() {
   const services = [
@@ -21,7 +21,7 @@ export default function ServicesSection() {
       icon: <Presentation />,
       dialogContent: <ConferenceDialog />,
       description:
-        "Je crée et j’anime des conférences sur mesure, conçues pour sensibiliser les participants à des thématiques clés et engager des discussions enrichissantes. Ces conférences peuvent s’accompagner d’ateliers pratiques, permettant de travailler en profondeur les sujets abordés pour favoriser des solutions concrètes et durables. ",
+        "Je crée et j'anime des conférences sur mesure, conçues pour sensibiliser les participants à des thématiques clés et engager des discussions enrichissantes. Ces conférences peuvent s'accompagner d'ateliers pratiques, permettant de travailler en profondeur les sujets abordés pour favoriser des solutions concrètes et durables. ",
     },
   ];
 
@@ -57,11 +57,7 @@ export default function ServicesSection() {
             <div className="grid grid-cols-2 gap-6">
               <CollabCard
                 title="Blaise & Marie"
-                dialogContent={
-                  <div className="w-full h-[70vh] border border-gray-200 rounded-lg overflow-hidden">
-                    <PDFViewer pdfUrl="/pdfs/plaquetteMarieBlaise.pdf" />
-                  </div>
-                }
+                dialogContent={<BlaiseMarieDialog />}
               >
                 <div className="flex -space-x-2 mb-4">
                   <div className="w-10 h-10 rounded-full bg-violet-100 border-2 border-violet-200 overflow-hidden">
@@ -85,7 +81,11 @@ export default function ServicesSection() {
                 title="Santé Partners"
                 dialogContent={
                   <div className="w-full h-[70vh] border border-gray-200 rounded-lg overflow-hidden">
-                    <PDFViewer pdfUrl="/pdfs/sante-partners.pdf" />
+                    <iframe
+                      src="/pdfs/sante-partners.pdf#view=FitH"
+                      className="w-full h-full rounded-lg border-0 bg-white"
+                      style={{ minHeight: "500px" }}
+                    />
                   </div>
                 }
               >
