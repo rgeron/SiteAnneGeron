@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { DialogContent } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { Textarea } from "@/components/ui/textarea"; // Remove if you no longer need Textarea
 
 export default function MJDialog() {
   return (
@@ -17,43 +17,19 @@ export default function MJDialog() {
 
             <div className="prose prose-slate">
               <p className="text-lg mb-4">
-                En tant que Mandataire Judiciaire à la Protection des Majeurs
-                (MJPM), mon rôle est d'accompagner et de protéger les personnes
-                vulnérables dans leur vie quotidienne.
+                Métier méconnu d’utilité publique d’auxiliaire de justice
+                au service des vulnérables dans la gestion de leurs affaires
+                personnelles, administratives ou patrimoniales.
               </p>
-
-              <h3 className="text-xl font-semibold mt-6 mb-3">
-                Mes missions principales :
-              </h3>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>
-                  Protection et représentation juridique des personnes
-                  vulnérables
-                </li>
-                <li>Gestion du patrimoine et des ressources</li>
-                <li>Accompagnement dans les démarches administratives</li>
-                <li>Veille au bien-être et à la qualité de vie</li>
-                <li>
-                  Coordination avec les différents intervenants (médecins,
-                  services sociaux, famille)
-                </li>
-              </ul>
-
-              <h3 className="text-xl font-semibold mt-6 mb-3">
-                Types de mesures :
-              </h3>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>Sauvegarde de justice</li>
-                <li>Curatelle simple ou renforcée</li>
-                <li>Tutelle</li>
-                <li>Mandat de protection future</li>
-              </ul>
-
-              <p className="mt-6">
-                Je travaille en étroite collaboration avec les juges des
-                tutelles et m'assure que les droits et les intérêts des
-                personnes protégées sont préservés, tout en respectant leur
-                autonomie et leur dignité.
+              <p className="text-lg mb-4">
+                Diplômée du Certification Nationale de Compétence en qualité
+                de Mandataire Judiciaire à la Protection des Majeurs.
+              </p>
+              <p className="text-lg">
+                La vulnérabilité est au cœur de notre humanité. Devenir
+                mandataire pour majeurs protégés, c’est soutenir,
+                accompagner ou représenter les personnes incapables ou
+                invalides, de manière temporaire ou permanente.
               </p>
             </div>
           </div>
@@ -62,6 +38,24 @@ export default function MJDialog() {
           <div className="flex-1 bg-gradient-to-br from-violet-50 to-blue-50 p-6 rounded-lg border border-violet-100">
             <h3 className="text-xl font-semibold mb-6">Me contacter</h3>
             <form className="space-y-6">
+              {/* Department Selection */}
+              <div className="space-y-2">
+                <label htmlFor="department" className="text-sm font-medium">
+                  Votre département
+                </label>
+                <select
+                  id="department"
+                  className="block w-full border border-gray-300 rounded-md p-2"
+                >
+                  <option value="" disabled>
+                    Sélectionnez votre département
+                  </option>
+                  <option value="92">92</option>
+                  <option value="77">77</option>
+                </select>
+              </div>
+
+              {/* Name */}
               <div className="space-y-2">
                 <label htmlFor="name" className="text-sm font-medium">
                   Nom complet
@@ -69,6 +63,7 @@ export default function MJDialog() {
                 <Input id="name" placeholder="Votre nom" />
               </div>
 
+              {/* Email */}
               <div className="space-y-2">
                 <label htmlFor="email" className="text-sm font-medium">
                   Email
@@ -76,6 +71,7 @@ export default function MJDialog() {
                 <Input id="email" type="email" placeholder="votre@email.com" />
               </div>
 
+              {/* Phone */}
               <div className="space-y-2">
                 <label htmlFor="phone" className="text-sm font-medium">
                   Téléphone
@@ -84,24 +80,6 @@ export default function MJDialog() {
                   id="phone"
                   type="tel"
                   placeholder="Votre numéro de téléphone"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="subject" className="text-sm font-medium">
-                  Sujet
-                </label>
-                <Input id="subject" placeholder="Sujet de votre message" />
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium">
-                  Message
-                </label>
-                <Textarea
-                  id="message"
-                  placeholder="Votre message"
-                  className="min-h-[150px]"
                 />
               </div>
 

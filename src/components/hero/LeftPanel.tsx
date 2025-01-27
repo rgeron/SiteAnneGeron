@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 interface Quote {
@@ -13,27 +13,35 @@ interface LeftPanelProps {
 
 const defaultQuotes: Quote[] = [
   {
-    text: "Parce qu'il faut vivre, vieillir est une chance et mourir une nécessité",
+    text: "Ma raison d’être est d’éduquer au bien-vieillir et d’inspirer la confiance dans le dernier tiers temps de la vie.",
   },
   {
-    text: "Votre performance business décollera en formant vos équipes à la culture et la pédagogie",
+    text: "Parce qu’il faut vivre, vieillir est une chance et mourir une nécessité",
   },
   {
-    text: "Mieux écouter pour conseiller de manière éclairée puis vendre en sécurité éthique",
+    text: "Vieillir c’est chiant et on n’a rien trouvé de mieux pour vivre",
   },
   {
-    text: "À travers des conférences, des ateliers et des formations, je vous invite à mieux comprendre ces passages",
+    text: "Nos parents et l’école nous apprennent à grandir puis nous sommes livrés à nous même pour vieillir",
   },
   {
-    text: "Ecouter l'intime nous dévoile ou nous confronte à nos peurs et à nos croyances limitantes",
+    text: "Vieillir et mourir c’est effrayant car c’est se diriger sans freins vers des territoires inconnus sans aide des aînés",
+  },
+  {
+    text: "La beauté et la performance sont l’adage du jeunisme. La connaissance et l’expérience sont l’adage de la maturité.",
+  },
+  {
+    text: "La jeunesse apprend, la vieillesse transmet",
+  },
+  {
+    text: "La connaissance est la lampe qui éclaire le chemin",
+  },
+  {
+    text: "La performance commerciale en prévoyance nécessite l’apport de connaissances culturelles et psychosociales aux équipes.",
   },
 ];
 
-const LeftPanel = ({
-  quotes = defaultQuotes,
-  logoText = "",
-  etymology = "From Ancient Greek 'γέρων' (gérōn) meaning 'elder' or 'wise one'",
-}: LeftPanelProps) => {
+const LeftPanel = ({ quotes = defaultQuotes }: LeftPanelProps) => {
   const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
 
   useEffect(() => {
