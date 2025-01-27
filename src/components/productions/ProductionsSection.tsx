@@ -7,25 +7,25 @@ import YTBCard from "./YTBCard";
 export default function ProductionsSection() {
   const projects = [
     {
-      title: "Livre de mémoire et transmission",
+      title: "Cahier MGEN",
       description:
         "Un guide complet pour préserver et transmettre l'histoire familiale aux générations futures",
       type: "pdf",
-      pdfUrl: "/pdfs/livre-memoire.pdf",
-    },
-    {
-      title: "Cahier MGEN",
-      description:
-        "Ressources et informations essentielles pour les adhérents MGEN sur la prévoyance et la santé",
-      type: "pdf",
-      pdfUrl: "/pdfs/cahier-mgen.pdf",
+      pdfUrl: "/public/pdfs/cahier-mgen.pdf",
     },
     {
       title: "Cahier mort Malakoff",
       description:
+        "Ressources et informations essentielles pour les adhérents MGEN sur la prévoyance et la santé",
+      type: "pdf",
+      pdfUrl: "/public/pdfs/cahier-mort-malakoff-medereic.pdf",
+    },
+    {
+      title: "Cahier retraite Malakoff",
+      description:
         "Guide pratique pour comprendre et préparer les aspects liés à la fin de vie",
       type: "pdf",
-      pdfUrl: "/pdfs/cahier-mort-malakoff.pdf",
+      pdfUrl: "/public/pdfs/cahier-retraite-malakoff-medereic.pdf",
     },
   ];
 
