@@ -47,7 +47,7 @@ export default function CahierCard({
           </div>
         </Card>
       </DialogTrigger>
-      <DialogContent className="max-w-4xl max-h-[80vh]">
+      <DialogContent className="max-w-7xl w-[95vw] max-h-[95vh] p-4">
         <PDFViewer pdfUrl={pdfUrl} />
       </DialogContent>
     </Dialog>
