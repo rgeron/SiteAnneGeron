@@ -1,10 +1,11 @@
-import { Gavel, GraduationCap, Presentation } from "lucide-react";
+import { Gavel, GraduationCap, Presentation, Users } from "lucide-react";
 import PDFViewer from "../PDFViewer";
 import ConferenceDialog from "./ConferenceDialog";
 import FormationDialog from "./FormationDialog";
 import MJCard from "./MJCard";
 import MJDialog from "./MJDialog";
 import ServiceCard from "./ServiceCard";
+import CollabCard from "./CollabCard";
 
 export default function ServicesSection() {
   const services = [
@@ -45,30 +46,54 @@ export default function ServicesSection() {
           </div>
 
           {/* Right side - Mandataire judiciaire */}
-          <div className="md:w-[32%]">
+          <div className="md:w-[32%] space-y-6">
             <MJCard
               title="Mandataire judiciaire"
               icon={
-                <Gavel className="text-gradient-to-br from-violet-50 to-blue-50 " />
+                <Gavel className="text-gradient-to-br from-violet-50 to-blue-50" />
               }
               dialogContent={<MJDialog />}
             />
-            <MJCard
-              title="Mon équipe de choc"
-              dialogContent={
-                <div className="w-full h-[70vh] border border-gray-200 rounded-lg overflow-hidden">
-                  <PDFViewer pdfUrl="/pdfs/plaquetteMarieBlaise.pdf" />
+            <div className="grid grid-cols-2 gap-6">
+              <CollabCard
+                title="Blaise & Marie"
+                dialogContent={
+                  <div className="w-full h-[70vh] border border-gray-200 rounded-lg overflow-hidden">
+                    <PDFViewer pdfUrl="/pdfs/plaquetteMarieBlaise.pdf" />
+                  </div>
+                }
+              >
+                <div className="flex -space-x-2 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-violet-100 border-2 border-violet-200 overflow-hidden">
+                    <img
+                      src="https://api.dicebear.com/7.x/avataaars/svg?seed=Blaise"
+                      alt="Blaise"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="w-10 h-10 rounded-full bg-violet-100 border-2 border-violet-200 overflow-hidden">
+                    <img
+                      src="https://api.dicebear.com/7.x/avataaars/svg?seed=Marie"
+                      alt="Marie"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
-              }
-            >
-              <div className="flex justify-center gap-6">
-                <div className="w-20 h-20 rounded-full bg-violet-100 border-2 border-violet-200" />
-                <div className="w-20 h-20 rounded-full bg-violet-100 border-2 border-violet-200" />
-              </div>
-              <p className="text-center mt-4 text-sm text-gray-600">
-                Nous créons des contenus ensemble
-              </p>
-            </MJCard>
+              </CollabCard>
+
+              <CollabCard
+                title="Santé Partners"
+                dialogContent={
+                  <div className="w-full h-[70vh] border border-gray-200 rounded-lg overflow-hidden">
+                    <PDFViewer pdfUrl="/pdfs/sante-partners.pdf" />
+                  </div>
+                }
+              >
+                <div className="w-10 h-10 rounded-full bg-violet-100 border-2 border-violet-200 overflow-hidden mb-4 mx-auto">
+                  <Users className="w-5 h-5 mx-auto mt-2 text-violet-600" />
+                </div>
+              </CollabCard>
+            </div>
           </div>
         </div>
       </div>
