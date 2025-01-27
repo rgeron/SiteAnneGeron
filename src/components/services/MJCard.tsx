@@ -20,7 +20,7 @@ export default function MJCard({
             {/* White background content */}
             <div className="bg-white rounded-[calc(var(--radius)-1px)] p-8 flex flex-col items-center justify-center text-center h-full">
               {icon && (
-                <div className="mb-4 text-4xl text-violet-600 transition-colors duration-300">
+                <div className="mb-4 text-4xl text-black transition-colors duration-300">
                   {icon}
                 </div>
               )}
