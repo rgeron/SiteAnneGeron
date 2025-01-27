@@ -6,26 +6,36 @@ import { Play, Pause } from "lucide-react";
 interface PodcastPlayerProps {
   title: string;
   src: string;
+  startTime?: number; // in seconds
+  endTime?: number; // in seconds
 }
 
-export default function PodcastPlayer({ title, src }: PodcastPlayerProps) {
+export default function PodcastPlayer({
+  title,
+  src,
+  startTime = 0,
+  endTime = 60,
+}: PodcastPlayerProps) {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
+  const duration = endTime - startTime;
 
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    // Set initial position to 1 minute
-    audio.currentTime = 60;
+    // Set initial position to start time
+    audio.currentTime = startTime;
 
     const handleTimeUpdate = () => {
-      setCurrentTime(audio.currentTime - 60); // Adjust display time to show 0-60
-      // Stop after 2 minutes (1 minute of actual content)
-      if (audio.currentTime >= 120) {
+      const adjustedTime = audio.currentTime - startTime;
+      setCurrentTime(adjustedTime);
+
+      // Stop when reaching end time
+      if (audio.currentTime >= endTime) {
         audio.pause();
-        audio.currentTime = 60; // Reset to 1-minute mark
+        audio.currentTime = startTime;
         setIsPlaying(false);
         setCurrentTime(0);
       }
@@ -33,7 +43,7 @@ export default function PodcastPlayer({ title, src }: PodcastPlayerProps) {
 
     audio.addEventListener("timeupdate", handleTimeUpdate);
     return () => audio.removeEventListener("timeupdate", handleTimeUpdate);
-  }, []);
+  }, [startTime, endTime]);
 
   const togglePlay = () => {
     if (!audioRef.current) return;
@@ -41,8 +51,8 @@ export default function PodcastPlayer({ title, src }: PodcastPlayerProps) {
     if (isPlaying) {
       audioRef.current.pause();
     } else {
-      // Ensure we start from 1-minute mark when playing
-      audioRef.current.currentTime = 60;
+      // Ensure we start from start time when playing
+      audioRef.current.currentTime = startTime;
       audioRef.current.play();
     }
     setIsPlaying(!isPlaying);
@@ -74,7 +84,7 @@ export default function PodcastPlayer({ title, src }: PodcastPlayerProps) {
           </Button>
 
           <span className="text-sm text-gray-500">
-            {formatTime(currentTime)} / 1:00
+            {formatTime(currentTime)} / {formatTime(duration)}
           </span>
         </div>
 
@@ -83,7 +93,7 @@ export default function PodcastPlayer({ title, src }: PodcastPlayerProps) {
         <div className="w-full bg-gray-200 rounded-full h-1.5">
           <div
             className="bg-violet-600 h-1.5 rounded-full transition-all duration-300"
-            style={{ width: `${(currentTime / 60) * 100}%` }}
+            style={{ width: `${(currentTime / duration) * 100}%` }}
           />
         </div>
       </CardContent>
