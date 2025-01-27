@@ -6,9 +6,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { FileText } from "lucide-react";
+import { FileText, X } from "lucide-react";
 import PDFViewer from "../PDFViewer";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 interface CahierCardProps {
   title: string;
@@ -21,35 +22,64 @@ export default function CahierCard({
   description,
   pdfUrl,
 }: CahierCardProps) {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Card className="w-[300px] h-[200px] flex-shrink-0 hover:shadow-xl transition-all duration-300 cursor-pointer bg-white border border-gray-200 group hover:border-gray-400">
-          <div className="h-full flex flex-col p-6">
-            <CardHeader className="p-0 mb-2 flex-1">
-              <CardTitle className="text-lg font-semibold text-gray-900 group-hover:text-gray-700 transition-colors duration-300">
-                {title}
-              </CardTitle>
-              {description && (
-                <CardDescription className="mt-2 text-gray-600">
-                  {description}
-                </CardDescription>
-              )}
-            </CardHeader>
-            <CardContent className="p-0">
-              <Button
-                className="w-full bg-gray-900 text-white hover:bg-gray-800 transition-all duration-300 shadow-sm hover:shadow group-hover:bg-gray-700"
-                variant="default"
+    <>
+      <Card className="w-[300px] h-[200px] flex-shrink-0 hover:shadow-xl transition-all duration-300 cursor-pointer bg-white border border-gray-200 group hover:border-gray-400">
+        <div className="h-full flex flex-col p-6">
+          <CardHeader className="p-0 mb-2 flex-1">
+            <CardTitle className="text-lg font-semibold text-gray-900 group-hover:text-gray-700 transition-colors duration-300">
+              {title}
+            </CardTitle>
+            {description && (
+              <CardDescription className="mt-2 text-gray-600">
+                {description}
+              </CardDescription>
+            )}
+          </CardHeader>
+          <CardContent className="p-0">
+            <Button
+              className="w-full bg-gray-900 text-white hover:bg-gray-800 transition-all duration-300 shadow-sm hover:shadow group-hover:bg-gray-700"
+              variant="default"
+              onClick={() => setIsOpen(true)}
+            >
+              <FileText className="mr-2 h-4 w-4" /> Voir le PDF
+            </Button>
+          </CardContent>
+        </div>
+      </Card>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
+            onClick={(e) => {
+              if (e.target === e.currentTarget) setIsOpen(false);
+            }}
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="relative w-[95vw] max-w-7xl"
+            >
+              <button
+                onClick={() => setIsOpen(false)}
+                className="absolute -top-12 right-0 p-2 text-white hover:text-gray-300 transition-colors"
               >
-                <FileText className="mr-2 h-4 w-4" /> Voir le PDF
-              </Button>
-            </CardContent>
-          </div>
-        </Card>
-      </DialogTrigger>
-      <DialogContent className="max-w-7xl w-[95vw] max-h-[95vh] p-4">
-        <PDFViewer pdfUrl={pdfUrl} />
-      </DialogContent>
-    </Dialog>
+                <X className="w-6 h-6" />
+              </button>
+              <PDFViewer pdfUrl={pdfUrl} />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
