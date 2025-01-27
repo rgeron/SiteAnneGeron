@@ -32,7 +32,7 @@ export default function CollabCard({
           </div>
         </div>
       </DialogTrigger>
-      <DialogContent className="w-4/5 h-4/5 max-w-[80vw] max-h-[80vh]">
+      <DialogContent className="w-5/6 h-5/6 max-w-[80vw] max-h-[80vh] bg-transparent">
         {dialogContent}
       </DialogContent>
     </Dialog>
