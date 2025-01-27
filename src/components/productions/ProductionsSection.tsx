@@ -150,6 +150,21 @@ export default function ProductionsSection() {
           </div>
 
           <div>
+            <h3 className="text-2xl font-semibold mb-6">Webinars</h3>
+            <ScrollArea>
+              <div className="flex space-x-4 pb-4">
+                <ProductionCard
+                  title="LILLY 15 min Webinair"
+                  type="video"
+                  videoId="webinar"
+                  image="https://images.unsplash.com/photo-1591115765373-5207764f72e7?q=80&w=2940&auto=format&fit=crop"
+                />
+              </div>
+              <ScrollBar orientation="horizontal" />
+            </ScrollArea>
+          </div>
+
+          <div>
             <h3 className="text-2xl font-semibold mb-6">Podcasts</h3>
             <ScrollArea>
               <div className="flex space-x-4 pb-4">

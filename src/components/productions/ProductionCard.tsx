@@ -70,16 +70,24 @@ export default function ProductionCard({
               </DialogTrigger>
               <DialogContent className="max-w-4xl">
                 <div className="aspect-video w-full">
-                  <iframe
-                    width="100%"
-                    height="100%"
-                    src={`https://www.youtube.com/embed/${videoId}`}
-                    title={title}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                    className="rounded-lg"
-                  />
+                  {videoId === "webinar" ? (
+                    <video
+                      src="/webinars/LILLY 15 min Webinair.mp4"
+                      controls
+                      className="w-full h-full rounded-lg"
+                    />
+                  ) : (
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      src={`https://www.youtube.com/embed/${videoId}`}
+                      title={title}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                      className="rounded-lg"
+                    />
+                  )}
                 </div>
               </DialogContent>
             </Dialog>
