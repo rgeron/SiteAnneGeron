@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { X } from "react-feather"; // Add this import for the cross icon
+import { X } from "react-feather";
 
 interface RightPanelProps {
   imageUrl?: string;
@@ -32,7 +32,7 @@ const RightPanel = ({ imageUrl = "/images/photo1.jpg" }: RightPanelProps) => {
         </Button>
 
         <motion.div
-          className="absolute inset-0 flex items-start justify-center p-8 overflow-y-auto bg-black bg-opacity-70 rounded-xl"
+          className="absolute inset-0 flex items-start justify-center p-8 overflow-y-auto bg-gradient-to-br from-white via-blue-50 to-purple-100 text-black rounded-xl"
           initial={{ opacity: 0 }}
           animate={{
             opacity: showBio ? 1 : 0,
@@ -40,41 +40,25 @@ const RightPanel = ({ imageUrl = "/images/photo1.jpg" }: RightPanelProps) => {
           }}
           transition={{ duration: 0.3 }}
         >
-          <div className="text-white space-y-4 max-w-prose p-2 mb-6">
-            <p className="text-xl font-semibold mb-6">
-              Pour se rendre d'une vie à l'autre n'est-il pas rassurant de s'y
-              préparer ?
+          <div className="space-y-4 max-w-prose p-2 mb-6">
+            <p className="text-lg font-semibold mb-6">
+              Gérontologue et thérapeute spécialisée dans le vieillissement,
+              avec une expertise de plus de 20 ans dans l'accompagnement des
+              seniors et des familles. J’ai introduit le métier de funeral
+              planner en France, sensibilisant à l'importance de préparer ses
+              funérailles avec ou sans contrat financier. Formatrice et
+              conférencière, j’œuvre pour démystifier les enjeux du
+              bien-vieillir et de la fin de vie, en proposant des outils
+              pédagogiques et la création de supports pratiques.
             </p>
 
-            <p className="leading-relaxed">
-              Cette réflexion est devenue au fil des années, pour moi, une
-              nécessité que j'ai enrichie de connaissances et d'expériences.
-            </p>
-
-            <p className="leading-relaxed">
-              Il y a 20 ans, j'ai introduit en France le métier de funeral
-              planner, en soutien aux familles endeuillées dans l'organisation
-              logistique des hommages aux défunts. Il y a 15 ans, j'ai rejoint
-              les assurances de personnes pour sensibiliser un plus grand
-              nombres d'acteurs à la prévention funéraire sous forme de récit de
-              vie et de transmission.
-            </p>
-
-            <p className="leading-relaxed">
-              J'ai poursuivi en travaillant auprès des personnes en fin de vie
-              et des personnes âgées dépendantes en maison de retraite (Ehpad).
-              Les années passées auprès du grand âge, de la vieillesse et des
-              retraités me persuadent de l'importance de se préparer aux étapes
-              incontournables de cette échéance.
-            </p>
-
-            <p className="leading-relaxed mb-8">
-              Egalement diplômée d'un master en droit de la santé, j'ai acquis
-              des expertises sur les thématiques de gérontologie. J'interviens
-              lors d'ateliers, des conférences et de formations. J'apporte une
-              sensibilisation pédagogique, illustrée et décomplexée sur ces
-              sujets encore tabous qui déterminent pourtant notre art du bien
-              vieillir.
+            <p className="leading-relaxed text-lg font-semibold mb-6">
+              Je suis engagée dans la prévention de la santé et la prévoyance,
+              je collabore avec des mutuelles, des caisses de retraite, et des
+              acteurs sociaux. Récemment certifiée Mandataire Judiciaire à la
+              Protection des Majeurs (MJPM), j’élargis mon champ d’action pour
+              accompagner les personnes vulnérables dans la gestion de leurs
+              droits et de leur autonomie avec empathie et éthique.
             </p>
           </div>
         </motion.div>

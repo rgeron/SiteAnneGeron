@@ -1,11 +1,10 @@
 import { Gavel, GraduationCap, Presentation } from "lucide-react";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import PDFViewer from "../PDFViewer";
 import ConferenceDialog from "./ConferenceDialog";
 import FormationDialog from "./FormationDialog";
+import MJCard from "./MJCard";
 import MJDialog from "./MJDialog";
 import ServiceCard from "./ServiceCard";
-import MJCard from "./MJCard";
-import PDFViewer from "../PDFViewer";
 
 export default function ServicesSection() {
   const services = [
@@ -14,14 +13,14 @@ export default function ServicesSection() {
       icon: <GraduationCap />,
       dialogContent: <FormationDialog />,
       description:
-        "Mon objectif est de vous permettre de mieux vendre, plus vendre tout en accompagnant vos collaborateurs à devenir plus agiles sur des sujets tabous et intimes.",
+        "Je conçois et anime des formations sur mesure adaptées aux enjeux spécifiques de chaque organisation. Intégrant une démarche de responsabilité sociétale (RSE) je favorise une approche éthique, durable, personnelle et collective. ",
     },
     {
       title: "Conférences & Ateliers",
       icon: <Presentation />,
       dialogContent: <ConferenceDialog />,
       description:
-        "La conférence permettant l'accueil un grand nombre de participants en présentiel et\nWebinar.\n\nL'atelier permettant des échanges plus longs, plus interactifs et des partages.",
+        "Je crée et j’anime des conférences sur mesure, conçues pour sensibiliser les participants à des thématiques clés et engager des discussions enrichissantes. Ces conférences peuvent s’accompagner d’ateliers pratiques, permettant de travailler en profondeur les sujets abordés pour favoriser des solutions concrètes et durables. ",
     },
   ];
 
