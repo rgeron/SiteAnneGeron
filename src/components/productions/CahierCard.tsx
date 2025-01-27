@@ -26,7 +26,7 @@ export default function CahierCard({
 
   return (
     <>
-      <Card className="w-[300px] h-[200px] flex-shrink-0 hover:shadow-xl transition-all duration-300 cursor-pointer bg-white border border-gray-200 group hover:border-gray-400">
+      <Card className="w-[300px] h-[200px] flex-shrink-0 hover:shadow-xl transition-all duration-300 cursor-pointer bg-white border-2 border-black group">
         <div className="h-full flex flex-col p-6">
           <CardHeader className="p-0 mb-2 flex-1">
             <CardTitle className="text-lg font-semibold text-gray-900 group-hover:text-gray-700 transition-colors duration-300">

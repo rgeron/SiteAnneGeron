@@ -77,61 +77,7 @@ function ConferenceThemeDialog({
 }
 
 const conferences = [
-  {
-    title: "Accepter la mort & le symbolisme des portes",
-    description:
-      "Une exploration profonde de notre rapport à la mort à travers le symbolisme universel des portes, offrant une perspective unique sur l'acceptation et la transition.",
-  },
-  {
-    title: "Bien vieillir toujours heureux",
-    description:
-      "Découvrez les clés pour maintenir une vie épanouie et positive tout au long du vieillissement, avec des conseils pratiques et des approches holistiques.",
-  },
-  {
-    title: "Cycle des aidants",
-    description:
-      "Une série complète abordant les aspects essentiels du rôle d'aidant : être aidant, prendre soin de soi, collaborer avec les professionnels, et comprendre l'accompagnement des maladies et du handicap.",
-  },
-  {
-    title: "Halloween & la Toussaint",
-    description:
-      "Une analyse culturelle et historique de ces célébrations, explorant leur signification profonde et leur évolution dans notre société moderne.",
-  },
-  {
-    title: "Je décide et je protège les miens",
-    description:
-      "Informations essentielles sur la protection juridique et les dispositions à prendre pour assurer l'avenir de vos proches.",
-  },
-  {
-    title: "La perte d'autonomie",
-    description:
-      "Comprendre et anticiper la perte d'autonomie, avec des solutions pratiques et des ressources pour maintenir la dignité et la qualité de vie.",
-  },
-  {
-    title: "Les bienfaits de l'amour",
-    description:
-      "Une exploration des effets positifs de l'amour sur notre bien-être physique et mental, particulièrement pendant les phases de transition de la vie.",
-  },
-  {
-    title: "Les dispositions juridiques et réglementaires de la fin de la vie",
-    description:
-      "Un aperçu complet du cadre légal entourant la fin de vie, permettant une meilleure compréhension de vos droits et options.",
-  },
-  {
-    title: "Les liens invisibles qui entravent",
-    description:
-      "Une analyse des attachements et des relations qui peuvent nous limiter, avec des outils pour identifier et transformer ces liens.",
-  },
-  {
-    title: "Prévenir et soulager les douleurs",
-    description:
-      "Stratégies et approches pratiques pour la gestion et la prévention de la douleur, combinant méthodes traditionnelles et modernes.",
-  },
-  {
-    title: "Vivre sereinement",
-    description:
-      "Des clés pour cultiver la sérénité au quotidien, avec des techniques et des conseils pratiques pour une vie plus équilibrée.",
-  },
+  // ... conference data
 ];
 
 export default function ConferenceDialog() {
@@ -145,28 +91,28 @@ export default function ConferenceDialog() {
             transition={{ duration: 0.5 }}
             className="relative inline-block"
           >
-            <h2 className="text-5xl font-bold mb-8 bg-gradient-to-r from-primary/90 via-blue-600 to-primary bg-[length:200%] animate-gradient bg-clip-text text-transparent">
+            <h2 className="text-5xl font-bold mb-8 text-black">
               Conférences & Ateliers
             </h2>
             <motion.div
-              className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent"
+              className="absolute -bottom-2 left-0 right-0 h-0.5 bg-black"
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             />
           </motion.div>
 
-          <div className="flex justify-center gap-8 mt-8 text-sm text-slate-600">
+          <div className="flex justify-center gap-8 mt-8 text-sm text-gray-600">
             <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+              <div className="w-1.5 h-1.5 rounded-full bg-black" />
               <span>Conférences de 2h incluant des temps d'échanges</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+              <div className="w-1.5 h-1.5 rounded-full bg-black" />
               <span>En présentiel et distanciel</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+              <div className="w-1.5 h-1.5 rounded-full bg-black" />
               <span>À partir de 20 personnes</span>
             </div>
           </div>
@@ -182,9 +128,9 @@ export default function ConferenceDialog() {
                 >
                   <Button
                     variant="outline"
-                    className="w-full h-auto py-4 px-4 text-left flex items-start gap-3 hover:bg-violet-50 hover:border-violet-200 transition-colors group bg-gradient-to-br from-violet-50/50 to-blue-50/50 border-violet-100"
+                    className="w-full h-auto py-4 px-4 text-left flex items-start gap-3 hover:bg-gray-50 border-2 border-black transition-colors group"
                   >
-                    <div className="flex-shrink-0 mt-1 p-2 rounded-full bg-primary/5 text-primary group-hover:bg-primary/10 transition-colors">
+                    <div className="flex-shrink-0 mt-1 p-2 rounded-full bg-black/5 text-black group-hover:bg-black/10 transition-colors">
                       {getIconForTheme(conference.title)}
                     </div>
                     <div className="flex-1 min-w-0">

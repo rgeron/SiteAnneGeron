@@ -11,7 +11,7 @@ export default function ContactForm({
   showWorkshopOption = false,
 }: ContactFormProps) {
   return (
-    <form className="space-y-6 bg-gradient-to-br from-violet-50 to-blue-50 p-6 rounded-lg border border-violet-100">
+    <form className="space-y-6 bg-white p-6 rounded-lg border-2 border-black">
       <h3 className="text-xl font-semibold mb-6">
         Laissez-moi vos informations pour que je vous recontacte.
       </h3>

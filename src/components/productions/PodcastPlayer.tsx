@@ -65,7 +65,7 @@ export default function PodcastPlayer({
   };
 
   return (
-    <Card className="w-[300px] flex-shrink-0 hover:shadow-lg transition-shadow bg-gradient-to-br from-violet-50 to-blue-50 border-violet-100">
+    <Card className="w-[300px] flex-shrink-0 hover:shadow-lg transition-shadow bg-white border-2 border-black">
       <CardContent className="p-6 space-y-4">
         <h3 className="font-medium text-lg line-clamp-2">{title}</h3>
 

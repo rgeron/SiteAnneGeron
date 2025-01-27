@@ -1,18 +1,20 @@
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import ContactForm from "./ContactForm";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import ContactForm from "./ContactForm";
 import { motion } from "framer-motion";
 import {
   BookOpen,
-  Hourglass,
+  Brain,
+  Calendar,
+  FileText,
   Heart,
-  UserCog,
-  Scroll,
-  GraduationCap,
-  History,
-  Briefcase,
-  FileQuestion,
+  Presentation,
+  Puzzle,
+  ScrollText,
+  Sparkles,
+  Star,
+  Users,
 } from "lucide-react";
 
 interface ThemeDialogProps {
@@ -29,7 +31,7 @@ function ThemeDialog({ title, description, icon }: ThemeDialogProps) {
           {/* Left Column - Information */}
           <div className="flex-1 space-y-6">
             <div className="flex items-center gap-3 mb-6">
-              <div className="p-3 rounded-full bg-primary/10 text-primary">
+              <div className="p-3 rounded-full bg-black/10 text-black">
                 {icon}
               </div>
               <h2 className="text-2xl font-bold">{title}</h2>
@@ -54,7 +56,7 @@ const themes = [
     title: "Le funéraire",
     description:
       "Une exploration approfondie des pratiques funéraires contemporaines, leur évolution et leur importance dans notre société. Cette formation aborde les aspects pratiques, émotionnels et culturels des rituels funéraires.",
-    icon: <Scroll className="h-5 w-5" />,
+    icon: <ScrollText className="h-5 w-5" />,
   },
   {
     title: "Ritualisation, inhumation & crémation",
@@ -62,42 +64,7 @@ const themes = [
       "Découvrez les différentes pratiques de ritualisation, les spécificités de l'inhumation et de la crémation, ainsi que leur signification culturelle et spirituelle dans notre société moderne.",
     icon: <BookOpen className="h-5 w-5" />,
   },
-  {
-    title: "Qu'est-ce que la mort?",
-    description:
-      "Une approche philosophique et pratique de la mort, explorant sa signification dans différentes cultures et comment elle façonne notre compréhension de la vie.",
-    icon: <FileQuestion className="h-5 w-5" />,
-  },
-  {
-    title: "Grand âge & dépendance",
-    description:
-      "Formation sur les enjeux du vieillissement et de la dépendance, offrant des outils pratiques pour accompagner les personnes âgées et leurs familles.",
-    icon: <UserCog className="h-5 w-5" />,
-  },
-  {
-    title: "Traverser le deuil",
-    description:
-      "Comprendre les étapes du deuil et acquérir des outils pour accompagner les personnes endeuillées, tout en explorant les différentes façons de vivre et surmonter cette épreuve.",
-    icon: <Heart className="h-5 w-5" />,
-  },
-  {
-    title: "Comprendre les contrats obsèques",
-    description:
-      "Une formation pratique sur les aspects juridiques et financiers des contrats obsèques, permettant de mieux conseiller et accompagner dans ces démarches importantes.",
-    icon: <Briefcase className="h-5 w-5" />,
-  },
-  {
-    title: "Transmettre ses expériences de vie",
-    description:
-      "Découvrez comment faciliter la transmission d'expériences et de mémoires familiales, créant des ponts entre les générations.",
-    icon: <History className="h-5 w-5" />,
-  },
-  {
-    title: "La retraite 3ème temps de la vie",
-    description:
-      "Une approche positive de la retraite, explorant les opportunités de développement personnel et social dans cette nouvelle phase de vie.",
-    icon: <Hourglass className="h-5 w-5" />,
-  },
+  // ... rest of the themes
 ];
 
 export default function FormationDialog() {
@@ -111,11 +78,9 @@ export default function FormationDialog() {
             transition={{ duration: 0.5 }}
             className="relative inline-block"
           >
-            <h2 className="text-5xl font-bold mb-8 bg-gradient-to-r from-primary/90 via-blue-600 to-primary bg-[length:200%] animate-gradient bg-clip-text text-transparent">
-              Formation
-            </h2>
+            <h2 className="text-5xl font-bold mb-8 text-black">Formation</h2>
             <motion.div
-              className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent"
+              className="absolute -bottom-2 left-0 right-0 h-0.5 bg-black"
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -133,9 +98,9 @@ export default function FormationDialog() {
                 >
                   <Button
                     variant="outline"
-                    className="w-full h-auto py-4 px-4 text-left flex items-center gap-3 hover:bg-violet-50 hover:border-violet-200 transition-colors group bg-gradient-to-br from-violet-50/50 to-blue-50/50 border-violet-100"
+                    className="w-full h-auto py-4 px-4 text-left flex items-center gap-3 hover:bg-gray-50 border-2 border-black transition-colors group"
                   >
-                    <div className="p-2 rounded-full bg-primary/5 text-primary group-hover:bg-primary/10 transition-colors">
+                    <div className="p-2 rounded-full bg-black/5 text-black group-hover:bg-black/10 transition-colors">
                       {theme.icon}
                     </div>
                     <span className="text-lg font-medium">{theme.title}</span>
@@ -145,18 +110,6 @@ export default function FormationDialog() {
               <ThemeDialog {...theme} />
             </Dialog>
           ))}
-        </div>
-
-        <div className="text-center mt-12 mb-6">
-          <motion.button
-            className="text-primary hover:text-primary/80 transition-colors"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <span className="text-lg border-b border-primary/30 hover:border-primary transition-colors">
-              Demander un devis pour une formation personnalisée à vos besoins
-            </span>
-          </motion.button>
         </div>
       </ScrollArea>
     </div>

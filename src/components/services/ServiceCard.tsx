@@ -24,13 +24,13 @@ export default function ServiceCard({
       <DialogTrigger asChild>
         <Card
           className={cn(
-            "cursor-pointer hover:shadow-lg transition-shadow",
+            "cursor-pointer hover:shadow-lg transition-shadow bg-white border-2 border-black",
             className,
           )}
         >
-          <CardContent className="p-0">
+          <CardContent className="p-6">
             {imageUrl && (
-              <div className="w-full h-48 overflow-hidden">
+              <div className="w-full h-48 overflow-hidden mb-4">
                 <img
                   src={imageUrl}
                   alt={title}
@@ -38,11 +38,11 @@ export default function ServiceCard({
                 />
               </div>
             )}
-            <div className="p-6 flex flex-col items-center justify-center text-center">
-              {icon && <div className="mb-4 text-4xl">{icon}</div>}
+            <div className="flex flex-col items-center justify-center text-center">
+              {icon && <div className="mb-4 text-4xl text-black">{icon}</div>}
               <h3 className="text-2xl font-semibold mb-4">{title}</h3>
               {description && (
-                <p className="text-lg leading-relaxed whitespace-pre-line">
+                <p className="text-lg leading-relaxed whitespace-pre-line text-gray-600">
                   {description}
                 </p>
               )}

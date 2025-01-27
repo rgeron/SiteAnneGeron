@@ -38,7 +38,7 @@ export default function ServicesSection() {
                   title={service.title}
                   icon={service.icon}
                   dialogContent={service.dialogContent}
-                  className="bg-gradient-to-br from-violet-50 to-blue-50 border-2 border-violet-100 h-full hover:shadow-violet-100"
+                  className="h-full"
                   description={service.description}
                 />
               ))}

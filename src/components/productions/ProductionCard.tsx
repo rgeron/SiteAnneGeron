@@ -31,7 +31,7 @@ export default function ProductionCard({
     return (
       <Dialog>
         <DialogTrigger asChild>
-          <Card className="w-[300px] flex-shrink-0 hover:shadow-lg transition-shadow cursor-pointer bg-gradient-to-br from-violet-50 to-blue-50 border-violet-100">
+          <Card className="w-[300px] flex-shrink-0 hover:shadow-lg transition-shadow cursor-pointer bg-white border-2 border-black">
             <CardHeader>
               <CardTitle className="text-lg">{title}</CardTitle>
               {description && <CardDescription>{description}</CardDescription>}
