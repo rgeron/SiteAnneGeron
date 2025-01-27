@@ -11,21 +11,21 @@ export default function ProductionsSection() {
       description:
         "Un guide complet pour préserver et transmettre l'histoire familiale aux générations futures",
       type: "pdf",
-      pdfUrl: "/public/pdfs/cahier-mgen.pdf",
+      pdfUrl: "/pdfs/cahier-mgen.pdf",
     },
     {
       title: "Cahier mort Malakoff",
       description:
         "Ressources et informations essentielles pour les adhérents MGEN sur la prévoyance et la santé",
       type: "pdf",
-      pdfUrl: "/public/pdfs/cahier-mort-malakoff-medereic.pdf",
+      pdfUrl: "/pdfs/cahier-mort-malakoff-mederic.pdf",
     },
     {
       title: "Cahier retraite Malakoff",
       description:
         "Guide pratique pour comprendre et préparer les aspects liés à la fin de vie",
       type: "pdf",
-      pdfUrl: "/public/pdfs/cahier-retraite-malakoff-medereic.pdf",
+      pdfUrl: "/pdfs/cahier-retraite-malakoff-mederic.pdf",
     },
   ];
 
