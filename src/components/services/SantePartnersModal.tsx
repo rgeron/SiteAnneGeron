@@ -25,7 +25,7 @@ export default function SantePartnersModal({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-50 flex items-center justify-center"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-opacity-50 backdrop-blur-sm"
           onClick={(e) => {
             if (e.target === e.currentTarget) onClose();
           }}
@@ -35,7 +35,7 @@ export default function SantePartnersModal({
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="relative w-[90vw] max-w-6xl overflow-hidden shadow-xl"
+            className="relative max-w-6xl overflow-hidden shadow-sm"
           >
             <button
               onClick={onClose}
@@ -44,7 +44,7 @@ export default function SantePartnersModal({
               <X className="w-6 h-6" />
             </button>
 
-            <div className="h-[80vh]">
+            <div className="h-[90vh]">
               <Carousel className="w-full h-full">
                 <CarouselContent className="-ml-1">
                   {[1, 2, 3, 4, 5, 6].map((num) => (
@@ -59,8 +59,8 @@ export default function SantePartnersModal({
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselPrevious className="-left-4 bg-gray-100 hover:bg-gray-200 border-0" />
-                <CarouselNext className="-right-4 bg-gray-100 hover:bg-gray-200 border-0" />
+                <CarouselPrevious className="-left-4 bg-gray-700 hover:bg-gray-800 text-white border-0" />
+                <CarouselNext className="-right-4 bg-gray-700 hover:bg-gray-800 text-white border-0" />
               </Carousel>
             </div>
           </motion.div>
