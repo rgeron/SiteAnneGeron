@@ -35,7 +35,7 @@ export default function SantePartnersModal({
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="relative w-[90vw] max-w-6xl bg-white rounded-lg overflow-hidden shadow-xl"
+            className="relative w-[90vw] max-w-6xl overflow-hidden shadow-xl"
           >
             <button
               onClick={onClose}
@@ -44,16 +44,16 @@ export default function SantePartnersModal({
               <X className="w-6 h-6" />
             </button>
 
-            <div className="h-[70vh]">
+            <div className="h-[80vh]">
               <Carousel className="w-full h-full">
-                <CarouselContent className="-ml-2">
+                <CarouselContent className="-ml-1">
                   {[1, 2, 3, 4, 5, 6].map((num) => (
-                    <CarouselItem key={num} className="pl-2 basis-1/2">
+                    <CarouselItem key={num} className="pl-1 basis-1/2">
                       <div className="flex items-center justify-center h-full">
                         <img
                           src={`/images/SP/SP${num}.png`}
                           alt={`Slide ${num}`}
-                          className="max-w-full max-h-[60vh] object-contain"
+                          className="max-w-full max-h-[85vh] object-contain"
                         />
                       </div>
                     </CarouselItem>
