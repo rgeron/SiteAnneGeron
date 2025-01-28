@@ -1,5 +1,3 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { X } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -7,6 +5,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { AnimatePresence, motion } from "framer-motion";
+import { X } from "lucide-react";
 
 interface SantePartnersModalProps {
   isOpen: boolean;
@@ -47,25 +47,14 @@ export default function SantePartnersModal({
             <div className="h-[70vh]">
               <Carousel className="w-full h-full">
                 <CarouselContent className="-ml-2">
-                  {[1, 3, 5].map((num) => (
+                  {[1, 2, 3, 4, 5, 6].map((num) => (
                     <CarouselItem key={num} className="pl-2 basis-1/2">
-                      <div className="grid grid-cols-2 gap-4 h-full p-4">
-                        <div className="flex items-center justify-center h-full">
-                          <img
-                            src={`/images/SP/SP${num}.png`}
-                            alt={`Slide ${num}`}
-                            className="max-w-full max-h-[60vh] object-contain"
-                          />
-                        </div>
-                        {num + 1 <= 6 && (
-                          <div className="flex items-center justify-center h-full">
-                            <img
-                              src={`/images/SP/SP${num + 1}.png`}
-                              alt={`Slide ${num + 1}`}
-                              className="max-w-full max-h-[60vh] object-contain"
-                            />
-                          </div>
-                        )}
+                      <div className="flex items-center justify-center h-full">
+                        <img
+                          src={`/images/SP/SP${num}.png`}
+                          alt={`Slide ${num}`}
+                          className="max-w-full max-h-[60vh] object-contain"
+                        />
                       </div>
                     </CarouselItem>
                   ))}
