@@ -9,21 +9,32 @@ export default function ProductionsSection() {
     {
       title: "Cahier MGEN",
       description:
-        "Un guide complet pour préserver et transmettre l'histoire familiale aux générations futures",
+        "Un cahier pédagogique pour guider les adhérents souscrivant un contrat obsèques à transformer ce dernier projet en une réflexion personnelle et familiale au-delà des aspects financiers.",
       type: "pdf",
       pdfUrl: "/pdfs/cahier-mgen.pdf",
     },
     {
-      title: "Cahier mort Malakoff",
-      description:
-        "Ressources et informations essentielles pour les adhérents MGEN sur la prévoyance et la santé",
+      title: (
+        <>
+          Cahier Malakoff-Médéric
+          <br />
+          <span className="text-base">À l'usage des gens que j'aime</span>
+        </>
+      ),
+      description: "",
       type: "pdf",
       pdfUrl: "/pdfs/cahier-mort-malakoff-mederic.pdf",
     },
     {
-      title: "Cahier retraite Malakoff",
+      title: (
+        <>
+          Cahier Malakoff-Médéric
+          <br />
+          <span className="text-base">Ma retraite, ma nouvelle vie</span>
+        </>
+      ),
       description:
-        "Guide pratique pour comprendre et préparer les aspects liés à la fin de vie",
+        "Cahier dédié aux retraités pour accompagner des ateliers sur le bien vieillir, déployés dans 28 agences à travers la France.",
       type: "pdf",
       pdfUrl: "/pdfs/cahier-retraite-malakoff-mederic.pdf",
     },
