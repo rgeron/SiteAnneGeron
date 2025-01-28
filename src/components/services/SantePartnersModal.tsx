@@ -6,7 +6,6 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { AnimatePresence, motion } from "framer-motion";
-import { X } from "lucide-react";
 
 interface SantePartnersModalProps {
   isOpen: boolean;
@@ -37,13 +36,6 @@ export default function SantePartnersModal({
             transition={{ duration: 0.2 }}
             className="relative max-w-6xl overflow-hidden shadow-sm"
           >
-            <button
-              onClick={onClose}
-              className="absolute top-4 right-4 z-50 p-2 text-gray-500 hover:text-gray-700 transition-colors"
-            >
-              <X className="w-6 h-6" />
-            </button>
-
             <div className="h-[90vh]">
               <Carousel className="w-full h-full">
                 <CarouselContent className="-ml-1">
@@ -59,8 +51,8 @@ export default function SantePartnersModal({
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselPrevious className="-left-4 bg-gray-700 hover:bg-gray-800 text-white border-0" />
-                <CarouselNext className="-right-4 bg-gray-700 hover:bg-gray-800 text-white border-0" />
+                <CarouselPrevious className="left-2 bg-gray-700 hover:bg-gray-800 text-white border-0 w-12 h-12" />
+                <CarouselNext className="right-2 bg-gray-700 hover:bg-gray-800 text-white border-0 w-12 h-12" />
               </Carousel>
             </div>
           </motion.div>
