@@ -77,7 +77,50 @@ function ConferenceThemeDialog({
 }
 
 const conferences = [
-  // ... conference data
+  {
+    title: "Accepter la mort & le symbolisme des portes",
+    description: "Description for Accepter la mort & le symbolisme des portes",
+  },
+  {
+    title: "Bien vieillir toujours heureux",
+    description: "Description for Bien vieillir toujours heureux",
+  },
+  {
+    title: "Cycle des aidants",
+    description: "Description for Cycle des aidants",
+  },
+  {
+    title: "Halloween & la Toussaint",
+    description: "Description for Halloween & la Toussaint",
+  },
+  {
+    title: "Je décide et je protège les miens",
+    description: "Description for Je décide et je protège les miens",
+  },
+  {
+    title: "La perte d'autonomie",
+    description: "Description for La perte d'autonomie",
+  },
+  {
+    title: "Les bienfaits de l'amour",
+    description: "Description for Les bienfaits de l'amour",
+  },
+  {
+    title: "Les dispositions juridiques et réglementaires de la fin de la vie",
+    description: "Description for Les dispositions juridiques et réglementaires de la fin de la vie",
+  },
+  {
+    title: "Les liens invisibles qui entravent",
+    description: "Description for Les liens invisibles qui entravent",
+  },
+  {
+    title: "Prévenir et soulager les douleurs",
+    description: "Description for Prévenir et soulager les douleurs",
+  },
+  {
+    title: "Vivre sereinement",
+    description: "Description for Vivre sereinement",
+  },
 ];
 
 export default function ConferenceDialog() {
@@ -144,6 +187,11 @@ export default function ConferenceDialog() {
               <ConferenceThemeDialog {...conference} />
             </Dialog>
           ))}
+        </div>
+        <div className="text-center mt-8">
+          <Button variant="link" className="text-lg underline">
+            demander un devis pour une conférence personnalisée
+          </Button>
         </div>
       </ScrollArea>
     </div>
