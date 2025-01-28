@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import ContactForm from "./ContactForm";
 import { motion } from "framer-motion";
 import {
   BookOpen,
@@ -15,6 +14,7 @@ import {
   Star,
   Users,
 } from "lucide-react";
+import ContactForm from "./ContactForm";
 
 interface ConferenceThemeDialogProps {
   title: string;
@@ -107,7 +107,8 @@ const conferences = [
   },
   {
     title: "Les dispositions juridiques et réglementaires de la fin de la vie",
-    description: "Description for Les dispositions juridiques et réglementaires de la fin de la vie",
+    description:
+      "Description for Les dispositions juridiques et réglementaires de la fin de la vie",
   },
   {
     title: "Les liens invisibles qui entravent",
@@ -171,13 +172,13 @@ export default function ConferenceDialog() {
                 >
                   <Button
                     variant="outline"
-                    className="w-full h-auto py-4 px-4 text-left flex items-start gap-3 hover:bg-gray-50 border-2 border-black transition-colors group"
+                    className="w-full h-auto py-4 px-4 text-left flex items-center gap-3 hover:bg-gray-50 border-2 border-black transition-colors group"
                   >
-                    <div className="flex-shrink-0 mt-1 p-2 rounded-full bg-black/5 text-black group-hover:bg-black/10 transition-colors">
+                    <div className="flex-shrink-0 rounded-full bg-black/5 text-black group-hover:bg-black/10 transition-colors">
                       {getIconForTheme(conference.title)}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <span className="text-lg font-medium block break-words">
+                      <span className="text-lg font-medium block break-words truncate">
                         {conference.title}
                       </span>
                     </div>
