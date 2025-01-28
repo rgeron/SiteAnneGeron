@@ -1,4 +1,6 @@
 import { Gavel, GraduationCap, Presentation, Users } from "lucide-react";
+import { useState } from "react";
+import SantePartnersModal from "./SantePartnersModal";
 import BlaiseMarieDialog from "./BlaiseMarieDialog";
 import CollabCard from "./CollabCard";
 import ConferenceDialog from "./ConferenceDialog";
@@ -8,6 +10,7 @@ import MJDialog from "./MJDialog";
 import ServiceCard from "./ServiceCard";
 
 export default function ServicesSection() {
+  const [isSantePartnersOpen, setIsSantePartnersOpen] = useState(false);
   const services = [
     {
       title: "Formations",
@@ -77,23 +80,27 @@ export default function ServicesSection() {
                 </div>
               </CollabCard>
 
-              <CollabCard
-                title="Santé Partners"
-                dialogContent={
-                  <div className="w-full h-[70vh] border border-gray-200 rounded-lg overflow-hidden">
-                    <iframe
-                      src="/pdfs/sante-partners.pdf#view=FitH"
-                      className="w-full h-full rounded-lg border-0 bg-white"
-                      style={{ minHeight: "500px" }}
-                    />
-                  </div>
-                }
+              <div
+                onClick={() => setIsSantePartnersOpen(true)}
+                className="relative group cursor-pointer"
               >
-                <div className="w-10 h-10 rounded-full bg-violet-100 border-2 border-violet-200 overflow-hidden mb-4 mx-auto">
-                  <Users className="w-5 h-5 mx-auto mt-2 text-violet-600" />
+                <div className="bg-black p-[3px] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                  <div className="bg-white rounded-[calc(var(--radius)-1px)] p-4 flex flex-col items-center justify-center text-center h-full">
+                    <div className="w-10 h-10 rounded-full bg-violet-100 border-2 border-violet-200 overflow-hidden mb-4 mx-auto">
+                      <Users className="w-5 h-5 mx-auto mt-2 text-violet-600" />
+                    </div>
+                    <h3 className="text-2xl font-semibold mb-4 text-black">
+                      Santé Partners
+                    </h3>
+                  </div>
                 </div>
-              </CollabCard>
+              </div>
             </div>
+
+            <SantePartnersModal
+              isOpen={isSantePartnersOpen}
+              onClose={() => setIsSantePartnersOpen(false)}
+            />
           </div>
         </div>
       </div>
