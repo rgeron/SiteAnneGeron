@@ -134,7 +134,7 @@ export default function ConferenceDialog() {
             transition={{ duration: 0.5 }}
             className="relative inline-block"
           >
-            <h2 className="text-5xl font-bold mb-8 text-black">
+            <h2 className="text-4xl font-bold mb-8 text-black">
               Conférences & Ateliers
             </h2>
             <motion.div
@@ -161,7 +161,7 @@ export default function ConferenceDialog() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 max-w-5xl mx-auto">
           {conferences.map((conference) => (
             <Dialog key={conference.title}>
               <DialogTrigger asChild>
@@ -177,7 +177,7 @@ export default function ConferenceDialog() {
                       {getIconForTheme(conference.title)}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <span className="text-lg font-medium block">
+                      <span className="text-lg font-medium block break-words">
                         {conference.title}
                       </span>
                     </div>
