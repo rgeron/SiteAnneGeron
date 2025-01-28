@@ -6,10 +6,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { FileText, X } from "lucide-react";
-import PDFViewer from "../PDFViewer";
-import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { FileText, X } from "lucide-react";
+import { useState } from "react";
+import PDFViewer from "../PDFViewer";
 
 interface CahierCardProps {
   title: string;
@@ -26,7 +26,7 @@ export default function CahierCard({
 
   return (
     <>
-      <Card className="w-[300px] h-[200px] flex-shrink-0 hover:shadow-xl transition-all duration-300 cursor-pointer bg-white border-2 border-black group">
+      <Card className="flex-grow flex-shrink-0 hover:shadow-xl transition-all duration-300 cursor-pointer bg-white border-2 border-black group max-w-xs">
         <div className="h-full flex flex-col p-6">
           <CardHeader className="p-0 mb-2 flex-1">
             <CardTitle className="text-lg font-semibold text-gray-900 group-hover:text-gray-700 transition-colors duration-300">
@@ -38,7 +38,7 @@ export default function CahierCard({
               </CardDescription>
             )}
           </CardHeader>
-          <CardContent className="p-0">
+          <CardContent className="p-0 mt-auto">
             <Button
               className="w-full bg-gray-900 text-white hover:bg-gray-800 transition-all duration-300 shadow-sm hover:shadow group-hover:bg-gray-700"
               variant="default"
