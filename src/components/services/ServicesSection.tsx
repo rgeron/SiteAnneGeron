@@ -1,16 +1,16 @@
 import { Gavel, GraduationCap, Presentation, Users } from "lucide-react";
+import BlaiseMarieDialog from "./BlaiseMarieDialog";
+import CollabCard from "./CollabCard";
 import ConferenceDialog from "./ConferenceDialog";
 import FormationDialog from "./FormationDialog";
 import MJCard from "./MJCard";
 import MJDialog from "./MJDialog";
 import ServiceCard from "./ServiceCard";
-import CollabCard from "./CollabCard";
-import BlaiseMarieDialog from "./BlaiseMarieDialog";
 
 export default function ServicesSection() {
   const services = [
     {
-      title: "Formation",
+      title: "Formations",
       icon: <GraduationCap />,
       dialogContent: <FormationDialog />,
       description:

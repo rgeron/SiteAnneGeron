@@ -16,7 +16,7 @@ const RightPanel = ({ imageUrl = "/images/photo1.jpg" }: RightPanelProps) => {
         <motion.img
           src={imageUrl}
           alt="Anne Géron"
-          className="w-full h-full object-cover rounded-xl border-2 border-violet-100 shadow-lg shadow-violet-100/20"
+          className="w-full h-full object-cover rounded-xl border-2 border-black shadow-lg shadow-black/20"
           animate={{
             filter: showBio ? "brightness(0.1)" : "brightness(1)",
           }}
@@ -32,7 +32,9 @@ const RightPanel = ({ imageUrl = "/images/photo1.jpg" }: RightPanelProps) => {
         </Button>
 
         <motion.div
-          className="absolute inset-0 flex items-start justify-center p-8 overflow-y-auto bg-gradient-to-br from-white via-blue-50 to-purple-100 text-black rounded-xl"
+          className={`absolute inset-0 flex items-start justify-center p-8 overflow-y-auto bg-white text-black rounded-xl ${
+            showBio ? "border-2 border-black" : ""
+          }`}
           initial={{ opacity: 0 }}
           animate={{
             opacity: showBio ? 1 : 0,
@@ -41,7 +43,7 @@ const RightPanel = ({ imageUrl = "/images/photo1.jpg" }: RightPanelProps) => {
           transition={{ duration: 0.3 }}
         >
           <div className="space-y-4 max-w-prose p-2 mb-6">
-            <p className="text-lg font-semibold mb-6">
+            <p className="text-lg font-medium mb-6">
               Gérontologue et thérapeute spécialisée dans le vieillissement,
               avec une expertise de plus de 20 ans dans l'accompagnement des
               seniors et des familles. J’ai introduit le métier de funeral
@@ -52,7 +54,13 @@ const RightPanel = ({ imageUrl = "/images/photo1.jpg" }: RightPanelProps) => {
               pédagogiques et la création de supports pratiques.
             </p>
 
-            <p className="leading-relaxed text-lg font-semibold mb-6">
+            <p className="text-lg font-medium mb-6">
+              Formatrice et conférencière, j’œuvre pour démystifier les enjeux
+              du bien-vieillir et de la fin de vie, en proposant des outils
+              pédagogiques et la création de supports pratiques.
+            </p>
+
+            <p className="leading-relaxed text-lg font-medium mb-6">
               Je suis engagée dans la prévention de la santé et la prévoyance,
               je collabore avec des mutuelles, des caisses de retraite, et des
               acteurs sociaux. Récemment certifiée Mandataire Judiciaire à la
