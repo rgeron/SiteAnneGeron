@@ -11,8 +11,8 @@ export default function ProductionsSection() {
       description:
         "Un projet conçu pour un family office, permettant aux familles de transmettre et préserver l'histoire de la construction et de la vie de leur entreprise.",
       pdfs: [
-        { label: "Livre de mémoires", url: "/pdfs/livre_memoire.pdf" },
-        { label: "Rituel", url: "/pdfs/rituel.pdf" },
+        { label: "Livre", url: "/pdfs/livre_memoire.pdf" },
+        { label: "Guide", url: "/pdfs/guide.pdf" },
       ],
     },
     {
