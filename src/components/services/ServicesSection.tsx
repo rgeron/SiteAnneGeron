@@ -51,7 +51,7 @@ export default function ServicesSection() {
           {/* Right side - Mandataire judiciaire */}
           <div className="md:w-[32%] space-y-6">
             <MJCard
-              title="Mandataire judiciaire"
+              title="Mandataire judiciaire à la protection des majeurs"
               icon={
                 <Gavel className="text-gradient-to-br from-violet-50 to-blue-50" />
               }
