@@ -7,6 +7,13 @@ import YTBCard from "./YTBCard";
 export default function ProductionsSection() {
   const projects = [
     {
+      title: "LIVRE DE MÉMOIRES",
+      description:
+        "Un projet conçu pour un family office, permettant aux familles de transmettre et préserver l'histoire de la construction et de la vie de leur entreprise.",
+      type: "pdf",
+      pdfUrl: "/pdfs/livre_memoire.pdf",
+    },
+    {
       title: "Cahier MGEN",
       description:
         "Un cahier pédagogique pour guider les adhérents souscrivant un contrat obsèques à transformer ce dernier projet en une réflexion personnelle et familiale au-delà des aspects financiers.",
