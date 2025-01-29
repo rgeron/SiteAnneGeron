@@ -16,15 +16,15 @@ export default function MJCard({
       <DialogTrigger asChild>
         <div className="relative group cursor-pointer">
           {/* Gradient border container */}
-          <div className="bg-black p-[3px] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+          <div className="bg-black p-[2px] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
             {/* White background content */}
-            <div className="bg-black rounded-[calc(var(--radius)-1px)] p-8 flex flex-col items-center justify-center text-center h-full">
+            <div className="bg-black rounded-[calc(var(--radius)-1px)] p-4 flex flex-col items-center justify-center text-center h-full">
               {icon && (
-                <div className="mb-4 text-4xl text-white transition-colors duration-300">
+                <div className="mb-2 text-3xl text-white transition-colors duration-300">
                   {icon}
                 </div>
               )}
-              <h3 className="text-2xl font-semibold mb-4 text-white">
+              <h3 className="text-xl font-semibold mb-2 text-white">
                 {title}
               </h3>
             </div>

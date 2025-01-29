@@ -43,7 +43,7 @@ export default function BentoLayout({
       icon: <GraduationCap />,
       dialogContent: <FormationDialog />,
       description:
-        "Je conçois et anime des formations sur mesure adaptées aux enjeux spécifiques de chaque organisation.",
+        "Je conçoiime des formations sur mesure adaptées aux enjeux spécifiques de chaque organisation.",
     },
     {
       title: "Conférences & Ateliers",
