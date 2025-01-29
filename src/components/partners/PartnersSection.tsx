@@ -42,12 +42,12 @@ export default function PartnersSection() {
           {partners1.map((logo) => (
             <div
               key={logo}
-              className="flex items-center justify-center bg-white p-4 rounded-lg shadow-sm w-[180px] h-[80px]"
+              className="flex items-center justify-center bg-white p-6 rounded-lg shadow-sm w-[220px] h-[100px]"
             >
               <img
                 src={`/images/partnerslogo/${logo}`}
                 alt={logo.split(".")[0]}
-                className="max-w-[120px] max-h-[50px] object-contain"
+                className="max-w-[160px] max-h-[70px] object-contain"
               />
             </div>
           ))}
@@ -59,12 +59,12 @@ export default function PartnersSection() {
           {partners1.map((logo) => (
             <div
               key={logo}
-              className="flex items-center justify-center bg-white p-4 rounded-lg shadow-sm w-[180px] h-[80px]"
+              className="flex items-center justify-center bg-white p-6 rounded-lg shadow-sm w-[220px] h-[100px]"
             >
               <img
                 src={`/images/partnerslogo/${logo}`}
                 alt={logo.split(".")[0]}
-                className="max-w-[120px] max-h-[50px] object-contain"
+                className="max-w-[160px] max-h-[70px] object-contain"
               />
             </div>
           ))}
@@ -77,12 +77,12 @@ export default function PartnersSection() {
           {partners2.map((logo) => (
             <div
               key={logo}
-              className="flex items-center justify-center bg-white p-4 rounded-lg shadow-sm w-[180px] h-[80px]"
+              className="flex items-center justify-center bg-white p-6 rounded-lg shadow-sm w-[220px] h-[100px]"
             >
               <img
                 src={`/images/partnerslogo/${logo}`}
                 alt={logo.split(".")[0]}
-                className="max-w-[120px] max-h-[50px] object-contain"
+                className="max-w-[160px] max-h-[70px] object-contain"
               />
             </div>
           ))}
@@ -94,12 +94,12 @@ export default function PartnersSection() {
           {partners2.map((logo) => (
             <div
               key={logo}
-              className="flex items-center justify-center bg-white p-4 rounded-lg shadow-sm w-[180px] h-[80px]"
+              className="flex items-center justify-center bg-white p-6 rounded-lg shadow-sm w-[220px] h-[100px]"
             >
               <img
                 src={`/images/partnerslogo/${logo}`}
                 alt={logo.split(".")[0]}
-                className="max-w-[120px] max-h-[50px] object-contain"
+                className="max-w-[160px] max-h-[70px] object-contain"
               />
             </div>
           ))}
