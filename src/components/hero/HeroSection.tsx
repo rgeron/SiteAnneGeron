@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import LeftPanel from "./LeftPanel";
 import RightPanel from "./RightPanel";
@@ -26,7 +25,7 @@ const HeroSection = ({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="w-full h-[55vh] container mx-auto mb-6 mt-6"
+      className="w-full h-[40vh] container mx-auto mb-6 mt-6 bg-red-200"
     >
       <div className="w-full h-full flex flex-col md:flex-row">
         <motion.div

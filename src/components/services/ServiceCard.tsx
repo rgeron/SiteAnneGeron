@@ -25,7 +25,7 @@ export default function ServiceCard({
         <Card
           className={cn(
             "cursor-pointer hover:shadow-lg transition-shadow bg-white border-2 border-black",
-            className,
+            className
           )}
         >
           <CardContent className="p-6">

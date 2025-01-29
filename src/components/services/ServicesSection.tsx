@@ -30,11 +30,11 @@ export default function ServicesSection() {
 
   return (
     <section className="bg-white">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row gap-6 h-full">
+      <div className="container mx-auto px-10">
+        <div className="flex flex-col md:flex-row h-full gap-10">
           {/* Left side - Formation and Conferences */}
-          <div className="md:w-[65%]">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="md:w-[70%]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
               {services.map((service) => (
                 <ServiceCard
                   key={service.title}
@@ -49,17 +49,15 @@ export default function ServicesSection() {
           </div>
 
           {/* Right side - Mandataire judiciaire */}
-          <div className="md:w-[32%] space-y-6">
+          <div className="md:w-[35%] space-y-10">
             <MJCard
               title="Mandataire judiciaire à la protection des majeurs"
-              icon={
-                <Gavel className="text-gradient-to-br from-violet-50 to-blue-50" />
-              }
+              icon={<Gavel className="" />}
               dialogContent={<MJDialog />}
             />
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-10">
               <CollabCard
-                title="Blaise & Marie"
+                title="Équipe avec Blaise & Marie"
                 dialogContent={<BlaiseMarieDialog />}
               >
                 <div className="flex -space-x-2 mb-4">
@@ -84,7 +82,7 @@ export default function ServicesSection() {
                 onClick={() => setIsSantePartnersOpen(true)}
                 className="relative group cursor-pointer"
               >
-                <div className="bg-black p-[3px] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="bg-black p-[2px] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
                   <div className="bg-white rounded-[calc(var(--radius)-1px)] p-4 flex flex-col items-center justify-center text-center h-full">
                     <div className="w-10 h-10 rounded-full bg-violet-100 border-2 border-violet-200 overflow-hidden mb-4 mx-auto">
                       <img
