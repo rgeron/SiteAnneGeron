@@ -11,7 +11,7 @@ export default function ProductionsSection() {
       description:
         "Un projet conçu pour un family office, permettant aux familles de transmettre et préserver l'histoire de la construction et de la vie de leur entreprise.",
       type: "pdf",
-      pdfUrl: "/pdfs/rituel.pdf",
+      pdfUrl: "/pdfs/livre_memoire.pdf",
     },
     {
       title: "Cahier MGEN",
