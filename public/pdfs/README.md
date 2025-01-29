@@ -1,1 +1,0 @@
-This folder contains PDF documents for the projects section.
