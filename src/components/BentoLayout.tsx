@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Gavel, GraduationCap, Presentation, X } from "lucide-react";
+import { GraduationCap, Gavel, Presentation, X } from "lucide-react";
 import { useState } from "react";
 import BlaiseMarieDialog from "./services/BlaiseMarieDialog";
 import CollabCard from "./services/CollabCard";
@@ -28,6 +28,24 @@ const defaultQuotes = [
   {
     text: "Vieillir c'est chiant et on n'a rien trouvé de mieux pour vivre",
   },
+  {
+    text: "Nos parents et l'école nous apprennent à grandir puis nous sommes livrés à nous même pour vieillir",
+  },
+  {
+    text: "Vieillir et mourir c'est effrayant car c'est se diriger sans freins vers des territoires inconnus sans aide des aînés",
+  },
+  {
+    text: "La beauté et la performance sont l'adage du jeunisme. La connaissance et l'expérience sont l'adage de la maturité.",
+  },
+  {
+    text: "La jeunesse apprend, la vieillesse transmet",
+  },
+  {
+    text: "La connaissance est la lampe qui éclaire le chemin",
+  },
+  {
+    text: "La performance commerciale en prévoyance nécessite l'apport de connaissances culturelles et psychosociales aux équipes.",
+  },
 ];
 
 export default function BentoLayout({
@@ -43,14 +61,14 @@ export default function BentoLayout({
       icon: <GraduationCap />,
       dialogContent: <FormationDialog />,
       description:
-        "Je conçoiime des formations sur mesure adaptées aux enjeux spécifiques de chaque organisation.",
+        "Je conçois et anime des formations sur mesure adaptées aux enjeux spécifiques de chaque organisation. Intégrant une démarche de responsabilité sociétale (RSE) je favorise une approche éthique, durable, personnelle et collective.",
     },
     {
       title: "Conférences & Ateliers",
       icon: <Presentation />,
       dialogContent: <ConferenceDialog />,
       description:
-        "Je crée et j'anime des conférences sur mesure, conçues pour sensibiliser les participants à des thématiques clés.",
+        "Je crée et j'anime des conférences sur mesure, conçues pour sensibiliser les participants à des thématiques clés et engager des discussions enrichissantes. Ces conférences peuvent s'accompagner d'ateliers pratiques, permettant de travailler en profondeur les sujets abordés pour favoriser des solutions concrètes et durables.",
     },
   ];
 
@@ -70,7 +88,7 @@ export default function BentoLayout({
             transition={{ duration: 1 }}
             className="bg-white p-6"
           >
-            <p className="text-xl md:text-2xl font-light italic text-gray-700">
+            <p className="text-xl md:text-2xl font-tan-nimbus italic text-gray-700">
               "{quotes[currentQuoteIndex].text}"
             </p>
           </motion.div>
@@ -107,14 +125,28 @@ export default function BentoLayout({
               transition={{ duration: 0.3 }}
             >
               <div className="space-y-4 text-white">
-                <p className="text-lg">
+                <p className="text-lg font-medium mb-6">
                   Gérontologue et thérapeute spécialisée dans le vieillissement,
                   avec une expertise de plus de 20 ans dans l'accompagnement des
-                  seniors et des familles.
+                  seniors et des familles. J'ai introduit le métier de funeral
+                  planner en France, sensibilisant à l'importance de préparer
+                  ses funérailles avec ou sans contrat financier.
                 </p>
-                <p className="text-lg">
+
+                <p className="text-lg font-medium mb-6">
                   Formatrice et conférencière, j'œuvre pour démystifier les
-                  enjeux du bien-vieillir et de la fin de vie.
+                  enjeux du bien-vieillir et de la fin de vie, en proposant des
+                  outils pédagogiques et la création de supports pratiques.
+                </p>
+
+                <p className="leading-relaxed text-lg font-medium mb-6">
+                  Je suis engagée dans la prévention de la santé et la
+                  prévoyance, je collabore avec des mutuelles, des caisses de
+                  retraite, et des acteurs sociaux. Récemment certifiée
+                  Mandataire Judiciaire à la Protection des Majeurs (MJPM),
+                  j'élargis mon champ d'action pour accompagner les personnes
+                  vulnérables dans la gestion de leurs droits et de leur
+                  autonomie avec empathie et éthique.
                 </p>
               </div>
             </motion.div>
@@ -177,7 +209,7 @@ export default function BentoLayout({
                       className="w-full h-full"
                     />
                   </div>
-                  <h3 className="text-2xl font-semibold mb-4 text-black">
+                  <h3 className="text-2xl font-tan-nimbus mb-4 text-black">
                     Santé Partners
                   </h3>
                 </div>
