@@ -1,15 +1,15 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { GraduationCap, Gavel, Presentation, X } from "lucide-react";
-import ServiceCard from "./services/ServiceCard";
-import CollabCard from "./services/CollabCard";
+import { Gavel, GraduationCap, Presentation, X } from "lucide-react";
+import { useState } from "react";
 import BlaiseMarieDialog from "./services/BlaiseMarieDialog";
+import CollabCard from "./services/CollabCard";
+import ConferenceDialog from "./services/ConferenceDialog";
+import FormationDialog from "./services/FormationDialog";
 import MJCard from "./services/MJCard";
 import MJDialog from "./services/MJDialog";
-import FormationDialog from "./services/FormationDialog";
-import ConferenceDialog from "./services/ConferenceDialog";
 import SantePartnersModal from "./services/SantePartnersModal";
+import ServiceCard from "./services/ServiceCard";
 
 interface BentoLayoutProps {
   quotes?: {
@@ -56,11 +56,11 @@ export default function BentoLayout({
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 ">
         {/* Top Left: Logo and Quotes */}
-        <div className="md:col-span-7 space-y-6">
+        <div className="md:col-span-7 space-y-10">
           <div className="w-full">
-            <img src="/images/logo.jpg" alt="Logo" className="w-full h-auto" />
+            <img src="/images/logo.jpg" alt="Logo" className="w-5/6 h-auto" />
           </div>
           <motion.div
             key={currentQuoteIndex}
@@ -68,7 +68,7 @@ export default function BentoLayout({
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 1 }}
-            className="bg-white p-6 rounded-lg border-2 border-black"
+            className="bg-white p-6"
           >
             <p className="text-xl md:text-2xl font-light italic text-gray-700">
               "{quotes[currentQuoteIndex].text}"
@@ -78,7 +78,7 @@ export default function BentoLayout({
 
         {/* Top Right: Photo and Bio */}
         <div className="md:col-span-5">
-          <div className="relative w-full h-[400px] bg-white overflow-hidden rounded-lg border-2 border-black">
+          <div className="relative w-3/4 bg-white overflow-hidden rounded-lg border-2 border-black">
             <motion.img
               src="/images/photo1.jpg"
               alt="Anne Géron"
@@ -132,54 +132,55 @@ export default function BentoLayout({
               />
             ))}
           </div>
-          {/* Long Black Card */}
+        </div>
+
+        {/* Bottom Right: MJCard, Collab and Sante Partner Cards */}
+        <div className="md:col-span-5 space-y-6">
           <MJCard
             title="Mandataire judiciaire à la protection des majeurs"
             icon={<Gavel />}
             dialogContent={<MJDialog />}
           />
-        </div>
-
-        {/* Bottom Right: Collab and Sante Partner Cards */}
-        <div className="md:col-span-5 space-y-6">
-          <CollabCard
-            title="Équipe avec Blaise & Marie"
-            dialogContent={<BlaiseMarieDialog />}
-          >
-            <div className="flex -space-x-2 mb-4">
-              <div className="w-10 h-10 rounded-full bg-violet-100 border-2 border-violet-200 overflow-hidden">
-                <img
-                  src="https://api.dicebear.com/7.x/avataaars/svg?seed=Blaise"
-                  alt="Blaise"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="w-10 h-10 rounded-full bg-violet-100 border-2 border-violet-200 overflow-hidden">
-                <img
-                  src="https://api.dicebear.com/7.x/avataaars/svg?seed=Marie"
-                  alt="Marie"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </CollabCard>
-
-          <div
-            onClick={() => setIsSantePartnersOpen(true)}
-            className="relative group cursor-pointer"
-          >
-            <div className="bg-black p-[2px] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="bg-white rounded-[calc(var(--radius)-1px)] p-4 flex flex-col items-center justify-center text-center h-full">
-                <div className="w-10 h-10 rounded-full bg-violet-100 border-2 border-violet-200 overflow-hidden mb-4 mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <CollabCard
+              title="Équipe avec Blaise & Marie"
+              dialogContent={<BlaiseMarieDialog />}
+            >
+              <div className="flex -space-x-2 mb-4">
+                <div className="w-10 h-10 rounded-full bg-violet-100 border-2 border-violet-200 overflow-hidden">
                   <img
-                    src="/images/SPLogo.png"
-                    alt="Santé Partners Logo"
-                    className="w-full h-full"
+                    src="https://api.dicebear.com/7.x/avataaars/svg?seed=Blaise"
+                    alt="Blaise"
+                    className="w-full h-full object-cover"
                   />
                 </div>
-                <h3 className="text-2xl font-semibold mb-4 text-black">
-                  Santé Partners
-                </h3>
+                <div className="w-10 h-10 rounded-full bg-violet-100 border-2 border-violet-200 overflow-hidden">
+                  <img
+                    src="https://api.dicebear.com/7.x/avataaars/svg?seed=Marie"
+                    alt="Marie"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </CollabCard>
+
+            <div
+              onClick={() => setIsSantePartnersOpen(true)}
+              className="relative group cursor-pointer"
+            >
+              <div className="bg-black p-[2px] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="bg-white rounded-[calc(var(--radius)-1px)] p-4 flex flex-col items-center justify-center text-center h-full">
+                  <div className="w-10 h-10 rounded-full bg-violet-100 border-2 border-violet-200 overflow-hidden mb-4 mx-auto">
+                    <img
+                      src="/images/SPLogo.png"
+                      alt="Santé Partners Logo"
+                      className="w-full h-full"
+                    />
+                  </div>
+                  <h3 className="text-2xl font-semibold mb-4 text-black">
+                    Santé Partners
+                  </h3>
+                </div>
               </div>
             </div>
           </div>
