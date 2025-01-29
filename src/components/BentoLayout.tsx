@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { GraduationCap, Gavel, Presentation, X } from "lucide-react";
+import { useEffect } from "react";
 import { useState } from "react";
 import BlaiseMarieDialog from "./services/BlaiseMarieDialog";
 import CollabCard from "./services/CollabCard";
@@ -53,6 +54,14 @@ export default function BentoLayout({
 }: BentoLayoutProps) {
   const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
   const [showBio, setShowBio] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentQuoteIndex((prev) => (prev + 1) % quotes.length);
+    }, 6000); // Change quote every 6 seconds
+
+    return () => clearInterval(interval);
+  }, [quotes.length]);
   const [isSantePartnersOpen, setIsSantePartnersOpen] = useState(false);
 
   const services = [
@@ -80,18 +89,22 @@ export default function BentoLayout({
           <div className="w-full">
             <img src="/images/logo.jpg" alt="Logo" className="w-5/6 h-auto" />
           </div>
-          <motion.div
-            key={currentQuoteIndex}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 1 }}
-            className="bg-white p-6"
-          >
-            <p className="text-xl md:text-2xl font-tan-nimbus italic text-gray-700">
-              "{quotes[currentQuoteIndex].text}"
-            </p>
-          </motion.div>
+          <div className="w-4/5 flex justify-center overflow-hidden">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentQuoteIndex}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 1 }}
+                className="text-center"
+              >
+                <p className="text-2xl md:text-3xl font-tan-nimbus italic text-gray-700">
+                  "{quotes[currentQuoteIndex].text}"
+                </p>
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
 
         {/* Top Right: Photo and Bio */}
