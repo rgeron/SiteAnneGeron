@@ -14,15 +14,18 @@ import PDFViewer from "../PDFViewer";
 interface CahierCardProps {
   title: string;
   description?: string;
-  pdfUrl: string;
+  pdfUrl?: string;
+  pdfs?: { label: string; url: string }[];
 }
 
 export default function CahierCard({
   title,
   description,
   pdfUrl,
+  pdfs,
 }: CahierCardProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedPdf, setSelectedPdf] = useState<string>("");
 
   return (
     <>
@@ -39,13 +42,34 @@ export default function CahierCard({
             )}
           </CardHeader>
           <CardContent className="p-0 mt-auto">
-            <Button
-              className="w-full bg-gray-900 text-white hover:bg-gray-800 transition-all duration-300 shadow-sm hover:shadow group-hover:bg-gray-700"
-              variant="default"
-              onClick={() => setIsOpen(true)}
-            >
-              <FileText className="mr-2 h-4 w-4" /> Voir le PDF
-            </Button>
+            {pdfs ? (
+              <div className="space-y-2">
+                {pdfs.map((pdf, index) => (
+                  <Button
+                    key={index}
+                    className="w-full bg-gray-900 text-white hover:bg-gray-800 transition-all duration-300 shadow-sm hover:shadow group-hover:bg-gray-700"
+                    variant="default"
+                    onClick={() => {
+                      setSelectedPdf(pdf.url);
+                      setIsOpen(true);
+                    }}
+                  >
+                    <FileText className="mr-2 h-4 w-4" /> {pdf.label}
+                  </Button>
+                ))}
+              </div>
+            ) : pdfUrl ? (
+              <Button
+                className="w-full bg-gray-900 text-white hover:bg-gray-800 transition-all duration-300 shadow-sm hover:shadow group-hover:bg-gray-700"
+                variant="default"
+                onClick={() => {
+                  setSelectedPdf(pdfUrl);
+                  setIsOpen(true);
+                }}
+              >
+                <FileText className="mr-2 h-4 w-4" /> Voir le PDF
+              </Button>
+            ) : null}
           </CardContent>
         </div>
       </Card>
@@ -75,7 +99,7 @@ export default function CahierCard({
               >
                 <X className="w-6 h-6" />
               </button>
-              <PDFViewer pdfUrl={pdfUrl} />
+              <PDFViewer pdfUrl={selectedPdf} />
             </motion.div>
           </motion.div>
         )}
