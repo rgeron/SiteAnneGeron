@@ -1,8 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { GraduationCap, Gavel, Presentation, X } from "lucide-react";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BlaiseMarieDialog from "./services/BlaiseMarieDialog";
 import CollabCard from "./services/CollabCard";
 import ConferenceDialog from "./services/ConferenceDialog";
@@ -54,6 +53,7 @@ export default function BentoLayout({
 }: BentoLayoutProps) {
   const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
   const [showBio, setShowBio] = useState(false);
+  const [isSantePartnersOpen, setIsSantePartnersOpen] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -62,7 +62,6 @@ export default function BentoLayout({
 
     return () => clearInterval(interval);
   }, [quotes.length]);
-  const [isSantePartnersOpen, setIsSantePartnersOpen] = useState(false);
 
   const services = [
     {
@@ -99,7 +98,7 @@ export default function BentoLayout({
                 transition={{ duration: 1 }}
                 className="text-center"
               >
-                <p className="text-2xl md:text-3xl font-tan-nimbus italic text-gray-700">
+                <p className="text-2xl md:text-3xl font-medium italic text-gray-700">
                   "{quotes[currentQuoteIndex].text}"
                 </p>
               </motion.div>
@@ -129,7 +128,7 @@ export default function BentoLayout({
             </Button>
 
             <motion.div
-              className="absolute inset-0 flex items-start justify-center p-8 overflow-y-auto"
+              className="bg-white  absolute inset-0 flex items-start justify-center overflow-y-auto"
               initial={{ opacity: 0 }}
               animate={{
                 opacity: showBio ? 1 : 0,
@@ -137,7 +136,7 @@ export default function BentoLayout({
               }}
               transition={{ duration: 0.3 }}
             >
-              <div className="space-y-4 text-white">
+              <div className=" max-w-prose bg-white text-black p-6 mb-6">
                 <p className="text-lg font-medium mb-6">
                   Gérontologue et thérapeute spécialisée dans le vieillissement,
                   avec une expertise de plus de 20 ans dans l'accompagnement des
@@ -222,7 +221,7 @@ export default function BentoLayout({
                       className="w-full h-full"
                     />
                   </div>
-                  <h3 className="text-2xl font-tan-nimbus mb-4 text-black">
+                  <h3 className="text-2xl font-semibold mb-4 text-black">
                     Santé Partners
                   </h3>
                 </div>
