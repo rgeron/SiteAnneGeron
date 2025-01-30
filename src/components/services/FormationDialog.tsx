@@ -52,7 +52,42 @@ const themes = [
       "Découvrez les différentes pratiques de ritualisation, les spécificités de l'inhumation et de la crémation, ainsi que leur signification culturelle et spirituelle dans notre société moderne.",
     icon: <BookOpen className="h-5 w-5" />,
   },
-  // ... rest of the themes
+  {
+    title: "Qu'est-ce que la mort?",
+    description:
+      "Une exploration philosophique et pratique de la mort, son impact sur notre société et comment mieux l'appréhender.",
+    icon: <ScrollText className="h-5 w-5" />,
+  },
+  {
+    title: "Grand âge & dépendance",
+    description:
+      "Comprendre les enjeux du vieillissement et de la dépendance, et comment accompagner au mieux les personnes âgées.",
+    icon: <BookOpen className="h-5 w-5" />,
+  },
+  {
+    title: "Traverser le deuil",
+    description:
+      "Un accompagnement pour comprendre et traverser les différentes étapes du deuil, avec des outils pratiques et du soutien émotionnel.",
+    icon: <ScrollText className="h-5 w-5" />,
+  },
+  {
+    title: "Comprendre les contrats obsèques",
+    description:
+      "Une formation détaillée sur les aspects juridiques et pratiques des contrats obsèques, pour mieux conseiller et accompagner.",
+    icon: <BookOpen className="h-5 w-5" />,
+  },
+  {
+    title: "Transmettre ses expériences de vie",
+    description:
+      "Apprendre à valoriser et partager son vécu, ses connaissances et sa sagesse avec les générations futures.",
+    icon: <ScrollText className="h-5 w-5" />,
+  },
+  {
+    title: "La retraite 3ème temps de la vie",
+    description:
+      "Une approche positive et pratique pour préparer et vivre pleinement sa retraite comme une nouvelle étape enrichissante.",
+    icon: <BookOpen className="h-5 w-5" />,
+  },
 ];
 
 export default function FormationDialog() {
@@ -98,6 +133,11 @@ export default function FormationDialog() {
               <ThemeDialog {...theme} />
             </Dialog>
           ))}
+        </div>
+        <div className="text-center mt-8">
+          <Button variant="link" className="text-lg underline">
+            demander un devis pour une formation personnalisée
+          </Button>
         </div>
       </ScrollArea>
     </div>
