@@ -85,9 +85,14 @@ export default function BentoLayout({
     <div className="container mx-auto px-24 py-14 ">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6  ">
         {/* Top Left: Logo and Quotes */}
-        <div className="md:col-span-7 space-y-10 flex flex-col items-center text-center p-10">
+        <div className="md:col-span-7 space-y-10 flex flex-col items-center text-center p-10 mt-8">
           <div className="w-full ">
-            <img src="/images/logo.jpg" alt="Logo" className="w-5/6 h-auto" />
+            <h1
+              className="text-7xl font-normal tracking-wide"
+              style={{ fontFamily: "Tan Nimbus" }}
+            >
+              ANNE GÉRON
+            </h1>
           </div>
           <div className="w-4/5 flex justify-center overflow-hidden ">
             <AnimatePresence mode="wait">
