@@ -191,24 +191,7 @@ export default function BentoLayout({
               title="Blaise & Marie"
               onClick={() => setIsBlaiseMarieOpen(true)} // Trigger modal on click
               className="h-full"
-            >
-              <div className="flex -space-x-2 mb-4">
-                <div className="w-10 h-10 rounded-full bg-violet-100 border-2 border-violet-200 overflow-hidden">
-                  <img
-                    src="https://api.dicebear.com/7.x/avataaars/svg?seed=Blaise"
-                    alt="Blaise"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="w-10 h-10 rounded-full bg-violet-100 border-2 border-violet-200 overflow-hidden">
-                  <img
-                    src="https://api.dicebear.com/7.x/avataaars/svg?seed=Marie"
-                    alt="Marie"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-            </CollabCard>
+            ></CollabCard>
 
             <div
               onClick={() => setIsSantePartnersOpen(true)}
