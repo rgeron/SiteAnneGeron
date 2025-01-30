@@ -188,8 +188,9 @@ export default function BentoLayout({
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <CollabCard
-              title="Équipe avec Blaise & Marie"
+              title="Blaise & Marie"
               onClick={() => setIsBlaiseMarieOpen(true)} // Trigger modal on click
+              className="h-full"
             >
               <div className="flex -space-x-2 mb-4">
                 <div className="w-10 h-10 rounded-full bg-violet-100 border-2 border-violet-200 overflow-hidden">
@@ -211,7 +212,7 @@ export default function BentoLayout({
 
             <div
               onClick={() => setIsSantePartnersOpen(true)}
-              className="relative group cursor-pointer"
+              className="relative group cursor-pointer h-full"
             >
               <div className="bg-black p-[2px] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
                 <div className="bg-white rounded-[calc(var(--radius)-1px)] p-4 flex flex-col items-center justify-center text-center h-full">
