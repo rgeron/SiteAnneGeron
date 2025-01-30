@@ -14,7 +14,7 @@ export default function YTBCard({ title, image, videoId }: YTBCardProps) {
 
   return (
     <>
-      <Card className="w-[280px] flex-shrink-0 hover:shadow-lg transition-shadow border-red-200 hover:border-red-300 group">
+      <Card className="w-[280px] flex-shrink-0 hover:shadow-lg transition-shadow border-red-200 hover:border-red-300 group bg-white">
         <CardContent className="p-3">
           {image && (
             <div
