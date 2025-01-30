@@ -77,12 +77,12 @@ export default function BentoLayout({
       icon: <Presentation />,
       dialogContent: <ConferenceDialog />,
       description:
-        "Je crée et j'anime des conférences sur mesure, conçues pour sensibiliser les participants à des thématiques clés et engager des discussions enrichissantes. Ces conférences peuvent s'accompagner d'ateliers pratiques, permettant de travailler en profondeur les sujets abordés pour favoriser des solutions concrètes et durables.",
+        "Je crée et j'anime des conférences sur mesure, conçues pour sensibiliser les participants à des thématiques clés et engager des discussions enrichissantes. Ces conférences peuvent s'accompagner d'ateliers pratiques.",
     },
   ];
 
   return (
-    <div className="container mx-auto px-20 py-8">
+    <div className="container mx-auto px-24 py-10">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6 ">
         {/* Top Left: Logo and Quotes */}
         <div className="md:col-span-7 space-y-10">
@@ -240,10 +240,7 @@ export default function BentoLayout({
         isOpen={isBlaiseMarieOpen}
         onClose={() => setIsBlaiseMarieOpen(false)}
       />
-      <MJModal
-        isOpen={isMJModalOpen}
-        onClose={() => setIsMJModalOpen(false)}
-      />
+      <MJModal isOpen={isMJModalOpen} onClose={() => setIsMJModalOpen(false)} />
     </div>
   );
 }
