@@ -28,19 +28,10 @@ export default function ServiceCard({
             className
           )}
         >
-          <CardContent className="p-6">
-            {imageUrl && (
-              <div className="w-full h-48 overflow-hidden mb-4">
-                <img
-                  src={imageUrl}
-                  alt={title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            )}
+          <CardContent className="p-5">
             <div className="flex flex-col items-center justify-center text-center">
-              {icon && <div className="mb-4 text-4xl text-black">{icon}</div>}
-              <h3 className="text-2xl font-semibold mb-4">{title}</h3>
+              {icon && <div className="mb-2 text-4xl text-black">{icon}</div>}
+              <h3 className="text-2xl font-semibold mb-2">{title}</h3>
               {description && (
                 <p className="text-base leading-relaxed whitespace-pre-line text-gray-600">
                   {description}
