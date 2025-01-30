@@ -82,14 +82,14 @@ export default function BentoLayout({
   ];
 
   return (
-    <div className="container mx-auto px-24 py-14 bg-red-400">
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 bg-blue-500 ">
+    <div className="container mx-auto px-24 py-14 ">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-6  ">
         {/* Top Left: Logo and Quotes */}
-        <div className="md:col-span-7 space-y-10 flex flex-col items-center text-center bg-orange-600 p-10">
-          <div className="w-full bg-violet-600">
+        <div className="md:col-span-7 space-y-10 flex flex-col items-center text-center p-10">
+          <div className="w-full ">
             <img src="/images/logo.jpg" alt="Logo" className="w-5/6 h-auto" />
           </div>
-          <div className="w-4/5 flex justify-center overflow-hidden bg-pink-600">
+          <div className="w-4/5 flex justify-center overflow-hidden ">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentQuoteIndex}
@@ -108,7 +108,7 @@ export default function BentoLayout({
         </div>
 
         {/* Top Right: Photo and Bio */}
-        <div className="md:col-span-5 flex justify-center bg-green-400">
+        <div className="md:col-span-5 flex justify-center ">
           <div className="relative w-4/5 bg-white overflow-hidden rounded-lg border-2 border-black">
             <motion.img
               src="/images/photo1.jpg"
@@ -180,7 +180,7 @@ export default function BentoLayout({
         </div>
 
         {/* Bottom Right: MJCard, Collab and Sante Partner Cards */}
-        <div className="md:col-span-5 space-y-6 bg-green-500">
+        <div className="md:col-span-5 space-y-6 flex flex-col items-center justify-center">
           <MJCard
             title="Mandataire judiciaire à la protection des majeurs"
             icon={<Gavel />}
@@ -188,10 +188,14 @@ export default function BentoLayout({
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <CollabCard
-              title="Trio de choc avec Blaise et Marie"
+              title="Un trio de choc avec Blaise & Marie"
               onClick={() => setIsBlaiseMarieOpen(true)}
             >
-              <img src="/images/BM/ouch.png" alt="Blaise et Marie" />
+              <img
+                src="/images/BM/ouch.png"
+                alt="Blaise et Marie"
+                className="h-10 rounded-lg mb-4"
+              />
             </CollabCard>
 
             <div
@@ -200,7 +204,7 @@ export default function BentoLayout({
             >
               <div className="bg-black p-[2px] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
                 <div className="bg-white rounded-[calc(var(--radius)-1px)] p-4 flex flex-col items-center justify-center text-center h-full">
-                  <div className="w-10 h-10 rounded-full bg-violet-100 border-2 border-violet-200 overflow-hidden mb-4 mx-auto">
+                  <div className="w-16 h-16 rounded-full overflow-hidden mb-4 mx-auto">
                     <img
                       src="/images/SPLogo.png"
                       alt="Santé Partners Logo"
