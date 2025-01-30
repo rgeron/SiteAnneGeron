@@ -87,10 +87,7 @@ export default function BentoLayout({
         {/* Top Left: Logo and Quotes */}
         <div className="md:col-span-7 space-y-10 flex flex-col items-center text-center p-10 mt-8">
           <div className="w-full ">
-            <h1
-              className="text-7xl font-normal tracking-wide"
-              style={{ fontFamily: "Tan Nimbus" }}
-            >
+            <h1 className="text-7xl tracking-wide" style={{ fontFamily: "TN" }}>
               ANNE GÉRON
             </h1>
           </div>
