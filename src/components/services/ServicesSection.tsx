@@ -1,6 +1,6 @@
 import { Gavel, GraduationCap, Presentation } from "lucide-react";
 import { useState } from "react";
-import BlaiseMarieDialog from "./BlaiseMarieDialog";
+import BlaiseMarieModal from "./BlaiseMarieModal";
 import CollabCard from "./CollabCard";
 import ConferenceDialog from "./ConferenceDialog";
 import FormationDialog from "./FormationDialog";
@@ -11,6 +11,7 @@ import ServiceCard from "./ServiceCard";
 
 export default function ServicesSection() {
   const [isSantePartnersOpen, setIsSantePartnersOpen] = useState(false);
+  const [isBlaiseMarieOpen, setIsBlaiseMarieOpen] = useState(false);
   const services = [
     {
       title: "Formations",
@@ -29,83 +30,90 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="bg-white">
-      <div className="container mx-auto px-10">
-        <div className="flex flex-col md:flex-row h-full gap-10">
-          {/* Left side - Formation and Conferences */}
-          <div className="md:w-[70%]">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-              {services.map((service) => (
-                <ServiceCard
-                  key={service.title}
-                  title={service.title}
-                  icon={service.icon}
-                  dialogContent={service.dialogContent}
-                  className="h-full"
-                  description={service.description}
-                />
-              ))}
+    <>
+      <section className="bg-white">
+        <div className="container mx-auto px-10">
+          <div className="flex flex-col md:flex-row h-full gap-10">
+            {/* Left side - Formation and Conferences */}
+            <div className="md:w-[70%]">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                {services.map((service) => (
+                  <ServiceCard
+                    key={service.title}
+                    title={service.title}
+                    icon={service.icon}
+                    dialogContent={service.dialogContent}
+                    className="h-full"
+                    description={service.description}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
 
-          {/* Right side - Mandataire judiciaire */}
-          <div className="md:w-[35%] space-y-10">
-            <MJCard
-              title="Mandataire judiciaire à la protection des majeurs"
-              icon={<Gavel className="" />}
-              dialogContent={<MJDialog />}
-            />
-            <div className="grid grid-cols-2 gap-10">
-              <CollabCard
-                title="Équipe avec Blaise & Marie"
-                dialogContent={<BlaiseMarieDialog />}
-              >
-                <div className="flex -space-x-2 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-violet-100 border-2 border-violet-200 overflow-hidden">
-                    <img
-                      src="https://api.dicebear.com/7.x/avataaars/svg?seed=Blaise"
-                      alt="Blaise"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="w-10 h-10 rounded-full bg-violet-100 border-2 border-violet-200 overflow-hidden">
-                    <img
-                      src="https://api.dicebear.com/7.x/avataaars/svg?seed=Marie"
-                      alt="Marie"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-              </CollabCard>
-
-              <div
-                onClick={() => setIsSantePartnersOpen(true)}
-                className="relative group cursor-pointer"
-              >
-                <div className="bg-black p-[2px] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                  <div className="bg-white rounded-[calc(var(--radius)-1px)] p-4 flex flex-col items-center justify-center text-center h-full">
-                    <div className="w-10 h-10 rounded-full bg-violet-100 border-2 border-violet-200 overflow-hidden mb-4 mx-auto">
+            {/* Right side - Mandataire judiciaire */}
+            <div className="md:w-[35%] space-y-10">
+              <MJCard
+                title="Mandataire judiciaire à la protection des majeurs"
+                icon={<Gavel className="" />}
+                dialogContent={<MJDialog />}
+              />
+              <div className="grid grid-cols-2 gap-10">
+                <CollabCard
+                  title="Équipe avec Blaise & Marie"
+                  onClick={() => setIsBlaiseMarieOpen(true)}
+                >
+                  <div className="flex -space-x-2 mb-4">
+                    <div className="w-10 h-10 rounded-full bg-violet-100 border-2 border-violet-200 overflow-hidden">
                       <img
-                        src="/images/SPLogo.png"
-                        alt="Santé Partners Logo"
-                        className="w-full h-full"
+                        src="https://api.dicebear.com/7.x/avataaars/svg?seed=Blaise"
+                        alt="Blaise"
+                        className="w-full h-full object-cover"
                       />
                     </div>
-                    <h3 className="text-2xl font-semibold mb-4 text-black">
-                      Santé Partners
-                    </h3>
+                    <div className="w-10 h-10 rounded-full bg-violet-100 border-2 border-violet-200 overflow-hidden">
+                      <img
+                        src="https://api.dicebear.com/7.x/avataaars/svg?seed=Marie"
+                        alt="Marie"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                </CollabCard>
+
+                <div
+                  onClick={() => setIsSantePartnersOpen(true)}
+                  className="relative group cursor-pointer"
+                >
+                  <div className="bg-black p-[2px] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div className="bg-white rounded-[calc(var(--radius)-1px)] p-4 flex flex-col items-center justify-center text-center h-full">
+                      <div className="w-10 h-10 rounded-full bg-violet-100 border-2 border-violet-200 overflow-hidden mb-4 mx-auto">
+                        <img
+                          src="/images/SPLogo.png"
+                          alt="Santé Partners Logo"
+                          className="w-full h-full"
+                        />
+                      </div>
+                      <h3 className="text-2xl font-semibold mb-4 text-black">
+                        Santé Partners
+                      </h3>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-
-            <SantePartnersModal
-              isOpen={isSantePartnersOpen}
-              onClose={() => setIsSantePartnersOpen(false)}
-            />
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <BlaiseMarieModal
+        isOpen={isBlaiseMarieOpen}
+        onClose={() => setIsBlaiseMarieOpen(false)}
+      />
+
+      <SantePartnersModal
+        isOpen={isSantePartnersOpen}
+        onClose={() => setIsSantePartnersOpen(false)}
+      />
+    </>
   );
 }
