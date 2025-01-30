@@ -68,7 +68,7 @@ function ConferenceThemeDialog({
 
           {/* Right Column - Contact Form */}
           <div className="flex-1">
-            <ContactForm showWorkshopOption={true} />
+            <ContactForm />
           </div>
         </div>
       </ScrollArea>

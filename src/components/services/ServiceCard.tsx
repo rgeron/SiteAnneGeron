@@ -42,7 +42,7 @@ export default function ServiceCard({
               {icon && <div className="mb-4 text-4xl text-black">{icon}</div>}
               <h3 className="text-2xl font-semibold mb-4">{title}</h3>
               {description && (
-                <p className="text-lg leading-relaxed whitespace-pre-line text-gray-600">
+                <p className="text-base leading-relaxed whitespace-pre-line text-gray-600">
                   {description}
                 </p>
               )}
