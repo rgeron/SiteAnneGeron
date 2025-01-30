@@ -1,18 +1,18 @@
 interface CollabCardProps {
   title: string;
   description?: string;
-  onClick?: () => void;
+
   children?: React.ReactNode;
 }
 
 export default function CollabCard({
   title,
   description,
-  onClick,
+
   children,
 }: CollabCardProps) {
   return (
-    <div className="relative group cursor-pointer" onClick={onClick}>
+    <div className="relative group cursor-pointer">
       {/* Gradient border container */}
       <div className="bg-black p-[2px] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
         {/* White background content */}

@@ -58,27 +58,26 @@ export default function ServicesSection() {
                 dialogContent={<MJDialog />}
               />
               <div className="grid grid-cols-2 gap-10">
-                <CollabCard
-                  title="Équipe avec Blaise & Marie"
-                  onClick={() => setIsBlaiseMarieOpen(true)}
-                >
-                  <div className="flex -space-x-2 mb-4">
-                    <div className="w-10 h-10 rounded-full bg-violet-100 border-2 border-violet-200 overflow-hidden">
-                      <img
-                        src="https://api.dicebear.com/7.x/avataaars/svg?seed=Blaise"
-                        alt="Blaise"
-                        className="w-full h-full object-cover"
-                      />
+                <div onClick={() => setIsBlaiseMarieOpen(true)}>
+                  <CollabCard title="Équipe avec Blaise & Marie">
+                    <div className="flex -space-x-2 mb-4">
+                      <div className="w-10 h-10 rounded-full bg-violet-100 border-2 border-violet-200 overflow-hidden">
+                        <img
+                          src="https://api.dicebear.com/7.x/avataaars/svg?seed=Blaise"
+                          alt="Blaise"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="w-10 h-10 rounded-full bg-violet-100 border-2 border-violet-200 overflow-hidden">
+                        <img
+                          src="https://api.dicebear.com/7.x/avataaars/svg?seed=Marie"
+                          alt="Marie"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
                     </div>
-                    <div className="w-10 h-10 rounded-full bg-violet-100 border-2 border-violet-200 overflow-hidden">
-                      <img
-                        src="https://api.dicebear.com/7.x/avataaars/svg?seed=Marie"
-                        alt="Marie"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </div>
-                </CollabCard>
+                  </CollabCard>
+                </div>
 
                 <div
                   onClick={() => setIsSantePartnersOpen(true)}
