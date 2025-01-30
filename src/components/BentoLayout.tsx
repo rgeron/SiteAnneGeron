@@ -82,14 +82,14 @@ export default function BentoLayout({
   ];
 
   return (
-    <div className="container mx-auto px-24 py-14">
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 ">
+    <div className="container mx-auto px-24 py-14 bg-red-400">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 bg-blue-500 ">
         {/* Top Left: Logo and Quotes */}
-        <div className="md:col-span-7 space-y-10">
-          <div className="w-full">
+        <div className="md:col-span-7 space-y-10 flex flex-col items-center text-center bg-orange-600 p-10">
+          <div className="w-full bg-violet-600">
             <img src="/images/logo.jpg" alt="Logo" className="w-5/6 h-auto" />
           </div>
-          <div className="w-4/5 flex justify-center overflow-hidden">
+          <div className="w-4/5 flex justify-center overflow-hidden bg-pink-600">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentQuoteIndex}
@@ -99,7 +99,7 @@ export default function BentoLayout({
                 transition={{ duration: 1 }}
                 className="text-center"
               >
-                <p className="text-2xl md:text-3xl font-medium italic text-gray-700">
+                <p className="text-3xl md:text-2xl font-medium italic text-black">
                   "{quotes[currentQuoteIndex].text}"
                 </p>
               </motion.div>
@@ -108,8 +108,8 @@ export default function BentoLayout({
         </div>
 
         {/* Top Right: Photo and Bio */}
-        <div className="md:col-span-5">
-          <div className="relative w-3/4 bg-white overflow-hidden rounded-lg border-2 border-black">
+        <div className="md:col-span-5 flex justify-center bg-green-400">
+          <div className="relative w-4/5 bg-white overflow-hidden rounded-lg border-2 border-black">
             <motion.img
               src="/images/photo1.jpg"
               alt="Anne Géron"
@@ -180,7 +180,7 @@ export default function BentoLayout({
         </div>
 
         {/* Bottom Right: MJCard, Collab and Sante Partner Cards */}
-        <div className="md:col-span-5 space-y-6">
+        <div className="md:col-span-5 space-y-6 bg-green-500">
           <MJCard
             title="Mandataire judiciaire à la protection des majeurs"
             icon={<Gavel />}
