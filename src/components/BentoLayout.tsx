@@ -82,7 +82,7 @@ export default function BentoLayout({
   ];
 
   return (
-    <div className="container mx-auto px-24 py-10">
+    <div className="container mx-auto px-24 py-14">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6 ">
         {/* Top Left: Logo and Quotes */}
         <div className="md:col-span-7 space-y-10">
