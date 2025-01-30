@@ -20,7 +20,7 @@ export default function CollabCard({
         {/* White background content */}
         <div className="bg-white rounded-[calc(var(--radius)-1px)] p-4 flex flex-col items-center justify-center text-center h-full">
           {children}
-          <h3 className="text-xl font-semibold mb-4 text-black">{title}</h3>
+          <h3 className="text-xl font-bold mb-4 text-black">{title}</h3>
           {description && (
             <p className="text-sm text-gray-600">{description}</p>
           )}

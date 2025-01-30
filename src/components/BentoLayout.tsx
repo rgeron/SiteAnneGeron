@@ -109,7 +109,7 @@ export default function BentoLayout({
 
         {/* Top Right: Photo and Bio */}
         <div className="md:col-span-5 flex justify-center ">
-          <div className="relative w-4/5 bg-white overflow-hidden rounded-lg border-2 border-black">
+          <div className="relative w-5/6 bg-white overflow-hidden rounded-lg border-2 border-black">
             <motion.img
               src="/images/photo1.jpg"
               alt="Anne Géron"
@@ -180,7 +180,7 @@ export default function BentoLayout({
         </div>
 
         {/* Bottom Right: MJCard, Collab and Sante Partner Cards */}
-        <div className="md:col-span-5 space-y-6 flex flex-col items-center justify-center">
+        <div className="md:col-span-5 space-y-6 flex flex-col items-center justify-items-center">
           <MJCard
             title="Mandataire judiciaire à la protection des majeurs"
             icon={<Gavel />}
