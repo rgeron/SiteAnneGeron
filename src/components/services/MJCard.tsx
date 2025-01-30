@@ -4,16 +4,17 @@ import MJModal from "./MJModal";
 interface MJCardProps {
   title: string;
   icon?: React.ReactNode;
+  onClick?: () => void; // Add onClick prop
 }
 
-export default function MJCard({ title, icon }: MJCardProps) {
+export default function MJCard({ title, icon, onClick }: MJCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <>
       <div
         className="relative group cursor-pointer"
-        onClick={() => setIsModalOpen(true)}
+        onClick={onClick} // Add onClick handler
       >
         {/* Gradient border container */}
         <div className="bg-black p-[2px] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">

@@ -5,7 +5,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import ContactForm from "../services/ContactForm";
+import ContactForm from "./ContactForm";
 
 export default function Footer() {
   const carouselImages = [

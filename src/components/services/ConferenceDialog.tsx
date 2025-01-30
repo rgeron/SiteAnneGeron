@@ -14,7 +14,7 @@ import {
   Star,
   Users,
 } from "lucide-react";
-import ContactForm from "./ContactForm";
+import ContactForm from "../contact/ContactForm";
 
 interface ConferenceThemeDialogProps {
   title: string;

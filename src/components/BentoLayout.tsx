@@ -14,7 +14,6 @@ import ServiceCard from "./services/ServiceCard";
 interface BentoLayoutProps {
   quotes?: {
     text: string;
-    author: string;
   }[];
 }
 
@@ -54,6 +53,8 @@ export default function BentoLayout({
   const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
   const [showBio, setShowBio] = useState(false);
   const [isSantePartnersOpen, setIsSantePartnersOpen] = useState(false);
+  const [isBlaiseMarieOpen, setIsBlaiseMarieOpen] = useState(false); // Add state for BlaiseMarieModal
+  const [isMJModalOpen, setIsMJModalOpen] = useState(false); // Add state for MJModal
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -183,12 +184,12 @@ export default function BentoLayout({
           <MJCard
             title="Mandataire judiciaire à la protection des majeurs"
             icon={<Gavel />}
-            dialogContent={<MJModal />}
+            onClick={() => setIsMJModalOpen(true)} // Trigger modal on click
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <CollabCard
               title="Équipe avec Blaise & Marie"
-              dialogContent={<BlaiseMarieModal />}
+              onClick={() => setIsBlaiseMarieOpen(true)} // Trigger modal on click
             >
               <div className="flex -space-x-2 mb-4">
                 <div className="w-10 h-10 rounded-full bg-violet-100 border-2 border-violet-200 overflow-hidden">
@@ -234,6 +235,14 @@ export default function BentoLayout({
       <SantePartnersModal
         isOpen={isSantePartnersOpen}
         onClose={() => setIsSantePartnersOpen(false)}
+      />
+      <BlaiseMarieModal
+        isOpen={isBlaiseMarieOpen}
+        onClose={() => setIsBlaiseMarieOpen(false)}
+      />
+      <MJModal
+        isOpen={isMJModalOpen}
+        onClose={() => setIsMJModalOpen(false)}
       />
     </div>
   );

@@ -1,21 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import ContactForm from "./ContactForm";
 import { motion } from "framer-motion";
-import {
-  BookOpen,
-  Brain,
-  Calendar,
-  FileText,
-  Heart,
-  Presentation,
-  Puzzle,
-  ScrollText,
-  Sparkles,
-  Star,
-  Users,
-} from "lucide-react";
+import { BookOpen, ScrollText } from "lucide-react";
+import ContactForm from "../contact/ContactForm";
 
 interface ThemeDialogProps {
   title: string;
