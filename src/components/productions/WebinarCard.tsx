@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Play, X } from "lucide-react";
 import { useState } from "react";
 
@@ -18,7 +18,7 @@ export default function WebinarCard({
 
   return (
     <>
-      <Card className="w-[280px] flex-shrink-0 hover:shadow-lg transition-shadow bg-gradient-to-br from-violet-50 to-blue-50 border-red-200 hover:border-red-300 group">
+      <Card className="w-[280px] flex-shrink-0 hover:shadow-lg transition-shadow border-red-200 hover:border-red-300 group">
         <CardContent className="p-3">
           {image && (
             <div
