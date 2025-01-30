@@ -31,7 +31,10 @@ export default function PartnersSection() {
   return (
     <section className="py-16 overflow-hidden">
       <div className="container mx-auto px-4 mb-8">
-        <h2 className="text-4xl font-semibold text-center mb-12">
+        <h2
+          className="text-4xl text-center mb-12"
+          style={{ fontFamily: "Agrandir" }}
+        >
           Nous avons eu des projets ensemble
         </h2>
       </div>

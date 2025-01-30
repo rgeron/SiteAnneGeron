@@ -145,7 +145,7 @@ export default function ProductionsSection() {
       <div className="container mx-auto px-4">
         <div className="space-y-12">
           <div>
-            <h3 className="text-2xl font-semibold mb-6">
+            <h3 className="text-2xl mb-6" style={{ fontFamily: "Agrandir" }}>
               Découvrez mes réalisations clients
             </h3>
             <ScrollArea>
@@ -159,7 +159,7 @@ export default function ProductionsSection() {
           </div>
 
           <div>
-            <h3 className="text-2xl font-semibold mb-6">
+            <h3 className="text-2xl mb-6" style={{ fontFamily: "Agrandir" }}>
               Extraits vidéo d'une conférence
             </h3>
             <ScrollArea className="w-full">
@@ -178,7 +178,9 @@ export default function ProductionsSection() {
           </div>
 
           <div>
-            <h3 className="text-2xl font-semibold mb-6">Webinars</h3>
+            <h3 className="text-2xl mb-6" style={{ fontFamily: "Agrandir" }}>
+              Webinars
+            </h3>
             <ScrollArea>
               <div className="flex space-x-4 pb-4">
                 {webinars.map((webinar) => (
@@ -190,7 +192,9 @@ export default function ProductionsSection() {
           </div>
 
           <div>
-            <h3 className="text-2xl font-semibold mb-6">Podcasts</h3>
+            <h3 className="text-2xl mb-6" style={{ fontFamily: "Agrandir" }}>
+              Podcasts
+            </h3>
             <ScrollArea>
               <div className="flex space-x-4 pb-4">
                 {podcasts.map((podcast) => (
