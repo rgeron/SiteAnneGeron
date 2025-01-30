@@ -188,10 +188,11 @@ export default function BentoLayout({
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <CollabCard
-              title="Blaise & Marie"
-              onClick={() => setIsBlaiseMarieOpen(true)} // Trigger modal on click
-              className="h-full"
-            ></CollabCard>
+              title="Trio de choc avec Blaise et Marie"
+              onClick={() => setIsBlaiseMarieOpen(true)}
+            >
+              <img src="/images/BM/ouch.png" alt="Blaise et Marie" />
+            </CollabCard>
 
             <div
               onClick={() => setIsSantePartnersOpen(true)}
