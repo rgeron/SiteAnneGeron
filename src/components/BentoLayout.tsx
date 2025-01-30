@@ -1,13 +1,13 @@
 import { Button } from "@/components/ui/button";
-import { motion, AnimatePresence } from "framer-motion";
-import { GraduationCap, Gavel, Presentation, X } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Gavel, GraduationCap, Presentation, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import BlaiseMarieDialog from "./services/BlaiseMarieDialog";
+import BlaiseMarieModal from "./services/BlaiseMarieModal";
 import CollabCard from "./services/CollabCard";
 import ConferenceDialog from "./services/ConferenceDialog";
 import FormationDialog from "./services/FormationDialog";
 import MJCard from "./services/MJCard";
-import MJDialog from "./services/MJDialog";
+import MJModal from "./services/MJModal";
 import SantePartnersModal from "./services/SantePartnersModal";
 import ServiceCard from "./services/ServiceCard";
 
@@ -183,12 +183,12 @@ export default function BentoLayout({
           <MJCard
             title="Mandataire judiciaire à la protection des majeurs"
             icon={<Gavel />}
-            dialogContent={<MJDialog />}
+            dialogContent={<MJModal />}
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <CollabCard
               title="Équipe avec Blaise & Marie"
-              dialogContent={<BlaiseMarieDialog />}
+              dialogContent={<BlaiseMarieModal />}
             >
               <div className="flex -space-x-2 mb-4">
                 <div className="w-10 h-10 rounded-full bg-violet-100 border-2 border-violet-200 overflow-hidden">

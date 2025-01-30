@@ -1,10 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { DialogContent } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea"; // Remove if you no longer need Textarea
+import { ScrollArea } from "@/components/ui/scroll-area";
 
-export default function MJDialog() {
+export default function MJModal() {
   return (
     <DialogContent className="max-w-4xl max-h-[90vh] p-0 overflow-hidden">
       <ScrollArea className="h-full max-h-[90vh]">
@@ -17,19 +16,19 @@ export default function MJDialog() {
 
             <div className="prose prose-slate">
               <p className="text-lg mb-4">
-                Métier méconnu d’utilité publique d’auxiliaire de justice
-                au service des vulnérables dans la gestion de leurs affaires
+                Métier méconnu d’utilité publique d’auxiliaire de justice au
+                service des vulnérables dans la gestion de leurs affaires
                 personnelles, administratives ou patrimoniales.
               </p>
               <p className="text-lg mb-4">
-                Diplômée du Certification Nationale de Compétence en qualité
-                de Mandataire Judiciaire à la Protection des Majeurs.
+                Diplômée du Certification Nationale de Compétence en qualité de
+                Mandataire Judiciaire à la Protection des Majeurs.
               </p>
               <p className="text-lg">
                 La vulnérabilité est au cœur de notre humanité. Devenir
-                mandataire pour majeurs protégés, c’est soutenir,
-                accompagner ou représenter les personnes incapables ou
-                invalides, de manière temporaire ou permanente.
+                mandataire pour majeurs protégés, c’est soutenir, accompagner ou
+                représenter les personnes incapables ou invalides, de manière
+                temporaire ou permanente.
               </p>
             </div>
           </div>

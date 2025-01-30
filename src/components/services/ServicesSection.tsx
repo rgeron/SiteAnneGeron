@@ -5,7 +5,7 @@ import CollabCard from "./CollabCard";
 import ConferenceDialog from "./ConferenceDialog";
 import FormationDialog from "./FormationDialog";
 import MJCard from "./MJCard";
-import MJDialog from "./MJDialog";
+import MJDialog from "./MJModal";
 import SantePartnersModal from "./SantePartnersModal";
 import ServiceCard from "./ServiceCard";
 
