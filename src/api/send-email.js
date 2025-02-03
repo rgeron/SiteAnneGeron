@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { name, email, message } = req.body;
+    const { name, phone, message } = req.body;
 
     // Configuration de Nodemailer pour Gmail
     const transporter = nodemailer.createTransport({
@@ -14,10 +14,10 @@ export default async function handler(req, res) {
     });
 
     const mailOptions = {
-      from: email,
+      from: process.env.GMAIL_USER,
       to: process.env.GMAIL_USER, // Votre adresse Gmail
       subject: `Nouveau message de ${name}`,
-      text: message,
+      text: `Téléphone: ${phone}\n\n${message}`,
     };
 
     try {

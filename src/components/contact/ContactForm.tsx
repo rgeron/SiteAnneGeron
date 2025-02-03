@@ -6,8 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 export default function ContactForm() {
   // États pour les champs du formulaire
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
+  const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
 
   // États pour la gestion des messages de succès/erreur
@@ -19,7 +18,7 @@ export default function ContactForm() {
     e.preventDefault();
 
     // Vérification des champs obligatoires
-    if (!name || !email || !subject || !message) {
+    if (!name || !phone || !message) {
       setStatus("error");
       setStatusMessage("Veuillez remplir tous les champs.");
       return;
@@ -36,7 +35,7 @@ export default function ContactForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name, email, subject, message }),
+        body: JSON.stringify({ name, phone, message }),
       });
 
       if (response.ok) {
@@ -45,8 +44,7 @@ export default function ContactForm() {
         setStatusMessage("Message envoyé avec succès !");
         // Réinitialiser les champs du formulaire
         setName("");
-        setEmail("");
-        setSubject("");
+        setPhone("");
         setMessage("");
       } else {
         // Erreur côté serveur
@@ -65,7 +63,7 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-2">
           <label htmlFor="name" className="text-sm font-medium">
-            Nom
+            Nom et prénom
           </label>
           <Input
             id="name"
@@ -76,30 +74,17 @@ export default function ContactForm() {
           />
         </div>
         <div className="space-y-2">
-          <label htmlFor="email" className="text-sm font-medium">
-            Email
+          <label htmlFor="phone" className="text-sm font-medium">
+            Numéro de téléphone
           </label>
           <Input
-            id="email"
-            type="email"
-            placeholder="votre@email.com"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            id="phone"
+            placeholder="Votre numéro de téléphone"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
             required
           />
         </div>
-      </div>
-      <div className="space-y-2">
-        <label htmlFor="subject" className="text-sm font-medium">
-          Sujet
-        </label>
-        <Input
-          id="subject"
-          placeholder="Sujet de votre message"
-          value={subject}
-          onChange={(e) => setSubject(e.target.value)}
-          required
-        />
       </div>
       <div className="space-y-2">
         <label htmlFor="message" className="text-sm font-medium">
