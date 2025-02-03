@@ -1,4 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
+import { Loader2 } from "lucide-react";
 
 interface BlaiseMarieModalProps {
   isOpen: boolean;
@@ -9,6 +11,15 @@ export default function BlaiseMarieModal({
   isOpen,
   onClose,
 }: BlaiseMarieModalProps) {
+  const [imagesLoaded, setImagesLoaded] = useState([false, false]);
+
+  const handleImageLoad = (index: number) => {
+    setImagesLoaded((prev) => {
+      const newState = [...prev];
+      newState[index] = true;
+      return newState;
+    });
+  };
   return (
     <AnimatePresence>
       {isOpen && (
@@ -30,18 +41,32 @@ export default function BlaiseMarieModal({
             className="relative max-w-6xl overflow-hidden shadow-sm"
           >
             <div className="h-[90vh] flex flex-col md:flex-row gap-4 p-4">
-              <div className="flex-1">
+              <div className="flex-1 relative">
+                {!imagesLoaded[0] && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-gray-100 rounded-lg">
+                    <Loader2 className="w-8 h-8 animate-spin" />
+                  </div>
+                )}
                 <img
                   src="/images/blaise&marie/page1.png"
                   alt="Blaise & Marie Page 1"
-                  className="w-full h-full object-contain rounded-lg shadow-xl"
+                  className={`w-full h-full object-contain rounded-lg shadow-xl transition-opacity duration-300 ${imagesLoaded[0] ? "opacity-100" : "opacity-0"}`}
+                  onLoad={() => handleImageLoad(0)}
+                  loading="eager"
                 />
               </div>
-              <div className="flex-1">
+              <div className="flex-1 relative">
+                {!imagesLoaded[1] && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-gray-100 rounded-lg">
+                    <Loader2 className="w-8 h-8 animate-spin" />
+                  </div>
+                )}
                 <img
                   src="/images/blaise&marie/page2.png"
                   alt="Blaise & Marie Page 2"
-                  className="w-full h-full object-contain rounded-lg shadow-xl"
+                  className={`w-full h-full object-contain rounded-lg shadow-xl transition-opacity duration-300 ${imagesLoaded[1] ? "opacity-100" : "opacity-0"}`}
+                  onLoad={() => handleImageLoad(1)}
+                  loading="eager"
                 />
               </div>
             </div>

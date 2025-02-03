@@ -6,6 +6,8 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
+import { Loader2 } from "lucide-react";
 
 interface SantePartnersModalProps {
   isOpen: boolean;
@@ -16,6 +18,11 @@ export default function SantePartnersModal({
   isOpen,
   onClose,
 }: SantePartnersModalProps) {
+  const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({});
+
+  const handleImageLoad = (num: number) => {
+    setLoadedImages((prev) => ({ ...prev, [num]: true }));
+  };
   return (
     <AnimatePresence>
       {isOpen && (
@@ -41,11 +48,18 @@ export default function SantePartnersModal({
                 <CarouselContent className="-ml-1">
                   {[1, 2, 3, 4, 5, 6].map((num) => (
                     <CarouselItem key={num} className="pl-1 basis-1/2">
-                      <div className="flex items-center justify-center h-full">
+                      <div className="flex items-center justify-center h-full relative">
+                        {!loadedImages[num] && (
+                          <div className="absolute inset-0 flex items-center justify-center bg-gray-100 rounded-lg">
+                            <Loader2 className="w-8 h-8 animate-spin" />
+                          </div>
+                        )}
                         <img
                           src={`/images/SP/SP${num}.png`}
                           alt={`Slide ${num}`}
-                          className="max-w-full max-h-[85vh] object-contain"
+                          className={`max-w-full max-h-[85vh] object-contain transition-opacity duration-300 ${loadedImages[num] ? "opacity-100" : "opacity-0"}`}
+                          onLoad={() => handleImageLoad(num)}
+                          loading="eager"
                         />
                       </div>
                     </CarouselItem>
