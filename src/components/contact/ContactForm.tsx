@@ -10,7 +10,9 @@ export default function ContactForm() {
   const [message, setMessage] = useState("");
 
   // États pour la gestion des messages de succès/erreur
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
   const [statusMessage, setStatusMessage] = useState("");
 
   // Fonction pour gérer la soumission du formulaire
@@ -54,7 +56,9 @@ export default function ContactForm() {
     } catch (error) {
       // Erreur réseau ou autre
       setStatus("error");
-      setStatusMessage("Une erreur est survenue. Veuillez réessayer plus tard.");
+      setStatusMessage(
+        "Une erreur est survenue. Veuillez réessayer plus tard.",
+      );
     }
   };
 
