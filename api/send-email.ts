@@ -13,7 +13,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       service: "gmail",
       auth: {
         user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_APP_PASSWORD, // Using app password instead of regular password
+        pass: process.env.GMAIL_PASSWORD, // Updated from GMAIL_APP_PASSWORD
       },
     });
 
