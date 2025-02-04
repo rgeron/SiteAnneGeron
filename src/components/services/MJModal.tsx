@@ -17,7 +17,7 @@ export default function MJModal({ isOpen, onClose }: MJModalProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-50 flex items-center justify-center"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
           onClick={(e) => {
             if (e.target === e.currentTarget) onClose();
           }}
@@ -36,7 +36,7 @@ export default function MJModal({ isOpen, onClose }: MJModalProps) {
               <X className="w-6 h-6" />
             </button>
 
-            <ScrollArea className="h-[60vh]">
+            <ScrollArea className="h-[65vh]">
               <div className="flex flex-col md:flex-row gap-8 p-6">
                 {/* Left Column - Information */}
                 <div className="flex-1">

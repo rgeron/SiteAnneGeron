@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import {
   BookOpen,
   Brain,
-  Calendar,
   FileText,
   Heart,
   Presentation,
@@ -29,8 +28,6 @@ function getIconForTheme(title: string) {
       return <Heart className="h-5 w-5" />;
     case "Cycle des aidants":
       return <Users className="h-5 w-5" />;
-    case "Halloween & la Toussaint":
-      return <Calendar className="h-5 w-5" />;
     case "Je décide et je protège les miens":
       return <FileText className="h-5 w-5" />;
     case "La perte d'autonomie":
@@ -88,10 +85,6 @@ const conferences = [
   {
     title: "Cycle des aidants",
     description: "Description for Cycle des aidants",
-  },
-  {
-    title: "Halloween & la Toussaint",
-    description: "Description for Halloween & la Toussaint",
   },
   {
     title: "Je décide et je protège les miens",
