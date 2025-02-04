@@ -21,6 +21,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>
             <ContactForm />
+            {/* Updated container styling to center the image */}
+            <div className="mt-28 flex justify-center">
+              <img
+                src="/images/logo.jpg"
+                alt="AB Logo"
+                className="w-auto h-36"
+              />
+            </div>
           </div>
 
           <div className="space-y-8">
