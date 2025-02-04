@@ -40,8 +40,8 @@ export default function BlaiseMarieModal({
             transition={{ duration: 0.2 }}
             className="relative max-w-6xl overflow-hidden shadow-sm"
           >
-            <div className="h-[90vh] flex flex-col md:flex-row gap-4 p-4">
-              <div className="flex-1 relative">
+            <div className="max-h-screen overflow-y-auto flex flex-col gap-4 p-4">
+              <div className="relative min-h-screen">
                 {!imagesLoaded[0] && (
                   <div className="absolute inset-0 flex items-center justify-center bg-gray-100 rounded-lg">
                     <Loader2 className="w-8 h-8 animate-spin" />
@@ -55,7 +55,7 @@ export default function BlaiseMarieModal({
                   loading="eager"
                 />
               </div>
-              <div className="flex-1 relative">
+              <div className="relative">
                 {!imagesLoaded[1] && (
                   <div className="absolute inset-0 flex items-center justify-center bg-gray-100 rounded-lg">
                     <Loader2 className="w-8 h-8 animate-spin" />
