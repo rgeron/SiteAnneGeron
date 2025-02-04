@@ -122,8 +122,8 @@ const conferences = [
 export default function ConferenceDialog() {
   const [isCustomRequestOpen, setIsCustomRequestOpen] = useState(false);
   return (
-    <div className="p-6 space-y-8 max-h-[80vh] overflow-hidden">
-      <ScrollArea className="h-full pr-4">
+    <div className="p-4 sm:p-6 space-y-8 max-h-[90vh] overflow-hidden">
+      <ScrollArea className="h-full pr-4 max-h-[calc(90vh-2rem)]">
         <div className="text-center mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -158,7 +158,7 @@ export default function ConferenceDialog() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 max-w-5xl mx-auto px-2 sm:px-4">
           {conferences.map((conference) => (
             <Dialog key={conference.title}>
               <DialogTrigger asChild>
@@ -168,13 +168,13 @@ export default function ConferenceDialog() {
                 >
                   <Button
                     variant="outline"
-                    className="w-full px-4 py-8 text-left flex items-center gap-3 hover:bg-gray-50 border-2 border-black transition-colors"
+                    className="w-full h-auto min-h-[5rem] px-3 py-4 sm:px-4 sm:py-8 text-left flex items-center gap-3 hover:bg-gray-50 border-2 border-black transition-colors"
                   >
                     <div className=" rounded-full bg-black/5 text-black group-hover:bg-black/10 transition-colors">
                       {getIconForTheme(conference.title)}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <span className="text-lg font-medium whitespace-normal leading-tight">
+                      <span className="text-base sm:text-lg font-medium whitespace-normal leading-tight">
                         {conference.title}
                       </span>
                     </div>

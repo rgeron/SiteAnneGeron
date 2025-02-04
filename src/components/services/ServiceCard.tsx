@@ -25,7 +25,7 @@ export default function ServiceCard({
         <Card
           className={cn(
             "cursor-pointer hover:shadow-lg transition-shadow bg-white border-2 border-black",
-            className
+            className,
           )}
         >
           <CardContent className="p-5">
@@ -41,7 +41,7 @@ export default function ServiceCard({
           </CardContent>
         </Card>
       </DialogTrigger>
-      <DialogContent className="w-4/5 max-w-[80vw]">
+      <DialogContent className="w-[95vw] sm:w-4/5 max-w-[90vw] h-[90vh] p-0 overflow-hidden">
         {dialogContent}
       </DialogContent>
     </Dialog>
