@@ -135,7 +135,7 @@ export default function ConferenceDialog() {
             transition={{ duration: 0.5 }}
             className="relative inline-block"
           >
-            <h2 className="text-4xl font-bold mb-8 text-black">
+            <h2 className="text-4xl font-bold mb-3 text-black">
               Conférences & Ateliers
             </h2>
             <motion.div

@@ -101,7 +101,7 @@ export default function FormationDialog() {
             transition={{ duration: 0.5 }}
             className="relative inline-block"
           >
-            <h2 className="text-5xl font-bold mb-8 text-black">Formation</h2>
+            <h2 className="text-5xl font-bold mb-3 text-black">Formations</h2>
             <motion.div
               className="absolute -bottom-2 left-0 right-0 h-0.5 bg-black"
               initial={{ scaleX: 0 }}

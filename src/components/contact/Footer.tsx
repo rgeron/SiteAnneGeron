@@ -20,9 +20,6 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>
-            <h2 className="text-2xl mb-6" style={{ fontFamily: "Agrandir" }}>
-              Contactez-moi !
-            </h2>
             <ContactForm />
           </div>
 
