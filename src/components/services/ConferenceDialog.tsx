@@ -1,4 +1,6 @@
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import CustomRequestModal from "./CustomRequestModal";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
@@ -118,6 +120,7 @@ const conferences = [
 ];
 
 export default function ConferenceDialog() {
+  const [isCustomRequestOpen, setIsCustomRequestOpen] = useState(false);
   return (
     <div className="p-6 space-y-8 max-h-[80vh] overflow-hidden">
       <ScrollArea className="h-full pr-4">
@@ -183,10 +186,20 @@ export default function ConferenceDialog() {
           ))}
         </div>
         <div className="text-center mt-8">
-          <Button variant="link" className="text-lg underline">
+          <Button
+            variant="link"
+            className="text-lg underline"
+            onClick={() => setIsCustomRequestOpen(true)}
+          >
             demander un devis pour une conférence personnalisée
           </Button>
         </div>
+
+        <CustomRequestModal
+          isOpen={isCustomRequestOpen}
+          onClose={() => setIsCustomRequestOpen(false)}
+          type="conference"
+        />
       </ScrollArea>
     </div>
   );

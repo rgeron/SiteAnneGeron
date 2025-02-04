@@ -1,4 +1,6 @@
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import CustomRequestModal from "./CustomRequestModal";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
@@ -91,6 +93,7 @@ const themes = [
 ];
 
 export default function FormationDialog() {
+  const [isCustomRequestOpen, setIsCustomRequestOpen] = useState(false);
   return (
     <div className="p-6 space-y-8">
       <ScrollArea className="h-full pr-4">
@@ -138,10 +141,20 @@ export default function FormationDialog() {
         </div>
 
         <div className="text-center mt-8">
-          <Button variant="link" className="text-lg underline">
+          <Button
+            variant="link"
+            className="text-lg underline"
+            onClick={() => setIsCustomRequestOpen(true)}
+          >
             demander un devis pour une formation personnalisée
           </Button>
         </div>
+
+        <CustomRequestModal
+          isOpen={isCustomRequestOpen}
+          onClose={() => setIsCustomRequestOpen(false)}
+          type="formation"
+        />
       </ScrollArea>
     </div>
   );
