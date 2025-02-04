@@ -23,27 +23,27 @@ interface ConferenceThemeDialogProps {
 function getIconForTheme(title: string) {
   switch (title) {
     case "Accepter la mort & le symbolisme des portes":
-      return <BookOpen className="h-5 w-5" />;
+      return <BookOpen className="h-7 w-7" />;
     case "Bien vieillir toujours heureux":
-      return <Heart className="h-5 w-5" />;
+      return <Heart className="h-7 w-7" />;
     case "Cycle des aidants":
-      return <Users className="h-5 w-5" />;
+      return <Users className="h-7 w-7" />;
     case "Je décide et je protège les miens":
-      return <FileText className="h-5 w-5" />;
+      return <FileText className="h-7 w-7" />;
     case "La perte d'autonomie":
-      return <Brain className="h-5 w-5" />;
+      return <Brain className="h-7 w-7" />;
     case "Les bienfaits de l'amour":
-      return <Heart className="h-5 w-5" />;
+      return <Heart className="h-7 w-7" />;
     case "Les dispositions juridiques et réglementaires de la fin de la vie":
-      return <FileText className="h-5 w-5" />;
+      return <FileText className="h-7 w-7" />;
     case "Les liens invisibles qui entravent":
-      return <Puzzle className="h-5 w-5" />;
+      return <Puzzle className="h-7 w-7" />;
     case "Prévenir et soulager les douleurs":
-      return <Star className="h-5 w-5" />;
+      return <Star className="h-7 w-7" />;
     case "Vivre sereinement":
-      return <Sparkles className="h-5 w-5" />;
+      return <Sparkles className="h-7 w-7" />;
     default:
-      return <Presentation className="h-5 w-5" />;
+      return <Presentation className="h-7 w-7" />;
   }
 }
 
@@ -75,7 +75,7 @@ function ConferenceThemeDialog({
 
 const conferences = [
   {
-    title: "Accepter la mort & le symbolisme des portes",
+    title: "Accepter la mort et le symbolisme des portes",
     description: "Description for Accepter la mort & le symbolisme des portes",
   },
   {
@@ -165,13 +165,13 @@ export default function ConferenceDialog() {
                 >
                   <Button
                     variant="outline"
-                    className="w-full p-5 text-left flex items-center gap-3 hover:bg-gray-50 border-2 border-black transition-colors"
+                    className="w-full px-4 py-12 text-left flex items-center gap-3 hover:bg-gray-50 border-2 border-black transition-colors"
                   >
                     <div className=" rounded-full bg-black/5 text-black group-hover:bg-black/10 transition-colors">
                       {getIconForTheme(conference.title)}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <span className="text-lg font-medium whitespace-normal">
+                      <span className="text-lg font-medium whitespace-normal leading-tight">
                         {conference.title}
                       </span>
                     </div>
