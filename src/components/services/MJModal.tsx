@@ -1,7 +1,7 @@
-import ContactForm from "../contact/ContactForm";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
+import ContactForm from "../contact/ContactForm";
 
 interface MJModalProps {
   isOpen: boolean;
@@ -36,10 +36,10 @@ export default function MJModal({ isOpen, onClose }: MJModalProps) {
               <X className="w-6 h-6" />
             </button>
 
-            <ScrollArea className="h-[80vh]">
+            <ScrollArea className="h-[60vh]">
               <div className="flex flex-col md:flex-row gap-8 p-6">
                 {/* Left Column - Information */}
-                <div className="flex-1 space-y-6">
+                <div className="flex-1">
                   <h2 className="text-2xl font-bold mb-6">
                     Mandataire Judiciaire à la Protection des Majeurs
                   </h2>
@@ -65,8 +65,7 @@ export default function MJModal({ isOpen, onClose }: MJModalProps) {
                 </div>
 
                 {/* Right Column - Contact Form */}
-                <div className="flex-1 bg-gradient-to-br from-violet-50 to-blue-50 p-6 rounded-lg border border-violet-100">
-                  <h3 className="text-xl font-semibold mb-6">Me contacter</h3>
+                <div className="flex-1">
                   <ContactForm />
                 </div>
               </div>
