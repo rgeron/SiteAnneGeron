@@ -104,7 +104,9 @@ export default function FormationDialog() {
             transition={{ duration: 0.5 }}
             className="relative inline-block"
           >
-            <h2 className="text-4xl font-bold mb-3 text-black">Formations</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 text-black">
+              Formations
+            </h2>
             <motion.div
               className="absolute -bottom-2 left-0 right-0 h-0.5 bg-black"
               initial={{ scaleX: 0 }}
@@ -114,7 +116,7 @@ export default function FormationDialog() {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 max-w-5xl mx-auto">
           {themes.map((theme) => (
             <Dialog key={theme.title}>
               <DialogTrigger asChild>

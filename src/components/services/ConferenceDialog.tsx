@@ -131,7 +131,7 @@ export default function ConferenceDialog() {
             transition={{ duration: 0.5 }}
             className="relative inline-block"
           >
-            <h2 className="text-4xl font-bold mb-3 text-black">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 text-black">
               Conférences & Ateliers
             </h2>
             <motion.div
@@ -142,23 +142,23 @@ export default function ConferenceDialog() {
             />
           </motion.div>
 
-          <div className="flex justify-center gap-8 mt-8 text-sm text-gray-600">
+          <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 mt-8 text-sm text-gray-600">
             <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-black" />
+              <div className="w-1.5 h-1.5 rounded-full bg-black flex-shrink-0" />
               <span>Conférences de 2h incluant des temps d'échanges</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-black" />
+              <div className="w-1.5 h-1.5 rounded-full bg-black flex-shrink-0" />
               <span>En présentiel et distanciel</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-black" />
+              <div className="w-1.5 h-1.5 rounded-full bg-black flex-shrink-0" />
               <span>À partir de 20 personnes</span>
             </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 max-w-5xl mx-auto">
           {conferences.map((conference) => (
             <Dialog key={conference.title}>
               <DialogTrigger asChild>
