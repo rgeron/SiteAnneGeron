@@ -160,18 +160,18 @@ export default function ConferenceDialog() {
             <Dialog key={conference.title}>
               <DialogTrigger asChild>
                 <motion.div
-                  whileHover={{ scale: 1.02 }}
+                  whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   <Button
                     variant="outline"
-                    className="w-full h-auto py-4 px-4 text-left flex items-center gap-3 hover:bg-gray-50 border-2 border-black transition-colors group"
+                    className="w-full p-5 text-left flex items-center gap-3 hover:bg-gray-50 border-2 border-black transition-colors"
                   >
-                    <div className="flex-shrink-0 rounded-full bg-black/5 text-black group-hover:bg-black/10 transition-colors">
+                    <div className=" rounded-full bg-black/5 text-black group-hover:bg-black/10 transition-colors">
                       {getIconForTheme(conference.title)}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <span className="text-lg font-medium block break-words truncate">
+                      <span className="text-lg font-medium whitespace-normal">
                         {conference.title}
                       </span>
                     </div>
