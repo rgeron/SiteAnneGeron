@@ -38,10 +38,10 @@ export default function BlaiseMarieModal({
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="relative max-w-6xl overflow-hidden shadow-sm"
+            className="relative w-[95vw] max-w-6xl overflow-hidden shadow-sm mx-4"
           >
-            <div className="max-h-screen overflow-y-auto flex flex-col gap-4 p-4">
-              <div className="relative min-h-screen">
+            <div className="max-h-[85vh] overflow-y-auto flex flex-col gap-4 p-4">
+              <div className="relative">
                 {!imagesLoaded[0] && (
                   <div className="absolute inset-0 flex items-center justify-center bg-gray-100 rounded-lg">
                     <Loader2 className="w-8 h-8 animate-spin" />

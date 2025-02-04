@@ -27,7 +27,7 @@ export default function MJModal({ isOpen, onClose }: MJModalProps) {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="relative w-[90vw] max-w-4xl bg-white rounded-lg overflow-hidden shadow-xl"
+            className="relative w-[95vw] max-w-4xl bg-white rounded-lg overflow-hidden shadow-xl mx-4"
           >
             <button
               onClick={onClose}
@@ -36,8 +36,8 @@ export default function MJModal({ isOpen, onClose }: MJModalProps) {
               <X className="w-6 h-6" />
             </button>
 
-            <ScrollArea className="h-[65vh]">
-              <div className="flex flex-col md:flex-row gap-8 p-6">
+            <ScrollArea className="max-h-[85vh]">
+              <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 p-4 lg:p-6">
                 {/* Left Column - Information */}
                 <div className="flex-1">
                   <h2 className="text-2xl font-bold mb-6">

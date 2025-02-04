@@ -15,9 +15,9 @@ interface ThemeDialogProps {
 
 function ThemeDialog({ title, description, icon }: ThemeDialogProps) {
   return (
-    <DialogContent className="max-w-4xl max-h-[60vh] p-0 overflow-hidden">
+    <DialogContent className="w-[95vw] max-w-4xl max-h-[90vh] p-0 overflow-hidden mx-4">
       <ScrollArea className="h-full max-h-[90vh]">
-        <div className="flex flex-col md:flex-row gap-8 p-6">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 p-4 lg:p-6">
           {/* Left Column - Information */}
           <div className="flex-1 space-y-6">
             <div className="flex items-center gap-3 mb-6">

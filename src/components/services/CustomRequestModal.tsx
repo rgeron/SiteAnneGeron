@@ -36,7 +36,7 @@ export default function CustomRequestModal({
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="relative w-[90vw] max-w-2xl bg-white rounded-lg overflow-hidden shadow-xl"
+            className="relative w-[95vw] max-w-2xl bg-white rounded-lg overflow-hidden shadow-xl mx-4"
           >
             <button
               onClick={onClose}
