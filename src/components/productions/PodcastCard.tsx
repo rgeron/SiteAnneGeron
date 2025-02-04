@@ -20,12 +20,7 @@ export default function PodcastCard({
   podcastUrl,
 }: PodcastCardProps) {
   return (
-    <Card className="w-[300px] flex-shrink-0 hover:shadow-lg transition-shadow bg-white border-2 border-black">
-      {image && (
-        <div className="aspect-video relative overflow-hidden">
-          <img src={image} alt={title} className="object-cover w-full h-full" />
-        </div>
-      )}
+    <Card className="hover:shadow-lg transition-shadow bg-white border-2 border-black">
       <CardHeader>
         <CardTitle>{title}</CardTitle>
         {description && <CardDescription>{description}</CardDescription>}

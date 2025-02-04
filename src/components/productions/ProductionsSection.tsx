@@ -120,20 +120,20 @@ export default function ProductionsSection() {
   const podcasts = [
     {
       title: "Empathie, Sympathie, Compassion",
-      src: "/podcasts/Podcast 1 - Empathie Sympathie Compassion.mp4",
+      src: "/podcasts/p1Empathie.mp4",
       startTime: 50,
       endTime: 180, // 3min
     },
     {
       title: "Histoire et réglementation funéraire",
-      src: "/podcasts/Podcast 2 - Histoire et réglementation funéraire.mp4",
+      src: "/podcasts/p2Histoire.mp4",
       startTime: 51,
       endTime: 155, // 2min35s
     },
     {
       title:
         "Les 3 transitions : assurance, épargne, risque projet décès obsèques",
-      src: "/podcasts/Podcast 3 - 3 transitions assurance epargne rique projet deces obséques.mp4",
+      src: "/podcasts/p3Assurance.mp4",
       startTime: 127, // 2min07s
       endTime: 223, // 3min43s
     },
