@@ -22,11 +22,11 @@ export default function Footer() {
           <div>
             <ContactForm />
             {/* Updated container styling to center the image */}
-            <div className="mt-28 flex justify-center">
+            <div className="mt-20 flex justify-center">
               <img
                 src="/images/logo.jpg"
                 alt="AB Logo"
-                className="w-auto h-36"
+                className="w-auto h-28"
               />
             </div>
           </div>

@@ -87,12 +87,8 @@ export default function BentoLayout({
         {/* Top Left: Logo and Quotes */}
         <div className="lg:col-span-7 space-y-4 lg:space-y-10 flex flex-col items-center text-center p-4 lg:p-10">
           <div className="w-full">
-            <h1
-              className="text-4xl sm:text-5xl lg:text-7xl tracking-wide"
-              style={{ fontFamily: "TN" }}
-            >
-              ANNE GÉRON
-            </h1>
+            {/* Changed from h1 to logo image */}
+            <img src="/images/logo.jpg" alt="Logo" className="w-full object-contain" />
           </div>
           <div className="w-full sm:w-4/5 flex justify-center overflow-hidden">
             <AnimatePresence mode="wait">
@@ -134,7 +130,7 @@ export default function BentoLayout({
             </Button>
 
             <motion.div
-              className="absolute inset-0 flex items-start justify-center overflow-y-auto"
+              className="absolute inset-0 flex items-start justify-center overflow-y-auto bg-white"
               initial={{ opacity: 0 }}
               animate={{
                 opacity: showBio ? 1 : 0,

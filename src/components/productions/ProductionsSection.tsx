@@ -192,7 +192,7 @@ export default function ProductionsSection() {
 
           <div>
             <h3 className="text-2xl mb-6" style={{ fontFamily: "Agrandir" }}>
-              Podcasts
+              Extraits de podcasts
             </h3>
             <ScrollArea>
               <div className="flex space-x-4 pb-4">
