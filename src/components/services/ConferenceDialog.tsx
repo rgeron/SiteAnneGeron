@@ -23,27 +23,27 @@ interface ConferenceThemeDialogProps {
 function getIconForTheme(title: string) {
   switch (title) {
     case "Accepter la mort & le symbolisme des portes":
-      return <BookOpen className="h-7 w-7" />;
+      return <BookOpen className="h-7 w-7 bg-white" />;
     case "Bien vieillir toujours heureux":
-      return <Heart className="h-7 w-7" />;
+      return <Heart className="h-7 w-7 bg-white" />;
     case "Cycle des aidants":
-      return <Users className="h-7 w-7" />;
+      return <Users className="h-7 w-7 bg-white" />;
     case "Je décide et je protège les miens":
-      return <FileText className="h-7 w-7" />;
+      return <FileText className="h-7 w-7" bg-white />;
     case "La perte d'autonomie":
-      return <Brain className="h-7 w-7" />;
+      return <Brain className="h-7 w-7 bg-white" />;
     case "Les bienfaits de l'amour":
-      return <Heart className="h-7 w-7" />;
+      return <Heart className="h-7 w-7 bg-white" />;
     case "Les dispositions juridiques et réglementaires de la fin de la vie":
-      return <FileText className="h-7 w-7" />;
+      return <FileText className="h-7 w-7 bg-white" />;
     case "Les liens invisibles qui entravent":
-      return <Puzzle className="h-7 w-7" />;
+      return <Puzzle className="h-7 w-7 bg-white" />;
     case "Prévenir et soulager les douleurs":
-      return <Star className="h-7 w-7" />;
+      return <Star className="h-7 w-7 bg-white" />;
     case "Vivre sereinement":
-      return <Sparkles className="h-7 w-7" />;
+      return <Sparkles className="h-7 w-7 bg-white" />;
     default:
-      return <Presentation className="h-7 w-7" />;
+      return <Presentation className="h-7 w-7 bg-white" />;
   }
 }
 

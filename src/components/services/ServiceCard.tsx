@@ -41,7 +41,7 @@ export default function ServiceCard({
           </CardContent>
         </Card>
       </DialogTrigger>
-      <DialogContent className="w-4/5 h-4/5 max-w-[80vw] max-h-[80vh]">
+      <DialogContent className="w-4/5 max-w-[80vw]">
         {dialogContent}
       </DialogContent>
     </Dialog>
