@@ -53,13 +53,13 @@ export default function BentoLayout({
   const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
   const [showBio, setShowBio] = useState(false);
   const [isSantePartnersOpen, setIsSantePartnersOpen] = useState(false);
-  const [isBlaiseMarieOpen, setIsBlaiseMarieOpen] = useState(false); // Add state for BlaiseMarieModal
-  const [isMJModalOpen, setIsMJModalOpen] = useState(false); // Add state for MJModal
+  const [isBlaiseMarieOpen, setIsBlaiseMarieOpen] = useState(false);
+  const [isMJModalOpen, setIsMJModalOpen] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentQuoteIndex((prev) => (prev + 1) % quotes.length);
-    }, 6000); // Change quote every 6 seconds
+    }, 6000);
 
     return () => clearInterval(interval);
   }, [quotes.length]);
@@ -82,16 +82,19 @@ export default function BentoLayout({
   ];
 
   return (
-    <div className="container mx-auto px-24 py-14 ">
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-6  ">
+    <div className="container mx-auto px-4 sm:px-8 lg:px-24 py-6 lg:py-14">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6">
         {/* Top Left: Logo and Quotes */}
-        <div className="md:col-span-7 space-y-10 flex flex-col items-center text-center p-10 mt-8">
-          <div className="w-full ">
-            <h1 className="text-7xl tracking-wide" style={{ fontFamily: "TN" }}>
+        <div className="lg:col-span-7 space-y-4 lg:space-y-10 flex flex-col items-center text-center p-4 lg:p-10">
+          <div className="w-full">
+            <h1
+              className="text-4xl sm:text-5xl lg:text-7xl tracking-wide"
+              style={{ fontFamily: "TN" }}
+            >
               ANNE GÉRON
             </h1>
           </div>
-          <div className="w-4/5 flex justify-center overflow-hidden ">
+          <div className="w-full sm:w-4/5 flex justify-center overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentQuoteIndex}
@@ -101,7 +104,7 @@ export default function BentoLayout({
                 transition={{ duration: 1 }}
                 className="text-center"
               >
-                <p className="text-3xl md:text-2xl font-medium italic text-black">
+                <p className="text-base sm:text-lg lg:text-2xl font-medium italic text-black">
                   "{quotes[currentQuoteIndex].text}"
                 </p>
               </motion.div>
@@ -110,8 +113,8 @@ export default function BentoLayout({
         </div>
 
         {/* Top Right: Photo and Bio */}
-        <div className="md:col-span-5 flex justify-center ">
-          <div className="relative w-5/6 bg-white overflow-hidden rounded-lg border-2 border-black">
+        <div className="lg:col-span-5 flex justify-center">
+          <div className="relative w-full sm:w-5/6 bg-white overflow-hidden rounded-lg border-2 border-black">
             <motion.img
               src="/images/photo1.jpg"
               alt="Anne Géron"
@@ -131,7 +134,7 @@ export default function BentoLayout({
             </Button>
 
             <motion.div
-              className="bg-white  absolute inset-0 flex items-start justify-center overflow-y-auto"
+              className="absolute inset-0 flex items-start justify-center overflow-y-auto"
               initial={{ opacity: 0 }}
               animate={{
                 opacity: showBio ? 1 : 0,
@@ -139,8 +142,8 @@ export default function BentoLayout({
               }}
               transition={{ duration: 0.3 }}
             >
-              <div className=" max-w-prose bg-white text-black p-6 mb-6">
-                <p className="text-lg font-medium mb-6">
+              <div className="max-w-prose bg-white text-black p-4 lg:p-6 mb-6">
+                <p className="text-sm sm:text-base lg:text-lg font-medium mb-4 lg:mb-6">
                   Gérontologue et thérapeute spécialisée dans le vieillissement,
                   avec une expertise de plus de 20 ans dans l'accompagnement des
                   seniors et des familles. J'ai introduit le métier de funeral
@@ -148,13 +151,13 @@ export default function BentoLayout({
                   ses funérailles avec ou sans contrat financier.
                 </p>
 
-                <p className="text-lg font-medium mb-6">
+                <p className="text-sm sm:text-base lg:text-lg font-medium mb-4 lg:mb-6">
                   Formatrice et conférencière, j'œuvre pour démystifier les
                   enjeux du bien-vieillir et de la fin de vie, en proposant des
                   outils pédagogiques et la création de supports pratiques.
                 </p>
 
-                <p className="leading-relaxed text-lg font-medium mb-6">
+                <p className="text-sm sm:text-base lg:text-lg font-medium mb-4 lg:mb-6">
                   Je suis engagée dans la prévention de la santé et la
                   prévoyance, je collabore avec des mutuelles, des caisses de
                   retraite, et des acteurs sociaux. Récemment certifiée
@@ -169,8 +172,8 @@ export default function BentoLayout({
         </div>
 
         {/* Bottom Left: Service Cards */}
-        <div className="md:col-span-7">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div className="lg:col-span-7">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6 mb-6">
             {services.map((service) => (
               <ServiceCard
                 key={service.title}
@@ -182,13 +185,13 @@ export default function BentoLayout({
         </div>
 
         {/* Bottom Right: MJCard, Collab and Sante Partner Cards */}
-        <div className="md:col-span-5 space-y-6 flex flex-col items-center justify-items-center">
+        <div className="lg:col-span-5 space-y-4 lg:space-y-6 flex flex-col items-center justify-items-center">
           <MJCard
             title="Mandataire judiciaire à la protection des majeurs"
             icon={<Gavel />}
-            onClick={() => setIsMJModalOpen(true)} // Trigger modal on click
+            onClick={() => setIsMJModalOpen(true)}
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6 w-full">
             <CollabCard
               title="Un trio de choc avec Blaise & Marie"
               onClick={() => setIsBlaiseMarieOpen(true)}
@@ -210,10 +213,10 @@ export default function BentoLayout({
                     <img
                       src="/images/SPLogo.png"
                       alt="Santé Partners Logo"
-                      className="w-full h-full"
+                      className="w-full h-full object-contain"
                     />
                   </div>
-                  <h3 className="text-2xl font-semibold mb-4 text-black">
+                  <h3 className="text-xl sm:text-2xl font-semibold mb-4 text-black">
                     Santé Partners
                   </h3>
                 </div>
