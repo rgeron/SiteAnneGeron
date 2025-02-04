@@ -111,10 +111,9 @@ export default function ProductionsSection() {
 
   const webinars = [
     {
-      title: "LILLY 15 min Webinair",
-      videoUrl: "https://example.com/webinar.mp4",
-      image:
-        "https://images.unsplash.com/photo-1591115765373-5207764f72e7?q=80&w=2940&auto=format&fit=crop",
+      title: "Webinar pour Lilly",
+      videoUrl: "/webinars/lilly.mp4",
+      image: "/images/lilly-webinar.webp",
     },
   ];
 
