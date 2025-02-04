@@ -47,7 +47,7 @@ const themes = [
     icon: <ScrollText className="h-5 w-5" />,
   },
   {
-    title: "Ritualisation, inhumation & crémation",
+    title: "Ritualisation, inhumation et crémation",
     description:
       "Découvrez les différentes pratiques de ritualisation, les spécificités de l'inhumation et de la crémation, ainsi que leur signification culturelle et spirituelle dans notre société moderne.",
     icon: <BookOpen className="h-5 w-5" />,
@@ -59,7 +59,7 @@ const themes = [
     icon: <ScrollText className="h-5 w-5" />,
   },
   {
-    title: "Grand âge & dépendance",
+    title: "Grand âge et dépendance",
     description:
       "Comprendre les enjeux du vieillissement et de la dépendance, et comment accompagner au mieux les personnes âgées.",
     icon: <BookOpen className="h-5 w-5" />,
@@ -101,7 +101,7 @@ export default function FormationDialog() {
             transition={{ duration: 0.5 }}
             className="relative inline-block"
           >
-            <h2 className="text-5xl font-bold mb-3 text-black">Formations</h2>
+            <h2 className="text-4xl font-bold mb-3 text-black">Formations</h2>
             <motion.div
               className="absolute -bottom-2 left-0 right-0 h-0.5 bg-black"
               initial={{ scaleX: 0 }}
@@ -111,22 +111,21 @@ export default function FormationDialog() {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 max-w-5xl mx-auto">
           {themes.map((theme) => (
             <Dialog key={theme.title}>
               <DialogTrigger asChild>
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
+                <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                   <Button
                     variant="outline"
-                    className="w-full h-auto py-4 px-4 text-left flex items-center gap-3 hover:bg-gray-50 border-2 border-black transition-colors group"
+                    className="w-full px-4 py-8 text-left flex justify-start items-center gap-3 hover:bg-gray-50 border-2 border-black transition-colors"
                   >
-                    <div className="p-2 rounded-full bg-black/5 text-black group-hover:bg-black/10 transition-colors">
+                    <div className="rounded-full bg-black/5 text-black group-hover:bg-black/10 transition-colors">
                       {theme.icon}
                     </div>
-                    <span className="text-lg font-medium">{theme.title}</span>
+                    <span className="text-lg font-medium whitespace-normal leading-tight">
+                      {theme.title}
+                    </span>
                   </Button>
                 </motion.div>
               </DialogTrigger>
@@ -134,6 +133,7 @@ export default function FormationDialog() {
             </Dialog>
           ))}
         </div>
+
         <div className="text-center mt-8">
           <Button variant="link" className="text-lg underline">
             demander un devis pour une formation personnalisée

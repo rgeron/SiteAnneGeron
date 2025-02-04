@@ -99,7 +99,7 @@ const conferences = [
     description: "Description for Les bienfaits de l'amour",
   },
   {
-    title: "Les dispositions juridiques et réglementaires de la fin de la vie",
+    title: "Les dispositions juridiques de la fin de la vie",
     description:
       "Description for Les dispositions juridiques et réglementaires de la fin de la vie",
   },
@@ -165,7 +165,7 @@ export default function ConferenceDialog() {
                 >
                   <Button
                     variant="outline"
-                    className="w-full px-4 py-12 text-left flex items-center gap-3 hover:bg-gray-50 border-2 border-black transition-colors"
+                    className="w-full px-4 py-8 text-left flex items-center gap-3 hover:bg-gray-50 border-2 border-black transition-colors"
                   >
                     <div className=" rounded-full bg-black/5 text-black group-hover:bg-black/10 transition-colors">
                       {getIconForTheme(conference.title)}
